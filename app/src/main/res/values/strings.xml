@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android Examples</string>
+    <string name="button_pinch_zoom">Pinch Zoom Image</string>
+    <string name="button_search_view">Search View with Filterable</string>
 </resources>

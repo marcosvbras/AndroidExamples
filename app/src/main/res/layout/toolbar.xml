@@ -5,10 +5,9 @@
     android:id="@+id/toobar"
     android:layout_height="?attr/actionBarSize"
     android:layout_width="match_parent"
+    android:theme="@style/Toolbar"
     android:minHeight="?attr/actionBarSize"
     android:layout_alignParentLeft="true"
     android:elevation="4dp"
-    android:title="@string/app_name"
-    android:titleTextColor="#fff"
     android:background="@color/colorPrimary"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
