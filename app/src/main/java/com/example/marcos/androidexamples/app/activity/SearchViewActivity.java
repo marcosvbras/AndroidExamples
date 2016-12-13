@@ -38,9 +38,8 @@ public class SearchViewActivity extends AppCompatActivity {
     }
 
     private void LoadComponents() {
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toobar);
-        toolbar.setTitle(getResources().getString(R.string.button_search_view));
-        setSupportActionBar(toolbar);
+        setSupportActionBar((Toolbar)findViewById(R.id.toobar));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         listView = (ListView)findViewById(R.id.listView);
         listView.setOnItemClickListener(onItemClick());
     }

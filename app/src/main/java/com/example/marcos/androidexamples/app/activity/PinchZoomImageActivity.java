@@ -11,8 +11,6 @@ import com.example.marcos.androidexamples.app.util.CustomImageView;
 
 public class PinchZoomImageActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,11 +19,9 @@ public class PinchZoomImageActivity extends AppCompatActivity {
     }
 
     private void LoadComponents() {
-        toolbar = (Toolbar)findViewById(R.id.toobar);
-        toolbar.setTitleTextColor(Color.WHITE);
-        setSupportActionBar(toolbar);
+        setSupportActionBar((Toolbar)findViewById(R.id.toobar));
         CustomImageView mImageView = (CustomImageView)findViewById(R.id.customImageView);
-        mImageView.setBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.katiau));
+        //mImageView.setBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.katiau));
         //ZoomableImageView touch = (ZoomableImageView)findViewById(R.id.zoomImage);
         //touch.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.katiau));
     }
