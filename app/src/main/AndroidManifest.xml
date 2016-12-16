@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.marcos.androidexamples">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,16 +19,63 @@
         </activity>
         <activity
             android:name=".app.activity.PinchZoomImageActivity"
-            android:label="@string/button_pinch_zoom" />
+            android:label="@string/button_pinch_zoom"
+            android:parentActivityName=".app.activity.MainActivity" />
         <activity
             android:name=".app.activity.SearchViewActivity"
             android:label="@string/button_search_view"
             android:parentActivityName=".app.activity.MainActivity" />
         <activity
             android:name=".app.activity.ToolbarWithTabsActivity"
-            android:label="@string/button_toolbar_tabs" />
-        <activity android:name=".app.activity.XmlSelectorsActivity"
-            android:label="@string/button_xml_selectors"/>
+            android:label="@string/button_toolbar_tabs"
+            android:parentActivityName=".app.activity.MainActivity" />
+        <activity
+            android:name=".app.activity.XmlSelectorsActivity"
+            android:label="@string/button_xml_selectors"
+            android:parentActivityName=".app.activity.MainActivity" />
+        <activity
+            android:name=".app.activity.ViewsLayoutActivity"
+            android:label="@string/button_views_layout"
+            android:parentActivityName=".app.activity.MainActivity" />
+        <activity
+            android:name=".app.activity.GridViewActivity"
+            android:label="@string/button_gridview"
+            android:parentActivityName=".app.activity.MainActivity" />
+        <activity
+            android:name=".app.activity.ViewPagerTypesActivity"
+            android:label="@string/button_viewpager"
+            android:parentActivityName=".app.activity.MainActivity" />
+        <activity
+            android:name=".app.activity.ViewPagerTitleActivity"
+            android:label="@string/button_viewpager_title"
+            android:parentActivityName=".app.activity.MainActivity" />
+        <activity
+            android:name=".app.activity.ViewPagerActivity"
+            android:label="@string/button_viewpager"
+            android:parentActivityName=".app.activity.MainActivity" />
+        <activity
+            android:name=".app.activity.IntroSliderActivity"
+            android:label="@string/button_intro_slider"
+            android:parentActivityName=".app.activity.MainActivity" />
+        <activity
+            android:name=".app.activity.ImageSwitcherActivity"
+            android:label="@string/button_image_switcher"
+            android:parentActivityName=".app.activity.MainActivity" />
+        <activity
+            android:name=".app.activity.WebViewActivity"
+            android:label="@string/button_webview"
+            android:parentActivityName=".app.activity.MainActivity" />
+        <activity
+            android:name=".app.activity.ToolbarActivity"
+            android:label="@string/button_toolbar"
+            android:parentActivityName=".app.activity.MainActivity" />
+        <activity
+            android:name=".app.activity.GesturesActivity"
+            android:label="@string/button_gestures"
+            android:parentActivityName=".app.activity.MainActivity" />
+        <activity android:name=".app.activity.DragAndDropImageActivity"
+            android:label="@string/button_drag_drop_image"
+            android:parentActivityName=".app.activity.MainActivity"/>
     </application>
 
 </manifest>

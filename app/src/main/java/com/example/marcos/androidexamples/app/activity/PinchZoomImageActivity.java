@@ -1,7 +1,5 @@
 package com.example.marcos.androidexamples.app.activity;
 
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -19,7 +17,8 @@ public class PinchZoomImageActivity extends AppCompatActivity {
     }
 
     private void LoadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toobar));
+        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         CustomImageView mImageView = (CustomImageView)findViewById(R.id.customImageView);
         //mImageView.setBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.katiau));
         //ZoomableImageView touch = (ZoomableImageView)findViewById(R.id.zoomImage);

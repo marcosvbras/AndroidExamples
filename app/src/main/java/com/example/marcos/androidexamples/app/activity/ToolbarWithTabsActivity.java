@@ -1,11 +1,9 @@
 package com.example.marcos.androidexamples.app.activity;
 
-import android.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
@@ -25,7 +23,8 @@ public class ToolbarWithTabsActivity extends AppCompatActivity {
     }
 
     private void LoadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toobar));
+        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         progressBar = (ProgressBar) findViewById(R.id.progressBar2);
         progressBar.setVisibility(View.GONE);
         button = (Button)findViewById(R.id.button);

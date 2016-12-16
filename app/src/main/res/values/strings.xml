@@ -1,7 +1,35 @@
 <resources>
     <string name="app_name">Android Examples</string>
+    <string name="button_views_layout">Views and Layouts</string>
+    <string name="button_get_image">Get Web Image</string>
+    <string name="dialog_download">Downloading image</string>
+    <string name="dialog_wait">Wait a moment...</string>
+    <string name="button_gridview">GridView</string>
     <string name="button_pinch_zoom">Pinch Zoom Image</string>
     <string name="button_search_view">Search View with Filterable</string>
     <string name="button_toolbar_tabs">Toolbar With Tabs</string>
     <string name="button_xml_selectors">XML Selectors</string>
+    <string name="button_viewpager">ViewPager</string>
+    <string name="button_viewpager_title">ViewPager + TitleStrip</string>
+    <string name="button_intro_slider">Intro Slider</string>
+    <string name="button_image_switcher">Image Switcher</string>
+    <string name="button_webview">WebView</string>
+    <string name="button_toolbar">Toolbar</string>
+    <string name="button_gestures">Gestures</string>
+    <string name="button_drag_drop_image">Drag and drop image</string>
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+    <string name="slide_1_title">Hello Food!</string>
+    <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
+    <string name="slide_2_title">Movie Tickets</string>
+    <string name="slide_2_desc">Book movie tickets for your family and friends!</string>
+    <string name="slide_3_title">Great Discounts</string>
+    <string name="slide_3_desc">Best discounts on every single service we offer!</string>
+    <string name="slide_4_title">World Travel</string>
+    <string name="slide_4_desc">Book tickets of any transportation and travel the world!</string>
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
 </resources>

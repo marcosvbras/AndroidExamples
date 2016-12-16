@@ -21,48 +21,58 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void LoadComponents() {
-        toolbar = (Toolbar)findViewById(R.id.toobar);
+        toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         // Click events
-        findViewById(R.id.button_pinch_zoom).setOnClickListener(onPinchZoomClick());
-        findViewById(R.id.button_search_view).setOnClickListener(onSearchViewClick());
-        findViewById(R.id.button_toolbar_tabs).setOnClickListener(onToolbarTabsClick());
-        findViewById(R.id.button_xml_selectors).setOnClickListener(onXmlSelectorsClick());
+        findViewById(R.id.button_gestures).setOnClickListener(onGesturesButtonClick());
+        findViewById(R.id.button_views).setOnClickListener(onViewsButtonClick());
+        findViewById(R.id.button_view_pager).setOnClickListener(onViewPagerButtonClick());
+        findViewById(R.id.button_image_switcher).setOnClickListener(onImageSwitcherButtonClick());
+        findViewById(R.id.button_toolbar).setOnClickListener(onToolbarButtonClick());
     }
 
-    private View.OnClickListener onXmlSelectorsClick() {
+    private View.OnClickListener onGesturesButtonClick() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(), XmlSelectorsActivity.class));
+                startActivity(new Intent(getBaseContext(), GesturesActivity.class));
             }
         };
     }
 
-    private View.OnClickListener onToolbarTabsClick() {
+    private View.OnClickListener onToolbarButtonClick() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(), ToolbarWithTabsActivity.class));
+                startActivity(new Intent(getBaseContext(), ToolbarActivity.class));
             }
         };
     }
 
-    private View.OnClickListener onSearchViewClick() {
+    private View.OnClickListener onImageSwitcherButtonClick() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(), SearchViewActivity.class));
+                startActivity(new Intent(getBaseContext(), ImageSwitcherActivity.class));
             }
         };
     }
 
-    private View.OnClickListener onPinchZoomClick() {
+    private View.OnClickListener onViewPagerButtonClick() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(), PinchZoomImageActivity.class));
+                startActivity(new Intent(getBaseContext(), ViewPagerTypesActivity.class));
+            }
+        };
+    }
+
+    private View.OnClickListener onViewsButtonClick() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getBaseContext(), ViewsLayoutActivity.class));
             }
         };
     }
