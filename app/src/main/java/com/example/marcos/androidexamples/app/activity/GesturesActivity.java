@@ -20,7 +20,7 @@ public class GesturesActivity extends AppCompatActivity {
     private void LoadComponents() {
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        findViewById(R.id.button_pinch_zoom).setOnClickListener(onPinchZoomButtonClick());
+        findViewById(R.id.button_zoomable_imageview).setOnClickListener(onZoomableImageViewButtonClick());
         findViewById(R.id.button_drag_drop_image).setOnClickListener(onDragDropImageButtonClick());
     }
 
@@ -33,11 +33,11 @@ public class GesturesActivity extends AppCompatActivity {
         };
     }
 
-    private View.OnClickListener onPinchZoomButtonClick() {
+    private View.OnClickListener onZoomableImageViewButtonClick() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(), PinchZoomImageActivity.class));
+                startActivity(new Intent(getBaseContext(), ZoomableImageActivity.class));
             }
         };
     }

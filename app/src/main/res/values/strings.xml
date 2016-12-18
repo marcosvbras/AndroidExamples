@@ -5,7 +5,6 @@
     <string name="dialog_download">Downloading image</string>
     <string name="dialog_wait">Wait a moment...</string>
     <string name="button_gridview">GridView</string>
-    <string name="button_pinch_zoom">Pinch Zoom Image</string>
     <string name="button_search_view">Search View with Filterable</string>
     <string name="button_toolbar_tabs">Toolbar With Tabs</string>
     <string name="button_xml_selectors">XML Selectors</string>
@@ -16,7 +15,9 @@
     <string name="button_webview">WebView</string>
     <string name="button_toolbar">Toolbar</string>
     <string name="button_gestures">Gestures</string>
+    <string name="button_drawing_shapes">Drawing Shapes</string>
     <string name="button_drag_drop_image">Drag and drop image</string>
+    <string name="button_zoomable_imageview">Zoomable ImageView</string>
 
     <string name="title_activity_welcome">Home Screen</string>
     <string name="next">NEXT</string>

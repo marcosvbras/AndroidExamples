@@ -18,17 +18,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.activity.PinchZoomImageActivity"
-            android:label="@string/button_pinch_zoom"
-            android:parentActivityName=".app.activity.MainActivity" />
+            android:name=".app.activity.ZoomableImageActivity"
+            android:label="@string/button_zoomable_imageview"
+            android:parentActivityName=".app.activity.GesturesActivity" />
         <activity
             android:name=".app.activity.SearchViewActivity"
             android:label="@string/button_search_view"
-            android:parentActivityName=".app.activity.MainActivity" />
+            android:parentActivityName=".app.activity.ToolbarActivity" />
         <activity
             android:name=".app.activity.ToolbarWithTabsActivity"
             android:label="@string/button_toolbar_tabs"
-            android:parentActivityName=".app.activity.MainActivity" />
+            android:parentActivityName=".app.activity.ToolbarActivity" />
         <activity
             android:name=".app.activity.XmlSelectorsActivity"
             android:label="@string/button_xml_selectors"
@@ -40,7 +40,7 @@
         <activity
             android:name=".app.activity.GridViewActivity"
             android:label="@string/button_gridview"
-            android:parentActivityName=".app.activity.MainActivity" />
+            android:parentActivityName=".app.activity.ViewsLayoutActivity" />
         <activity
             android:name=".app.activity.ViewPagerTypesActivity"
             android:label="@string/button_viewpager"
@@ -48,15 +48,15 @@
         <activity
             android:name=".app.activity.ViewPagerTitleActivity"
             android:label="@string/button_viewpager_title"
-            android:parentActivityName=".app.activity.MainActivity" />
+            android:parentActivityName=".app.activity.ViewPagerTypesActivity" />
         <activity
             android:name=".app.activity.ViewPagerActivity"
             android:label="@string/button_viewpager"
-            android:parentActivityName=".app.activity.MainActivity" />
+            android:parentActivityName=".app.activity.ViewPagerTypesActivity" />
         <activity
             android:name=".app.activity.IntroSliderActivity"
             android:label="@string/button_intro_slider"
-            android:parentActivityName=".app.activity.MainActivity" />
+            android:parentActivityName=".app.activity.ViewPagerTypesActivity" />
         <activity
             android:name=".app.activity.ImageSwitcherActivity"
             android:label="@string/button_image_switcher"
@@ -64,7 +64,7 @@
         <activity
             android:name=".app.activity.WebViewActivity"
             android:label="@string/button_webview"
-            android:parentActivityName=".app.activity.MainActivity" />
+            android:parentActivityName=".app.activity.ViewsLayoutActivity" />
         <activity
             android:name=".app.activity.ToolbarActivity"
             android:label="@string/button_toolbar"
@@ -73,9 +73,14 @@
             android:name=".app.activity.GesturesActivity"
             android:label="@string/button_gestures"
             android:parentActivityName=".app.activity.MainActivity" />
-        <activity android:name=".app.activity.DragAndDropImageActivity"
+        <activity
+            android:name=".app.activity.DragAndDropImageActivity"
             android:label="@string/button_drag_drop_image"
-            android:parentActivityName=".app.activity.MainActivity"/>
+            android:parentActivityName=".app.activity.MainActivity" />
+        <activity
+            android:name=".app.activity.DrawingShapesActivity"
+            android:label="@string/button_drawing_shapes"
+            android:parentActivityName=".app.activity.ViewsLayoutActivity" />
     </application>
 
 </manifest>

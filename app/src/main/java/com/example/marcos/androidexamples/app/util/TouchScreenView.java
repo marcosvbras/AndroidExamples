@@ -5,18 +5,19 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
 import com.example.marcos.androidexamples.R;
 
 /**
- * Created by marco on 16/12/2016.
+ * Created by marcos on 16/12/2016.
  */
 
 public class TouchScreenView extends View {
 
-    private static final String TAG = "got";
+    private static final String TAG = "Debug";
     private Drawable drawableImage;
     private int x, y;
     private boolean selected;
@@ -25,11 +26,9 @@ public class TouchScreenView extends View {
 
     public TouchScreenView(Context context) {
         super(context, null);
-
         drawableImage = context.getResources().getDrawable(R.drawable.stark);
         imageWidth = drawableImage.getIntrinsicWidth();
         imageHeight = drawableImage.getIntrinsicHeight();
-
         // Configura a view para receber foco e tratar eventos de teclado
         setFocusable(true);
     }
@@ -39,20 +38,25 @@ public class TouchScreenView extends View {
         super.onSizeChanged(currentWidth, currentHeight, oldWidth, oldHeight);
         this.screenWidth = currentWidth;
         this.screenHeight = currentHeight;
+
         x = currentWidth / 2 - (imageWidth / 2);
         y = currentHeight / 2 - (imageHeight / 2);
     }
 
-    @Override // Desenha a tela
+    /*
+    * Método que desenha a tela
+    * Ele é chamado na crianção da tela e depois do método onTouchEvent para atualizá-la
+    * */
+    @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        // Fundo Branco
+        // Criando o fundo branco da tela
         Paint paint = new Paint();
         paint.setColor(Color.WHITE);
         canvas.drawRect(0, 0, screenWidth, screenHeight, paint);
-        // Define os limites/área para desenhar
+        // Define os limites/pontos/área para desenhar a imagem na tela
         drawableImage.setBounds(x, y, x + imageWidth, y + imageHeight);
-        // Desenha a imagem
+        // Desenha a imagem na tela
         drawableImage.draw(canvas);
     }
 

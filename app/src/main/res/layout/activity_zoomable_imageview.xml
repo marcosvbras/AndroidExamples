@@ -5,17 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.marcos.androidexamples.app.activity.PinchZoomImageActivity">
+    tools:context="com.example.marcos.androidexamples.app.activity.ZoomableImageActivity">
     <include layout="@layout/toolbar" />
 
-    <com.example.marcos.androidexamples.app.util.CustomImageView
-        android:id="@+id/customImageView"
+    <com.example.marcos.androidexamples.app.util.ZoomableImageView
+        android:id="@+id/zoomableImageView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:scaleType="matrix"/>
-
-    <!--com.example.marcos.androidexamples.app.Util.ZoomableImageView
-        android:id="@+id/zoomImage"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" /-->
 </LinearLayout>
