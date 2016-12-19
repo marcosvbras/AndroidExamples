@@ -28,7 +28,7 @@ public class GesturesActivity extends AppCompatActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(), DragAndDropImageActivity.class));
+                startActivity(new Intent(getBaseContext(), DragImageActivity.class));
             }
         };
     }

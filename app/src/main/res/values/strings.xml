@@ -16,8 +16,12 @@
     <string name="button_toolbar">Toolbar</string>
     <string name="button_gestures">Gestures</string>
     <string name="button_drawing_shapes">Drawing Shapes</string>
-    <string name="button_drag_drop_image">Drag and drop image</string>
+    <string name="button_drag_image">Drag Image</string>
     <string name="button_zoomable_imageview">Zoomable ImageView</string>
+    <string name="button_fragments">Fragments</string>
+    <string name="button_helloworld_fragment">Hello World Fragment</string>
+    <string name="button_show_first_fragment">Show first fragment</string>
+    <string name="button_show_second_fragment">Show second fragment</string>
 
     <string name="title_activity_welcome">Home Screen</string>
     <string name="next">NEXT</string>
@@ -33,4 +37,7 @@
     <string name="slide_4_desc">Book tickets of any transportation and travel the world!</string>
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
+
+    <string name="hello_blank_fragment_id">Hello blank fragment added by ID</string>
+    <string name="hello_blank_fragment_tag">Hello blank fragment added by TAG</string>
 </resources>

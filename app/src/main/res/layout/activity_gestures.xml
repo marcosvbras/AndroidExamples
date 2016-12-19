@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/button_zoomable_imageview" />
     <Button
-        android:text="@string/button_drag_drop_image"
+        android:text="@string/button_drag_image"
         android:paddingTop="@dimen/activity_vertical_padding"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"

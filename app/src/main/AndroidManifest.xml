@@ -60,7 +60,7 @@
         <activity
             android:name=".app.activity.ImageSwitcherActivity"
             android:label="@string/button_image_switcher"
-            android:parentActivityName=".app.activity.MainActivity" />
+            android:parentActivityName=".app.activity.ViewsLayoutActivity" />
         <activity
             android:name=".app.activity.WebViewActivity"
             android:label="@string/button_webview"
@@ -74,13 +74,20 @@
             android:label="@string/button_gestures"
             android:parentActivityName=".app.activity.MainActivity" />
         <activity
-            android:name=".app.activity.DragAndDropImageActivity"
-            android:label="@string/button_drag_drop_image"
+            android:name=".app.activity.DragImageActivity"
+            android:label="@string/button_drag_image"
             android:parentActivityName=".app.activity.MainActivity" />
         <activity
             android:name=".app.activity.DrawingShapesActivity"
             android:label="@string/button_drawing_shapes"
             android:parentActivityName=".app.activity.ViewsLayoutActivity" />
+        <activity
+            android:name=".app.activity.FragmentsActivity"
+            android:label="@string/button_fragments"
+            android:parentActivityName=".app.activity.MainActivity" />
+        <activity android:name=".app.activity.HelloWorldFragmentActivity"
+            android:label="@string/button_helloworld_fragment"
+            android:parentActivityName=".app.activity.FragmentsActivity"/>
     </application>
 
 </manifest>

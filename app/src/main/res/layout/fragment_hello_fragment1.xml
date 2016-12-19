@@ -1,0 +1,15 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.example.marcos.androidexamples.app.fragment.HelloFragment1">
+    <TextView
+        android:id="@+id/textViewFrag1"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:background="@color/bg_screen3"
+        android:textColor="@android:color/white"
+        android:layout_height="50dp" />
+</LinearLayout>

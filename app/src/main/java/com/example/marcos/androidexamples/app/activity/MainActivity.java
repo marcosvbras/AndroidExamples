@@ -28,8 +28,17 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button_gestures).setOnClickListener(onGesturesButtonClick());
         findViewById(R.id.button_views).setOnClickListener(onViewsButtonClick());
         findViewById(R.id.button_view_pager).setOnClickListener(onViewPagerButtonClick());
-        findViewById(R.id.button_image_switcher).setOnClickListener(onImageSwitcherButtonClick());
         findViewById(R.id.button_toolbar).setOnClickListener(onToolbarButtonClick());
+        findViewById(R.id.button_fragments).setOnClickListener(onFragmentsButtonClick());
+    }
+
+    private View.OnClickListener onFragmentsButtonClick() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getBaseContext(), FragmentsActivity.class));
+            }
+        };
     }
 
     private View.OnClickListener onGesturesButtonClick() {
@@ -50,15 +59,6 @@ public class MainActivity extends AppCompatActivity {
         };
     }
 
-    private View.OnClickListener onImageSwitcherButtonClick() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(), ImageSwitcherActivity.class));
-            }
-        };
-    }
-
     private View.OnClickListener onViewPagerButtonClick() {
         return new View.OnClickListener() {
             @Override
@@ -75,9 +75,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getBaseContext(), ViewsLayoutActivity.class));
             }
         };
-    }
-
-    private void showMessage(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

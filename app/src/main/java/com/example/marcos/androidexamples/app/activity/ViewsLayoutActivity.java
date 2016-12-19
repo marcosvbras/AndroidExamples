@@ -51,6 +51,7 @@ public class ViewsLayoutActivity extends AppCompatActivity {
         findViewById(R.id.button_gridview).setOnClickListener(onGridViewButtonClick());
         findViewById(R.id.button_xml_selectors).setOnClickListener(onXmlSelectorsClick());
         findViewById(R.id.button_drawing_shapes).setOnClickListener(onDrawingShapesButtonClick());
+        findViewById(R.id.button_image_switcher).setOnClickListener(onImageSwitcherButtonClick());
 
         // Auto Complete
         autoCompleteTextView = (AutoCompleteTextView)findViewById(R.id.autoComplete);
@@ -80,6 +81,15 @@ public class ViewsLayoutActivity extends AppCompatActivity {
         buttonGetImage = (Button)findViewById(R.id.button_get_image);
         buttonGetImage.setOnClickListener(onButtonGetImageClick());
         imageView = (ImageView)findViewById(R.id.imageView);
+    }
+
+    private View.OnClickListener onImageSwitcherButtonClick() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getBaseContext(), ImageSwitcherActivity.class));
+            }
+        };
     }
 
     private View.OnClickListener onDrawingShapesButtonClick() {

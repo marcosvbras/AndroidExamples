@@ -7,7 +7,7 @@ import android.support.v7.widget.Toolbar;
 import com.example.marcos.androidexamples.R;
 import com.example.marcos.androidexamples.app.util.TouchScreenView;
 
-public class DragAndDropImageActivity extends AppCompatActivity {
+public class DragImageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

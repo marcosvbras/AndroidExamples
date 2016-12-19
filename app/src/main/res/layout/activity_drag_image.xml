@@ -5,6 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.marcos.androidexamples.app.activity.DragAndDropImageActivity">
+    tools:context="com.example.marcos.androidexamples.app.activity.DragImageActivity">
     <include layout="@layout/toolbar"/>
 </LinearLayout>
