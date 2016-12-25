@@ -22,6 +22,8 @@
     <string name="button_helloworld_fragment">Hello World Fragment</string>
     <string name="button_show_first_fragment">Show first fragment</string>
     <string name="button_show_second_fragment">Show second fragment</string>
+    <string name="button_recycler_view">RecyclerView</string>
+    <string name="button_spinner_complete_check">Spinner, AutoComplete and CheckBox</string>
 
     <string name="title_activity_welcome">Home Screen</string>
     <string name="next">NEXT</string>
