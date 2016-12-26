@@ -31,15 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button_gridview" />
-        <Button
-            android:text="@string/button_recycler_view"
-            android:paddingTop="@dimen/activity_vertical_padding"
-            android:textAllCaps="false"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/button_recycler_view" />
+
         <Button
             android:text="@string/button_image_switcher"
             android:paddingTop="@dimen/activity_vertical_padding"
@@ -49,6 +41,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button_image_switcher" />
+        <Button
+            android:text="@string/button_recycler_view"
+            android:paddingTop="@dimen/activity_vertical_padding"
+            android:textAllCaps="false"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_recycler_view" />
         <Button
             android:text="@string/button_webview"
             android:paddingTop="@dimen/activity_vertical_padding"

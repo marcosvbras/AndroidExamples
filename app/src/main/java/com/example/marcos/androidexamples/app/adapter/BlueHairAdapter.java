@@ -5,16 +5,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.marcos.androidexamples.R;
 import com.example.marcos.androidexamples.app.entity.BlueHair;
+import com.example.marcos.androidexamples.app.listener.RecyclerViewOnItemClickListener;
+import com.example.marcos.androidexamples.app.util.Animations;
+import com.example.marcos.androidexamples.app.util.Constants;
+import com.example.marcos.androidexamples.app.util.RecyclerSettings;
 
 import java.util.List;
 
@@ -27,12 +27,14 @@ public class BlueHairAdapter extends RecyclerView.Adapter {
     private List<BlueHair> listBlueHair;
     private Context context;
     private int lastLoadedViewPosition;
-    private static final int FADE_DURATION = 1000; // em milisegundos
+    private RecyclerSettings recyclerSettings;
+    private RecyclerViewOnItemClickListener onItemClickListener;
 
-    public BlueHairAdapter(List<BlueHair> listBlueHair, Context context) {
+    public BlueHairAdapter(List<BlueHair> listBlueHair, Context context, RecyclerSettings recyclerSettings) {
         this.listBlueHair = listBlueHair;
         this.context = context;
         this.lastLoadedViewPosition = -1;
+        this.recyclerSettings = recyclerSettings;
     }
 
     @Override
@@ -50,53 +52,50 @@ public class BlueHairAdapter extends RecyclerView.Adapter {
         MyViewHolder myViewHolder = (MyViewHolder)viewHolder;
         myViewHolder.textView.setText("Item " + blueHair.getId());
         myViewHolder.imageView.setImageResource(blueHair.getDrawableId());
-        setScaleAnimation(myViewHolder.container, position);
+
+        if(recyclerSettings.getAnimationConstant() == Constants.ANIMATION_SLIDE_IN_LEFT)
+            Animations.setSlideInLeftAnimation(myViewHolder.container, position, lastLoadedViewPosition, recyclerSettings.isAlwaysAnimate(), context);
+        else if(recyclerSettings.getAnimationConstant() == Constants.ANIMATION_SLIDE_OUT_RIGHT)
+            Animations.setSlideOutRightAnimation(myViewHolder.container, position, lastLoadedViewPosition, recyclerSettings.isAlwaysAnimate(), context);
+        else if(recyclerSettings.getAnimationConstant() == Constants.ANIMATION_FADE_IN)
+            Animations.setFadeInAnimation(myViewHolder.container, position, lastLoadedViewPosition, recyclerSettings.isAlwaysAnimate(), context);
+        else if(recyclerSettings.getAnimationConstant() == Constants.ANIMATION_FADE_OUT)
+            Animations.setFadeOutAnimation(myViewHolder.container, position, lastLoadedViewPosition, recyclerSettings.isAlwaysAnimate(), context);
+        else if(recyclerSettings.getAnimationConstant() == Constants.ANIMATION_SCALE)
+            Animations.setScaleAnimation(myViewHolder.container, position, lastLoadedViewPosition, recyclerSettings.isAlwaysAnimate(), context);
+
+        lastLoadedViewPosition = position;
     }
 
     @Override
-    public void onViewDetachedFromWindow(RecyclerView.ViewHolder holder) {
-        ((MyViewHolder)holder).clearAnimation();
-    }
-
-    private void setAnimation(View viewToAnimate, int currentPosition) {
-        // Se a última view não foi exibida anteriormente na lista, ela recebe a animação
-        if (currentPosition > lastLoadedViewPosition) {
-            Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
-            viewToAnimate.startAnimation(animation);
-            lastLoadedViewPosition = currentPosition;
-        }
-    }
-
-    private void setFadeAnimation(View viewToAnimate, int currentPosition) {
-        // Se a última view não foi exibida anteriormente na lista, ela recebe a animação
-        if(currentPosition > lastLoadedViewPosition) {
-            AlphaAnimation anim = new AlphaAnimation(0.0f, 1.0f);
-            anim.setDuration(FADE_DURATION);
-            viewToAnimate.startAnimation(anim);
-            lastLoadedViewPosition = currentPosition;
-        }
-    }
-
-    private void setScaleAnimation(View viewToAnimate, int currentPosition) {
-        // Se a última view não foi exibida anteriormente na lista, ela recebe a animação
-        if(currentPosition > lastLoadedViewPosition) {
-            ScaleAnimation anim = new ScaleAnimation(0.0f, 1.0f, 0.0f, 1.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-            anim.setDuration(FADE_DURATION);
-            viewToAnimate.startAnimation(anim);
-            lastLoadedViewPosition = currentPosition;
-        }
-    }
+    public void onViewDetachedFromWindow(RecyclerView.ViewHolder holder) { ((MyViewHolder)holder).clearAnimation(); }
 
     @Override
     public int getItemCount() {
         return listBlueHair.size();
     }
 
-    public BlueHair getItemAtPosition(int position) {
-        return listBlueHair.get(position);
+    public void setRecyclerSettings(RecyclerSettings recyclerSettings) { this.recyclerSettings = recyclerSettings; }
+
+    public void setLastLoadedViewPosition(int lastLoadedViewPosition) { this.lastLoadedViewPosition = lastLoadedViewPosition; }
+
+    public BlueHair getItemAtPosition(int position) { return listBlueHair.get(position); }
+
+    public void addItemToList(BlueHair blueHair, int position) {
+        listBlueHair.add(blueHair);
+        notifyItemInserted(position);
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    public void removeItem(int position) {
+        listBlueHair.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    public void setOnItemClickListener(RecyclerViewOnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView textView;
         ImageView imageView;
@@ -107,10 +106,18 @@ public class BlueHairAdapter extends RecyclerView.Adapter {
             textView = (TextView) itemView.findViewById(R.id.textView);
             imageView = (ImageView) itemView.findViewById(R.id.imageView);
             container = (LinearLayout) itemView.findViewById(R.id.container);
+            itemView.setOnClickListener(this);
         }
 
         public void clearAnimation() {
             container.clearAnimation();
+        }
+
+        @Override
+        public void onClick(View v) {
+            if(onItemClickListener != null) {
+                onItemClickListener.onClickListener(v, getLayoutPosition());
+            }
         }
     }
 }

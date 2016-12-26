@@ -32,7 +32,7 @@
         <activity
             android:name=".app.activity.XmlSelectorsActivity"
             android:label="@string/button_xml_selectors"
-            android:parentActivityName=".app.activity.MainActivity" />
+            android:parentActivityName=".app.activity.ViewsLayoutActivity" />
         <activity
             android:name=".app.activity.ViewsLayoutActivity"
             android:label="@string/button_views_layout"
