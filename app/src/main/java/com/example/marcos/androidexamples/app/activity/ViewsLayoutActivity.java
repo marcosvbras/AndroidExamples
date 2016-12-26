@@ -8,14 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ImageView;
-import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.marcos.androidexamples.R;
 
@@ -71,7 +65,7 @@ public class ViewsLayoutActivity extends AppCompatActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(), RecyclerViewActivity.class));
+                startActivity(new Intent(getBaseContext(), RecyclerViewActivityListener.class));
             }
         };
     }

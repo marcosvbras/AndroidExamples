@@ -1,7 +1,7 @@
 package com.example.marcos.androidexamples.app.activity;
 
+import android.content.Context;
 import android.content.DialogInterface;
-import android.content.res.Resources;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,9 +10,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
@@ -23,15 +25,14 @@ import com.example.marcos.androidexamples.R;
 import com.example.marcos.androidexamples.app.adapter.BlueHairAdapter;
 import com.example.marcos.androidexamples.app.entity.BlueHair;
 import com.example.marcos.androidexamples.app.listener.RecyclerItemClickListener;
-import com.example.marcos.androidexamples.app.listener.RecyclerViewOnItemClickListener;
+import com.example.marcos.androidexamples.app.interfaces.RecyclerViewTouchListener;
 import com.example.marcos.androidexamples.app.util.Constants;
 import com.example.marcos.androidexamples.app.util.RecyclerSettings;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-public class RecyclerViewActivity extends AppCompatActivity implements RecyclerViewOnItemClickListener {
+public class RecyclerViewActivityListener extends AppCompatActivity implements RecyclerViewTouchListener {
 
     // View
     private RecyclerView recyclerView;
@@ -89,13 +90,18 @@ public class RecyclerViewActivity extends AppCompatActivity implements RecyclerV
         super.onResume();
         populateList();
         blueHairAdapter = new BlueHairAdapter(listBlueHair, this, recyclerSettings);
-        blueHairAdapter.setOnItemClickListener(this);
         recyclerView.setAdapter(blueHairAdapter);
         recyclerView.setLayoutManager(layoutManager);
-        //recyclerView.addOnItemTouchListener(onRecyclerItemClickListener());
+        recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getBaseContext(), recyclerView, this));
         // Melhora a perfomance do RecycleView se o tamanho dos componentes forem fixos e não mudarão
         recyclerView.setHasFixedSize(true);
         setDialog();
+    }
+
+    private RecylerViewTouchListener onItemTouchListener() {
+        return new RecylerViewTouchListener(this, recyclerView, this) {
+
+        };
     }
 
     private void populateList() {
@@ -227,14 +233,6 @@ public class RecyclerViewActivity extends AppCompatActivity implements RecyclerV
         Toast.makeText(this, R.string.scroll_to_see, Toast.LENGTH_SHORT).show();
     }
 
-    private RecyclerItemClickListener onRecyclerItemClickListener() {
-        return new RecyclerItemClickListener(getBaseContext(), new RecyclerItemClickListener.OnItemClickListener() {
-            @Override public void onItemClick(View view, int position) {
-                Toast.makeText(getBaseContext(), "Item " + blueHairAdapter.getItemAtPosition(position).getId() + " clicked!", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_recycle, menu);
@@ -255,7 +253,75 @@ public class RecyclerViewActivity extends AppCompatActivity implements RecyclerV
     }
 
     @Override
-    public void onClickListener(View view, int position) {
-        Toast.makeText(getBaseContext(), "Item " + blueHairAdapter.getItemAtPosition(position).getId() + " clicked!", Toast.LENGTH_SHORT).show();
+    public void onItemClickListener(View view, int position) {
+        Toast.makeText(getBaseContext(), "Item " + blueHairAdapter.getItemAtPosition(position).getId() + " single click", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onLongItemClickListener(View view, int position) {
+        Toast.makeText(getBaseContext(), "Item " + blueHairAdapter.getItemAtPosition(position).getId() + " long click", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDoubleTapListener(View view, int position) {
+        Toast.makeText(getBaseContext(), "Item " + blueHairAdapter.getItemAtPosition(position).getId() + " double click", Toast.LENGTH_SHORT).show();
+    }
+
+    private static class RecylerViewTouchListener implements RecyclerView.OnItemTouchListener {
+
+        private Context context;
+        private GestureDetector gestureDetector;
+        private RecyclerViewTouchListener recyclerViewOnClickListener;
+        private RecyclerView recyclerView;
+
+        private RecylerViewTouchListener(Context context, RecyclerView recyclerView, RecyclerViewTouchListener recyclerViewOnClickListener) {
+            this.context = context;
+            this.recyclerView = recyclerView;
+            this.recyclerViewOnClickListener = recyclerViewOnClickListener;
+
+            gestureDetector = new GestureDetector(context, onSimpleGestureListener());
+        }
+
+        private GestureDetector.SimpleOnGestureListener onSimpleGestureListener() {
+            return new GestureDetector.SimpleOnGestureListener(){
+                @Override
+                public void onLongPress(MotionEvent motionEvent) {
+                    super.onLongPress(motionEvent);
+
+                    View childView = recyclerView.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
+
+                    if(childView != null && recyclerViewOnClickListener != null) {
+                        recyclerViewOnClickListener.onLongItemClickListener(childView, recyclerView.getChildAdapterPosition(childView));
+                    }
+                }
+
+                @Override
+                public boolean onSingleTapUp(MotionEvent motionEvent) {
+                    View childView = recyclerView.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
+
+                    if(childView != null && recyclerViewOnClickListener != null) {
+                        recyclerViewOnClickListener.onItemClickListener(childView, recyclerView.getChildAdapterPosition(childView));
+                    }
+
+                    return true;
+                }
+            };
+        }
+
+        @Override
+        public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent motionEvent) {
+            gestureDetector.onTouchEvent(motionEvent);
+            return false;
+        }
+
+        @Override
+        public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+
+        }
+
+        @Override
+        public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+        }
     }
 }

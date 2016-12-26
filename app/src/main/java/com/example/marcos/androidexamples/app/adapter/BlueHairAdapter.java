@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.example.marcos.androidexamples.R;
 import com.example.marcos.androidexamples.app.entity.BlueHair;
-import com.example.marcos.androidexamples.app.listener.RecyclerViewOnItemClickListener;
+import com.example.marcos.androidexamples.app.interfaces.RecyclerViewTouchListener;
 import com.example.marcos.androidexamples.app.util.Animations;
 import com.example.marcos.androidexamples.app.util.Constants;
 import com.example.marcos.androidexamples.app.util.RecyclerSettings;
@@ -28,7 +28,7 @@ public class BlueHairAdapter extends RecyclerView.Adapter {
     private Context context;
     private int lastLoadedViewPosition;
     private RecyclerSettings recyclerSettings;
-    private RecyclerViewOnItemClickListener onItemClickListener;
+    private RecyclerViewTouchListener onItemClickListener;
 
     public BlueHairAdapter(List<BlueHair> listBlueHair, Context context, RecyclerSettings recyclerSettings) {
         this.listBlueHair = listBlueHair;
@@ -91,7 +91,7 @@ public class BlueHairAdapter extends RecyclerView.Adapter {
         notifyItemRemoved(position);
     }
 
-    public void setOnItemClickListener(RecyclerViewOnItemClickListener onItemClickListener) {
+    public void setOnItemClickListener(RecyclerViewTouchListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
 
@@ -116,7 +116,7 @@ public class BlueHairAdapter extends RecyclerView.Adapter {
         @Override
         public void onClick(View v) {
             if(onItemClickListener != null) {
-                onItemClickListener.onClickListener(v, getLayoutPosition());
+                onItemClickListener.onItemClickListener(v, getLayoutPosition());
             }
         }
     }
