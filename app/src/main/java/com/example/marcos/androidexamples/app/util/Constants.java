@@ -14,4 +14,7 @@ public class Constants {
     public static final int ANIMATION_SCALE = 5;
     public static final int FADE_DURATION = 1500; // em milisegundos
     public static final int SCALE_FADE_DURATION = 400;
+
+    // Keys
+    public static final String KEY_COUNT = "keyCount";
 }

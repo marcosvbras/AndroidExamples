@@ -93,9 +93,13 @@
             android:name=".app.activity.RecyclerViewActivity"
             android:label="@string/button_recycler_view"
             android:parentActivityName=".app.activity.ViewsLayoutActivity" />
-        <activity android:name=".app.activity.SpinnerCompleteCheckActivity"
+        <activity
+            android:name=".app.activity.SpinnerCompleteCheckActivity"
             android:label="@string/button_spinner_complete_check"
-            android:parentActivityName=".app.activity.ViewsLayoutActivity"/>
+            android:parentActivityName=".app.activity.ViewsLayoutActivity" />
+        <activity android:name=".app.activity.SaveInstanceStateActivity"
+            android:label="@string/button_save_instance_state"
+            android:parentActivityName=".app.activity.MainActivity"/>
     </application>
 
 </manifest>

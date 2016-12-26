@@ -10,7 +10,6 @@
 
     <Button
         android:text="@string/button_fragments"
-        android:paddingTop="@dimen/activity_vertical_padding"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
@@ -20,7 +19,6 @@
         android:id="@+id/button_fragments" />
     <Button
         android:text="@string/button_gestures"
-        android:paddingTop="@dimen/activity_vertical_padding"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
@@ -28,18 +26,23 @@
         android:layout_height="wrap_content"
         android:id="@+id/button_gestures" />
     <Button
+        android:text="@string/button_save_instance_state"
+        android:textAllCaps="false"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_save_instance_state" />
+    <Button
         android:text="@string/button_toolbar"
-        android:paddingTop="@dimen/activity_vertical_padding"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button_toolbar" />
-
     <Button
         android:text="@string/button_viewpager"
-        android:paddingTop="@dimen/activity_vertical_padding"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
@@ -48,7 +51,6 @@
         android:id="@+id/button_view_pager" />
     <Button
         android:text="@string/button_views_layout"
-        android:paddingTop="@dimen/activity_vertical_padding"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"

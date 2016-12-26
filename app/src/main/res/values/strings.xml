@@ -24,6 +24,7 @@
     <string name="button_show_second_fragment">Show second fragment</string>
     <string name="button_recycler_view">RecyclerView</string>
     <string name="button_spinner_complete_check">Spinner, AutoComplete and CheckBox</string>
+    <string name="button_save_instance_state">SaveInstanceState</string>
 
     <string name="title_activity_welcome">Home Screen</string>
     <string name="next">NEXT</string>
@@ -39,7 +40,7 @@
     <string name="slide_4_desc">Book tickets of any transportation and travel the world!</string>
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
-    
+
     <string name="grid_manager_vertical">Vertical GridLayout</string>
     <string name="grid_manager_horizontal">Horizontal GridLayout</string>
     <string name="staggered_manager_horizontal">Horizontal StaggeredGrid</string>

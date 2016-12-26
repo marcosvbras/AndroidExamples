@@ -30,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button_view_pager).setOnClickListener(onViewPagerButtonClick());
         findViewById(R.id.button_toolbar).setOnClickListener(onToolbarButtonClick());
         findViewById(R.id.button_fragments).setOnClickListener(onFragmentsButtonClick());
+        findViewById(R.id.button_save_instance_state).setOnClickListener(onSaveInstanceStateButtonClick());
+    }
+
+    private View.OnClickListener onSaveInstanceStateButtonClick() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), SaveInstanceStateActivity.class));
+            }
+        };
     }
 
     private View.OnClickListener onFragmentsButtonClick() {
