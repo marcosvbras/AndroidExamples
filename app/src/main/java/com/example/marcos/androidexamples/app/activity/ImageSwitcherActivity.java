@@ -32,7 +32,7 @@ public class ImageSwitcherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_switcher);
         loadComponents();
-        Log.v("Log", "onCreate");
+        index = 0;
     }
 
     private void loadComponents() {
@@ -41,17 +41,37 @@ public class ImageSwitcherActivity extends AppCompatActivity {
         imageSwitcher = (ImageSwitcher)findViewById(R.id.imageSwitcher);
         imageSwitcher.setFactory(getViewFactory());
         imageSwitcher.setInAnimation(AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left));
-        imageSwitcher.setOutAnimation(AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right));
-        findViewById(R.id.button_next).setOnClickListener(onNextButtonClick());
+        imageSwitcher.setOutAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_out));
+        findViewById(R.id.button_previous).setOnClickListener(onControlButtonClick());
+        findViewById(R.id.button_next).setOnClickListener(onControlButtonClick());
+    }
+
+    private View.OnClickListener onControlButtonClick() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v.getId() == R.id.button_previous) {
+                    if(index == 0)
+                        index = listSimpleItems.size() - 1;
+                    else
+                        index--;
+                } else if(v.getId() == R.id.button_next) {
+                    if(index == listSimpleItems.size() - 1)
+                        index = 0;
+                    else
+                        index++;
+                }
+
+                imageSwitcher.setImageResource(listSimpleItems.get(index).getImageResource());
+            }
+        };
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         populateList();
-        populateImageSwitcher();
-        index = 0;
-        Log.v("Log", "onResume");
+        imageSwitcher.setImageResource(listSimpleItems.get(index).getImageResource());
     }
 
     private void populateList() {
@@ -67,36 +87,12 @@ public class ImageSwitcherActivity extends AppCompatActivity {
         listSimpleItems.add(new SimpleItem("To Love-Ru", R.drawable.toloveru));
     }
 
-    private void populateImageSwitcher() {
-        ImageView imageView;
-
-        for(SimpleItem item : listSimpleItems) {
-            imageView = new ImageView(this);
-            imageView.setImageResource(item.getImageResource());
-            imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-            //imageSwitcher.addView(imageView);
-        }
-    }
-
-    private View.OnClickListener onNextButtonClick() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(index == listSimpleItems.size())
-                    index = 0;
-
-                imageSwitcher.showNext();
-            }
-        };
-    }
-
     public ViewSwitcher.ViewFactory getViewFactory() {
         return new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
                 ImageView imageView = new ImageView(getBaseContext());
-                imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
                 return imageView;
             }
@@ -107,12 +103,13 @@ public class ImageSwitcherActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(Constants.KEY_COUNT, index);
-        Log.v("Log", "onSaveInstanceState");
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        Log.v("Log", "onRestoreInstanceState");
+
+        if(savedInstanceState != null)
+            index = savedInstanceState.getInt(Constants.KEY_COUNT);
     }
 }

@@ -7,16 +7,28 @@
     android:orientation="vertical"
     tools:context="com.example.marcos.androidexamples.app.activity.ImageSwitcherActivity">
     <include layout="@layout/toolbar"/>
-    <Button
-        android:text="@string/next"
-        android:paddingTop="@dimen/activity_vertical_padding"
-        android:textAllCaps="false"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_next" />
     <ImageSwitcher
         android:id="@+id/imageSwitcher"
-        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="@string/previous"
+            android:textAllCaps="false"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_previous" />
+        <Button
+            android:text="@string/next"
+            android:textAllCaps="false"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_next" />
+    </LinearLayout>
 </LinearLayout>
