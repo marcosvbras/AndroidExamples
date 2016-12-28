@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.marcos.androidexamples.R;
-import com.example.marcos.androidexamples.app.entity.BlueHair;
+import com.example.marcos.androidexamples.app.entity.SimpleItem;
 import com.example.marcos.androidexamples.app.interfaces.RecyclerViewTouchListener;
 import com.example.marcos.androidexamples.app.util.Animations;
 import com.example.marcos.androidexamples.app.util.Constants;
@@ -24,14 +24,13 @@ import java.util.List;
 
 public class BlueHairAdapter extends RecyclerView.Adapter {
 
-    private List<BlueHair> listBlueHair;
+    private List<SimpleItem> simpleItems;
     private Context context;
     private int lastLoadedViewPosition;
     private RecyclerSettings recyclerSettings;
-    private RecyclerViewTouchListener onItemClickListener;
 
-    public BlueHairAdapter(List<BlueHair> listBlueHair, Context context, RecyclerSettings recyclerSettings) {
-        this.listBlueHair = listBlueHair;
+    public BlueHairAdapter(List<SimpleItem> simpleItems, Context context, RecyclerSettings recyclerSettings) {
+        this.simpleItems = simpleItems;
         this.context = context;
         this.lastLoadedViewPosition = -1;
         this.recyclerSettings = recyclerSettings;
@@ -48,10 +47,10 @@ public class BlueHairAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
-        BlueHair blueHair = listBlueHair.get(position);
+        SimpleItem simpleItem = simpleItems.get(position);
         MyViewHolder myViewHolder = (MyViewHolder)viewHolder;
-        myViewHolder.textView.setText("Item " + blueHair.getId());
-        myViewHolder.imageView.setImageResource(blueHair.getDrawableId());
+        myViewHolder.textView.setText("Item " + simpleItem.getName());
+        myViewHolder.imageView.setImageResource(simpleItem.getImageResource());
 
         if(recyclerSettings.getAnimationConstant() == Constants.ANIMATION_SLIDE_IN_LEFT)
             Animations.setSlideInLeftAnimation(myViewHolder.container, position, lastLoadedViewPosition, recyclerSettings.isAlwaysAnimate(), context);
@@ -72,30 +71,26 @@ public class BlueHairAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return listBlueHair.size();
+        return simpleItems.size();
     }
 
     public void setRecyclerSettings(RecyclerSettings recyclerSettings) { this.recyclerSettings = recyclerSettings; }
 
     public void setLastLoadedViewPosition(int lastLoadedViewPosition) { this.lastLoadedViewPosition = lastLoadedViewPosition; }
 
-    public BlueHair getItemAtPosition(int position) { return listBlueHair.get(position); }
+    public SimpleItem getItemAtPosition(int position) { return simpleItems.get(position); }
 
-    public void addItemToList(BlueHair blueHair, int position) {
-        listBlueHair.add(blueHair);
+    public void addItemToList(SimpleItem blueHair, int position) {
+        simpleItems.add(blueHair);
         notifyItemInserted(position);
     }
 
     public void removeItem(int position) {
-        listBlueHair.remove(position);
+        simpleItems.remove(position);
         notifyItemRemoved(position);
     }
 
-    public void setOnItemClickListener(RecyclerViewTouchListener onItemClickListener) {
-        this.onItemClickListener = onItemClickListener;
-    }
-
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView textView;
         ImageView imageView;
@@ -106,18 +101,10 @@ public class BlueHairAdapter extends RecyclerView.Adapter {
             textView = (TextView) itemView.findViewById(R.id.textView);
             imageView = (ImageView) itemView.findViewById(R.id.imageView);
             container = (LinearLayout) itemView.findViewById(R.id.container);
-            itemView.setOnClickListener(this);
         }
 
         public void clearAnimation() {
             container.clearAnimation();
-        }
-
-        @Override
-        public void onClick(View v) {
-            if(onItemClickListener != null) {
-                onItemClickListener.onItemClickListener(v, getLayoutPosition());
-            }
         }
     }
 }

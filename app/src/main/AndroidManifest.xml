@@ -32,39 +32,39 @@
         <activity
             android:name=".app.activity.XmlSelectorsActivity"
             android:label="@string/button_xml_selectors"
-            android:parentActivityName=".app.activity.ViewsLayoutActivity" />
+            android:parentActivityName=".app.activity.AnotherViewsActivity" />
         <activity
-            android:name=".app.activity.ViewsLayoutActivity"
-            android:label="@string/button_views_layout"
+            android:name=".app.activity.AnotherViewsActivity"
+            android:label="@string/button_another_views"
             android:parentActivityName=".app.activity.MainActivity" />
         <activity
             android:name=".app.activity.GridViewActivity"
             android:label="@string/button_gridview"
-            android:parentActivityName=".app.activity.ViewsLayoutActivity" />
+            android:parentActivityName=".app.activity.AnotherViewsActivity" />
         <activity
-            android:name=".app.activity.ViewPagerTypesActivity"
+            android:name=".app.activity.ViewPagerActivity"
             android:label="@string/button_viewpager"
             android:parentActivityName=".app.activity.MainActivity" />
         <activity
             android:name=".app.activity.ViewPagerTitleActivity"
             android:label="@string/button_viewpager_title"
-            android:parentActivityName=".app.activity.ViewPagerTypesActivity" />
+            android:parentActivityName=".app.activity.ViewPagerActivity" />
         <activity
-            android:name=".app.activity.ViewPagerActivity"
-            android:label="@string/button_viewpager"
-            android:parentActivityName=".app.activity.ViewPagerTypesActivity" />
+            android:name=".app.activity.SimpleViewPagerActivity"
+            android:label="@string/button_simple_viewpager"
+            android:parentActivityName=".app.activity.ViewPagerActivity" />
         <activity
             android:name=".app.activity.IntroSliderActivity"
             android:label="@string/button_intro_slider"
-            android:parentActivityName=".app.activity.ViewPagerTypesActivity" />
+            android:parentActivityName=".app.activity.ViewPagerActivity" />
         <activity
             android:name=".app.activity.ImageSwitcherActivity"
             android:label="@string/button_image_switcher"
-            android:parentActivityName=".app.activity.ViewsLayoutActivity" />
+            android:parentActivityName=".app.activity.AnotherViewsActivity" />
         <activity
             android:name=".app.activity.WebViewActivity"
             android:label="@string/button_webview"
-            android:parentActivityName=".app.activity.ViewsLayoutActivity" />
+            android:parentActivityName=".app.activity.AnotherViewsActivity" />
         <activity
             android:name=".app.activity.ToolbarActivity"
             android:label="@string/button_toolbar"
@@ -74,13 +74,13 @@
             android:label="@string/button_gestures"
             android:parentActivityName=".app.activity.MainActivity" />
         <activity
-            android:name=".app.activity.DragImageActivity"
-            android:label="@string/button_drag_image"
+            android:name=".app.activity.DraggableViewActivity"
+            android:label="@string/button_draggable_view"
             android:parentActivityName=".app.activity.MainActivity" />
         <activity
             android:name=".app.activity.DrawingShapesActivity"
             android:label="@string/button_drawing_shapes"
-            android:parentActivityName=".app.activity.ViewsLayoutActivity" />
+            android:parentActivityName=".app.activity.AnotherViewsActivity" />
         <activity
             android:name=".app.activity.FragmentsActivity"
             android:label="@string/button_fragments"
@@ -90,13 +90,13 @@
             android:label="@string/button_helloworld_fragment"
             android:parentActivityName=".app.activity.FragmentsActivity" />
         <activity
-            android:name=".app.activity.RecyclerViewActivityListener"
+            android:name=".app.activity.RecyclerViewActivity"
             android:label="@string/button_recycler_view"
-            android:parentActivityName=".app.activity.ViewsLayoutActivity" />
+            android:parentActivityName=".app.activity.AnotherViewsActivity" />
         <activity
             android:name=".app.activity.SpinnerCompleteCheckActivity"
             android:label="@string/button_spinner_complete_check"
-            android:parentActivityName=".app.activity.ViewsLayoutActivity" />
+            android:parentActivityName=".app.activity.AnotherViewsActivity" />
         <activity android:name=".app.activity.SaveInstanceStateActivity"
             android:label="@string/button_save_instance_state"
             android:parentActivityName=".app.activity.MainActivity"/>

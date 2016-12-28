@@ -7,8 +7,31 @@
     android:orientation="vertical"
     tools:context="com.example.marcos.androidexamples.app.activity.ViewPagerActivity">
     <include layout="@layout/toolbar"/>
-    <android.support.v4.view.ViewPager
+    <Button
+        android:text="@string/button_simple_viewpager"
+        android:textAllCaps="false"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/viewPager" />
+        android:layout_height="wrap_content"
+        android:id="@+id/button_simple_view_pager" />
+    <Button
+        android:text="@string/button_viewpager_title"
+        android:textAllCaps="false"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_viewpager_title" />
+    <Button
+        android:text="@string/button_intro_slider"
+        android:textAllCaps="false"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_intro_slider" />
 </LinearLayout>

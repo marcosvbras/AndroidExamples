@@ -11,10 +11,6 @@ import com.example.marcos.androidexamples.R;
 
 public class ToolbarWithTabsActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
-    private ProgressBar progressBar;
-    private Button button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,19 +21,6 @@ public class ToolbarWithTabsActivity extends AppCompatActivity {
     private void LoadComponents() {
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar2);
-        progressBar.setVisibility(View.GONE);
-        button = (Button)findViewById(R.id.button);
-        button.setOnClickListener(onButtonClickListener());
-    }
 
-    private View.OnClickListener onButtonClickListener() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                button.setVisibility(View.GONE);
-                progressBar.setVisibility(View.VISIBLE);
-            }
-        };
     }
 }

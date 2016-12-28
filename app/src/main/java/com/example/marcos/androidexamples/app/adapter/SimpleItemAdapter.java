@@ -1,32 +1,29 @@
 package com.example.marcos.androidexamples.app.adapter;
 
 import android.app.Activity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Filter;
-import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.marcos.androidexamples.R;
+import com.example.marcos.androidexamples.app.entity.SimpleItem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by marcos on 11/12/2016.
+ * Created by marcos on 14/12/2016.
  */
 
-public class SimpleItemAdapter extends BaseAdapter implements Filterable {
+public class SimpleItemAdapter extends BaseAdapter {
 
     private Activity context;
-    private List<String> listItems;
-    private List<String> listItemsOriginal;
+    private List<SimpleItem> listItems;
 
-    public SimpleItemAdapter(Activity context, List<String> listItems) {
+    public SimpleItemAdapter(Activity context, List<SimpleItem> listItems) {
         this.context = context;
-        this.listItemsOriginal = listItems;
         this.listItems = listItems;
     }
 
@@ -36,8 +33,8 @@ public class SimpleItemAdapter extends BaseAdapter implements Filterable {
     }
 
     @Override
-    public Object getItem(int i) {
-        return this.listItems.get(i);
+    public Object getItem(int position) {
+        return listItems.get(position);
     }
 
     @Override
@@ -46,59 +43,33 @@ public class SimpleItemAdapter extends BaseAdapter implements Filterable {
     }
 
     @Override
-    public View getView(int position, View view, ViewGroup viewGroup) {
-        String item = listItems.get(position);;
+    public View getView(int position, View convertView, ViewGroup viewGroup) {
+        View view;
+        SimpleItem item = listItems.get(position);
+        MyViewHolder myViewHolder;
 
-        View layout;
+        if(convertView == null) {
+            view = LayoutInflater.from(context).inflate(R.layout.simple_item, viewGroup, false);
+            myViewHolder = new MyViewHolder(view);
+            view.setTag(myViewHolder);
+        } else {
+            view = convertView;
+            myViewHolder = (MyViewHolder) view.getTag();
+        }
 
-        if(view == null)
-            layout = context.getLayoutInflater().inflate(R.layout.simple_item, null);
-        else
-            layout = view;
+        myViewHolder.imageView.setImageResource(item.getImageResource());
+        myViewHolder.textView.setText(item.getName());
 
-        TextView textViewItem = (TextView) layout.findViewById(R.id.textViewItem);
-        textViewItem.setText(item);
-
-        return layout;
+        return view;
     }
 
-    @Override
-    public Filter getFilter() {
+    public class MyViewHolder {
+        final TextView textView;
+        final ImageView imageView;
 
-        final Filter filter = new Filter() {
-            @Override
-            protected FilterResults performFiltering(CharSequence query) {
-                FilterResults filterResults = new FilterResults();
-
-                if(query == null || query.length() == 0) {
-                    filterResults.count = listItemsOriginal.size();
-                    filterResults.values = listItemsOriginal;
-                } else {
-                    List<String> listItemsFiltered = new ArrayList<>();
-                    query = query.toString().toLowerCase();
-
-                    for(String item : listItemsOriginal){
-                        if(item.toLowerCase().equals(query)) {
-                            listItemsFiltered.add(item);
-                        }
-                    }
-
-                    filterResults.count = listItemsFiltered.size();
-                    filterResults.values = listItemsFiltered;
-                }
-
-                return filterResults;
-            }
-
-            @Override
-            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                if(filterResults.count == 0)
-                    notifyDataSetInvalidated();
-                else
-                    listItems = (ArrayList<String>)filterResults.values;
-                    notifyDataSetChanged();
-            }
-        };
-        return filter;
+        public MyViewHolder(View view) {
+            this.textView = (TextView)view.findViewById(R.id.textView);
+            this.imageView = (ImageView)view.findViewById(R.id.imageView);
+        }
     }
 }

@@ -12,30 +12,33 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.marcos.androidexamples.R;
-import com.example.marcos.androidexamples.app.adapter.SimpleItemAdapter;
+import com.example.marcos.androidexamples.app.adapter.FilterableAdapter;
+import com.example.marcos.androidexamples.app.interfaces.FilterObserverListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchViewActivity extends AppCompatActivity {
+public class SearchViewActivity extends AppCompatActivity implements FilterObserverListener {
 
     // Views
     private ListView listView;
+    private SearchView searchView;
 
     // Another objects
-    private SimpleItemAdapter adapter;
+    private FilterableAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_view);
-        LoadComponents();
+        loadComponents();
     }
 
-    private void LoadComponents() {
+    private void loadComponents() {
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         listView = (ListView)findViewById(R.id.listView);
@@ -46,7 +49,7 @@ public class SearchViewActivity extends AppCompatActivity {
         return new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String item = (String)adapter.getItem(i);
+                String item = (String) adapter.getItem(i);
                 Toast.makeText(getBaseContext(), item + " clicked!", Toast.LENGTH_SHORT).show();
             }
         };
@@ -61,7 +64,8 @@ public class SearchViewActivity extends AppCompatActivity {
         for(int i = 1; i <= 20; i++)
             listItems.add("Item " + i);
 
-        adapter = new SimpleItemAdapter(this, listItems);
+        adapter = new FilterableAdapter(this, listItems);
+        adapter.setFilterObserverListener(this);
         listView.setAdapter(adapter);
     }
 
@@ -71,7 +75,7 @@ public class SearchViewActivity extends AppCompatActivity {
 
         // SearchView
         MenuItem menuItemSearch = menu.findItem(R.id.search);
-        SearchView searchView = (SearchView) menuItemSearch.getActionView();
+        searchView = (SearchView) menuItemSearch.getActionView();
         searchView.setOnQueryTextListener(onSearch());
         searchView.setOnCloseListener(onCloseSearch());
 
@@ -105,7 +109,7 @@ public class SearchViewActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 adapter.getFilter().filter(query);
-                return false;
+                return true;
             }
 
             @Override
@@ -113,5 +117,16 @@ public class SearchViewActivity extends AppCompatActivity {
                 return false;
             }
         };
+    }
+
+    @Override
+    public void onFinishFiltering(int countItems) {
+        if(countItems > 0)
+            listView.setVisibility(View.VISIBLE);
+        else {
+            listView.setVisibility(View.GONE);
+            ((TextView)findViewById(R.id.textViewMessage)).setText(getResources().getString(R.string.no_results_for)
+                    + " '" + searchView.getQuery().toString() + "'");
+        }
     }
 }

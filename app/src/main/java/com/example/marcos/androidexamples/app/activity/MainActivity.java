@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.marcos.androidexamples.R;
 
@@ -17,17 +16,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LoadComponents();
+        loadComponents();
     }
 
-    private void LoadComponents() {
+    private void loadComponents() {
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         // Click events
         findViewById(R.id.button_gestures).setOnClickListener(onGesturesButtonClick());
-        findViewById(R.id.button_views).setOnClickListener(onViewsButtonClick());
-        findViewById(R.id.button_view_pager).setOnClickListener(onViewPagerButtonClick());
+        findViewById(R.id.button_views).setOnClickListener(onAnotherViewsButtonClick());
+        findViewById(R.id.button_simple_view_pager).setOnClickListener(onViewPagerButtonClick());
         findViewById(R.id.button_toolbar).setOnClickListener(onToolbarButtonClick());
         findViewById(R.id.button_fragments).setOnClickListener(onFragmentsButtonClick());
         findViewById(R.id.button_save_instance_state).setOnClickListener(onSaveInstanceStateButtonClick());
@@ -73,16 +72,16 @@ public class MainActivity extends AppCompatActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(), ViewPagerTypesActivity.class));
+                startActivity(new Intent(getBaseContext(), ViewPagerActivity.class));
             }
         };
     }
 
-    private View.OnClickListener onViewsButtonClick() {
+    private View.OnClickListener onAnotherViewsButtonClick() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(), ViewsLayoutActivity.class));
+                startActivity(new Intent(getBaseContext(), AnotherViewsActivity.class));
             }
         };
     }

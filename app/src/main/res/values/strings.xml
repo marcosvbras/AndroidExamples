@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Android Examples</string>
-    <string name="button_views_layout">Views and Layouts</string>
+    <string name="button_another_views">Another Views</string>
     <string name="button_get_image">Get Web Image</string>
     <string name="dialog_download">Downloading image</string>
     <string name="dialog_wait">Wait a moment...</string>
@@ -9,6 +9,7 @@
     <string name="button_toolbar_tabs">Toolbar With Tabs</string>
     <string name="button_xml_selectors">XML Selectors</string>
     <string name="button_viewpager">ViewPager</string>
+    <string name="button_simple_viewpager">Simple ViewPager</string>
     <string name="button_viewpager_title">ViewPager + TitleStrip</string>
     <string name="button_intro_slider">Intro Slider</string>
     <string name="button_image_switcher">Image Switcher</string>
@@ -16,7 +17,7 @@
     <string name="button_toolbar">Toolbar</string>
     <string name="button_gestures">Gestures</string>
     <string name="button_drawing_shapes">Drawing Shapes</string>
-    <string name="button_drag_image">Drag Image</string>
+    <string name="button_draggable_view">Draggable View</string>
     <string name="button_zoomable_imageview">Zoomable ImageView</string>
     <string name="button_fragments">Fragments</string>
     <string name="button_helloworld_fragment">Hello World Fragment</string>
@@ -61,6 +62,7 @@
     <string name="always_animate">Always Animate</string>
     <string name="none">None</string>
     <string name="scroll_to_see">Scroll To See Changes</string>
+    <string name="no_results_for">No results for</string>
 
     <string name="hello_blank_fragment_id">Hello blank fragment added by ID</string>
     <string name="hello_blank_fragment_tag">Hello blank fragment added by TAG</string>

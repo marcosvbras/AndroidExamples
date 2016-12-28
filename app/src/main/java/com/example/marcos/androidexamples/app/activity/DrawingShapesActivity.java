@@ -13,10 +13,10 @@ public class DrawingShapesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawing_shapes);
-        LoadComponents();
+        loadComponents();
     }
 
-    private void LoadComponents() {
+    private void loadComponents() {
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

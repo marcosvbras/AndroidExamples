@@ -16,6 +16,7 @@
         android:id="@+id/button_next" />
     <ImageSwitcher
         android:id="@+id/imageSwitcher"
+        android:layout_marginBottom="3dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ImageSwitcher>
+        android:layout_height="match_parent"/>
 </LinearLayout>

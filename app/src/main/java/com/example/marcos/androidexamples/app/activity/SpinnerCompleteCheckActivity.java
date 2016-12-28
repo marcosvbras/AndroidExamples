@@ -12,7 +12,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.marcos.androidexamples.R;
-import com.example.marcos.androidexamples.app.entity.Got;
+import com.example.marcos.androidexamples.app.entity.SimpleItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class SpinnerCompleteCheckActivity extends AppCompatActivity {
     private Spinner spinner;
 
     // Outros Objetos
-    private List<Got> listGot;
+    private List<SimpleItem> listSimpleItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class SpinnerCompleteCheckActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         populateList();
-        ArrayAdapter<Got> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, listGot);
+        ArrayAdapter<SimpleItem> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, listSimpleItems);
         spinner.setAdapter(adapter);
         autoCompleteTextView.setAdapter(adapter);
         autoCompleteTextView.clearFocus();
@@ -64,16 +64,16 @@ public class SpinnerCompleteCheckActivity extends AppCompatActivity {
     }
 
     private void populateList() {
-        listGot = new ArrayList<>();
-        listGot.add(new Got("Arryn", R.drawable.arryn));
-        listGot.add(new Got("Baratheon", R.drawable.baratheon));
-        listGot.add(new Got("Greyjoy", R.drawable.greyjoy));
-        listGot.add(new Got("Lannister", R.drawable.lannister));
-        listGot.add(new Got("Martell", R.drawable.martell));
-        listGot.add(new Got("Stark", R.drawable.stark));
-        listGot.add(new Got("Targaryan", R.drawable.targaryen));
-        listGot.add(new Got("Tully", R.drawable.tully));
-        listGot.add(new Got("Tyrell", R.drawable.tyrell));
+        listSimpleItems = new ArrayList<>();
+        listSimpleItems.add(new SimpleItem("Arryn", R.drawable.arryn));
+        listSimpleItems.add(new SimpleItem("Baratheon", R.drawable.baratheon));
+        listSimpleItems.add(new SimpleItem("Greyjoy", R.drawable.greyjoy));
+        listSimpleItems.add(new SimpleItem("Lannister", R.drawable.lannister));
+        listSimpleItems.add(new SimpleItem("Martell", R.drawable.martell));
+        listSimpleItems.add(new SimpleItem("Stark", R.drawable.stark));
+        listSimpleItems.add(new SimpleItem("Targaryan", R.drawable.targaryen));
+        listSimpleItems.add(new SimpleItem("Tully", R.drawable.tully));
+        listSimpleItems.add(new SimpleItem("Tyrell", R.drawable.tyrell));
     }
 
     private View.OnClickListener onCheckStar() {
@@ -121,8 +121,8 @@ public class SpinnerCompleteCheckActivity extends AppCompatActivity {
         return new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Got got = (Got)adapterView.getSelectedItem();
-                Toast.makeText(getBaseContext(), got.getName() + " selected!", Toast.LENGTH_SHORT).show();
+                SimpleItem simpleItem = (SimpleItem) adapterView.getSelectedItem();
+                Toast.makeText(getBaseContext(), simpleItem.getName() + " selected!", Toast.LENGTH_SHORT).show();
             }
         };
     }
@@ -131,8 +131,8 @@ public class SpinnerCompleteCheckActivity extends AppCompatActivity {
         return new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                Got got = (Got)adapterView.getSelectedItem();
-                Toast.makeText(getBaseContext(), got.getName() + " selected!", Toast.LENGTH_SHORT).show();
+                SimpleItem simpleItem = (SimpleItem) adapterView.getSelectedItem();
+                Toast.makeText(getBaseContext(), simpleItem.getName() + " selected!", Toast.LENGTH_SHORT).show();
             }
 
             @Override

@@ -7,7 +7,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.example.marcos.androidexamples.R;
 import com.example.marcos.androidexamples.app.adapter.ImageAdapter;
-import com.example.marcos.androidexamples.app.entity.Image;
+import com.example.marcos.androidexamples.app.entity.SimpleItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class ViewPagerTitleActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private ImageAdapter adapter;
-    private List<Image> listImages;
+    private List<SimpleItem> listSimpleItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,17 +27,23 @@ public class ViewPagerTitleActivity extends AppCompatActivity {
     }
 
     private void preencherLista() {
-        listImages = new ArrayList<>();
-        listImages.add(new Image(R.drawable.natdormer, "Natalie Dormer"));
-        listImages.add(new Image(R.drawable.dany1, "Emilia Clarke"));
-        listImages.add(new Image(R.drawable.ygritte, "Rose Leslie"));
+        listSimpleItems = new ArrayList<>();
+        listSimpleItems.add(new SimpleItem("Akami ga Kill", R.drawable.akami_ga_kill));
+        listSimpleItems.add(new SimpleItem("Angel Beats!", R.drawable.angel_beats));
+        listSimpleItems.add(new SimpleItem("Attack On Titan", R.drawable.attack_on_titan));
+        listSimpleItems.add(new SimpleItem("Btooom!", R.drawable.btooom));
+        listSimpleItems.add(new SimpleItem("No Game, No Life!", R.drawable.no_game_no_life));
+        listSimpleItems.add(new SimpleItem("Noragami", R.drawable.noragami));
+        listSimpleItems.add(new SimpleItem("Tokyo Ghoul", R.drawable.tghoul));
+        listSimpleItems.add(new SimpleItem("Tokyo Ghoul Root A", R.drawable.tokyo));
+        listSimpleItems.add(new SimpleItem("To Love-Ru", R.drawable.toloveru));
     }
 
     private void LoadComponents() {
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         viewPager = (ViewPager)findViewById(R.id.viewPager);
-        adapter = new ImageAdapter(this, listImages);
+        adapter = new ImageAdapter(this, listSimpleItems);
         viewPager.setAdapter(adapter);
     }
 }

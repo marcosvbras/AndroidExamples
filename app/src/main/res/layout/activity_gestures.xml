@@ -9,16 +9,15 @@
     <include layout="@layout/toolbar"/>
     <Button
         android:text="@string/button_zoomable_imageview"
-        android:paddingTop="@dimen/activity_vertical_padding"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button_zoomable_imageview" />
     <Button
-        android:text="@string/button_drag_image"
-        android:paddingTop="@dimen/activity_vertical_padding"
+        android:text="@string/button_draggable_view"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"

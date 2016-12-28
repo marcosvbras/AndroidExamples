@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.marcos.androidexamples.R;
-import com.example.marcos.androidexamples.app.entity.Image;
+import com.example.marcos.androidexamples.app.entity.SimpleItem;
 
 import java.util.List;
 
@@ -18,23 +18,23 @@ import java.util.List;
 public class ImageAdapter extends PagerAdapter {
 
     private Activity context;
-    private List<Image> listImages;
+    private List<SimpleItem> listSimpleItems;
 
-    public ImageAdapter(Activity context, List<Image> listImages) {
+    public ImageAdapter(Activity context, List<SimpleItem> listSimpleItems) {
         this.context = context;
-        this.listImages = listImages;
+        this.listSimpleItems = listSimpleItems;
     }
 
     @Override
     public int getCount() {
-        return listImages != null ? listImages.size() : 0;
+        return listSimpleItems != null ? listSimpleItems.size() : 0;
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        Image imageItem = listImages.get(position);
-        View view = context.getLayoutInflater().inflate(R.layout.got_item, container, false);
-        ((ImageView)view.findViewById(R.id.imageView)).setImageResource(imageItem.getImageResource());
+        SimpleItem simpleItemItem = listSimpleItems.get(position);
+        View view = context.getLayoutInflater().inflate(R.layout.grid_item, container, false);
+        ((ImageView)view.findViewById(R.id.imageView)).setImageResource(simpleItemItem.getImageResource());
         container.addView(view);
 
         return view;
@@ -42,7 +42,7 @@ public class ImageAdapter extends PagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return listImages.get(position).getName();
+        return listSimpleItems.get(position).getName();
     }
 
     @Override

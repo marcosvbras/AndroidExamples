@@ -7,19 +7,5 @@
     android:orientation="vertical"
     tools:context="com.example.marcos.androidexamples.app.activity.ToolbarWithTabsActivity">
     <include layout="@layout/toolbar"/>
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <Button
-            android:text="Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button"
-            android:layout_weight="1" />
-        <ProgressBar
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/progressBar2" />
-    </FrameLayout>
+
 </LinearLayout>

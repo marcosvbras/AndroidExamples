@@ -1,61 +1,53 @@
 package com.example.marcos.androidexamples.app.activity;
 
-import android.support.v4.view.ViewPager;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.example.marcos.androidexamples.R;
-import com.example.marcos.androidexamples.app.adapter.ImageAdapter;
-import com.example.marcos.androidexamples.app.entity.Image;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ViewPagerActivity extends AppCompatActivity {
-
-    private ViewPager viewPager;
-    private List<Image> listImages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_pager);
-        preencherLista();
         LoadComponents();
-    }
-
-    private void preencherLista() {
-        listImages = new ArrayList<>();
-        listImages.add(new Image(R.drawable.natdormer, "Natalie Dormer"));
-        listImages.add(new Image(R.drawable.dany1, "Emilia Clarke"));
-        listImages.add(new Image(R.drawable.dany2, "Emilia Clarke"));
-        listImages.add(new Image(R.drawable.ygritte, "Rose Leslie"));
     }
 
     private void LoadComponents() {
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        viewPager = (ViewPager)findViewById(R.id.viewPager);
-        viewPager.setAdapter(new ImageAdapter(this, listImages));
-        viewPager.setOnPageChangeListener(onPageChange());
+        findViewById(R.id.button_simple_view_pager).setOnClickListener(onSimpleViewPagerButtonClick());
+        findViewById(R.id.button_viewpager_title).setOnClickListener(onViewPagerTitleButtonClick());
+        findViewById(R.id.button_intro_slider).setOnClickListener(onIntroSliderButtonClick());
     }
 
-    private ViewPager.OnPageChangeListener onPageChange() {
-        return new ViewPager.OnPageChangeListener() {
+    private View.OnClickListener onIntroSliderButtonClick() {
+        return new View.OnClickListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
+            public void onClick(View view) {
+                startActivity(new Intent(getBaseContext(), IntroSliderActivity.class));
             }
+        };
+    }
 
+    private View.OnClickListener onViewPagerTitleButtonClick() {
+        return new View.OnClickListener() {
             @Override
-            public void onPageSelected(int position) {
-
+            public void onClick(View view) {
+                startActivity(new Intent(getBaseContext(), ViewPagerTitleActivity.class));
             }
+        };
+    }
 
+    private View.OnClickListener onSimpleViewPagerButtonClick() {
+        return new View.OnClickListener() {
             @Override
-            public void onPageScrollStateChanged(int state) {
-
+            public void onClick(View view) {
+                startActivity(new Intent(getBaseContext(), SimpleViewPagerActivity.class));
             }
         };
     }
