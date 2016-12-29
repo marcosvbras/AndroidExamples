@@ -7,14 +7,64 @@
     android:orientation="vertical"
     tools:context="com.example.marcos.androidexamples.app.activity.FragmentsActivity">
     <include layout="@layout/toolbar"/>
-    <Button
-        android:text="@string/button_helloworld_fragment"
-        android:paddingTop="@dimen/activity_vertical_padding"
-        android:textAllCaps="false"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
+    <FrameLayout
+        android:id="@+id/conteinerFrag"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_helloworld_fragment" />
+        android:layout_weight="1"
+        android:layout_height="0dp">
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/button_add_sw_frag"
+            android:layout_width="0dp"
+            android:textAllCaps="false"
+            android:layout_weight="1"
+            android:text="@string/add_frag1"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/button_add_frag2"
+            android:layout_width="0dp"
+            android:textAllCaps="false"
+            android:layout_weight="1"
+            android:text="@string/add_frag2"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/button_remove"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="lksdf"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/button_remove_frag1"
+            android:layout_width="0dp"
+            android:textAllCaps="false"
+            android:layout_weight="1"
+            android:text="@string/remove_star_wars_frag"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/button_remove_frag2"
+            android:layout_width="0dp"
+            android:textAllCaps="false"
+            android:layout_weight="1"
+            android:text="@string/remove_food_frag"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/button_removesas"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="lksdf"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
 </LinearLayout>

@@ -17,4 +17,11 @@ public class Constants {
 
     // Keys
     public static final String KEY_COUNT = "keyCount";
+    public static final String KEY_TEXT = "keyText";
+    public static final String KEY_RESOURCE = "keyResource";
+
+    // Tags
+    public static final String TAG_STAR_WARS_FRAG = "Star Wsrs Frag";
+    public static final String TAG_FOOD_FRAG = "Food Frag";
+    public static final String TAG_ANIMALS_FRAG = "Animals Frag";
 }

@@ -86,10 +86,6 @@
             android:label="@string/button_fragments"
             android:parentActivityName=".app.activity.MainActivity" />
         <activity
-            android:name=".app.activity.HelloWorldFragmentActivity"
-            android:label="@string/button_helloworld_fragment"
-            android:parentActivityName=".app.activity.FragmentsActivity" />
-        <activity
             android:name=".app.activity.RecyclerViewActivity"
             android:label="@string/button_recycler_view"
             android:parentActivityName=".app.activity.AnotherViewsActivity" />

@@ -19,7 +19,6 @@ import java.net.URL;
 public class AnotherViewsActivity extends AppCompatActivity {
 
     // Views
-
     private Button buttonGetImage;
     private ProgressDialog progressDialog;
     private ImageView imageView;
@@ -31,10 +30,10 @@ public class AnotherViewsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_another_views);
-        LoadComponents();
+        loadComponents();
     }
 
-    private void LoadComponents() {
+    private void loadComponents() {
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

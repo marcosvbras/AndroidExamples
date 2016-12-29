@@ -14,10 +14,10 @@ public class ZoomableImageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zoomable_imageview);
-        LoadComponents();
+        loadComponents();
     }
 
-    private void LoadComponents() {
+    private void loadComponents() {
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ZoomableImageView zoomableImageView = (ZoomableImageView) findViewById(R.id.zoomableImageView);

@@ -20,7 +20,6 @@
     <string name="button_draggable_view">Draggable View</string>
     <string name="button_zoomable_imageview">Zoomable ImageView</string>
     <string name="button_fragments">Fragments</string>
-    <string name="button_helloworld_fragment">Hello World Fragment</string>
     <string name="button_show_first_fragment">Show first fragment</string>
     <string name="button_show_second_fragment">Show second fragment</string>
     <string name="button_recycler_view">RecyclerView</string>
@@ -32,6 +31,18 @@
     <string name="previous">Previous</string>
     <string name="skip">Skip</string>
     <string name="start">Got it</string>
+    <string name="add_frag1">Add Frag1</string>
+    <string name="add_frag2">Add Frag2</string>
+    <string name="add_frag3">Add Frag3</string>
+    <string name="star_wars_frag">This is a Star Wars Fragment!</string>
+    <string name="food_frag">This is a Food Fragment!</string>
+    <string name="animals_frag">This is a Animals Fragment!</string>
+    <string name="remove_star_wars_frag">Remove Star Wars Frag</string>
+    <string name="remove_food_frag">Remove Food Frag</string>
+    <string name="frag_not_added">was not added to the stack</string>
+    <string name="frag_removed">has been removed from the stack</string>
+    <string name="find">Find</string>
+    <string name="replace">Replace</string>
     <string name="slide_1_title">Hello Food!</string>
     <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
     <string name="slide_2_title">Movie Tickets</string>
@@ -64,7 +75,5 @@
     <string name="none">None</string>
     <string name="scroll_to_see">Scroll To See Changes</string>
     <string name="no_results_for">No results for</string>
-
-    <string name="hello_blank_fragment_id">Hello blank fragment added by ID</string>
-    <string name="hello_blank_fragment_tag">Hello blank fragment added by TAG</string>
+    <string name="share">Share</string>
 </resources>
