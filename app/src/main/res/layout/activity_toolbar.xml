@@ -8,7 +8,7 @@
     tools:context="com.example.marcos.androidexamples.app.activity.ToolbarActivity">
     <include layout="@layout/toolbar"/>
     <Button
-        android:text="@string/button_search_view"
+        android:text="@string/search_view"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/button_search_view" />
     <Button
-        android:text="@string/button_toolbar_tabs"
+        android:text="@string/toolbar_tabs"
         android:paddingTop="@dimen/activity_vertical_padding"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"

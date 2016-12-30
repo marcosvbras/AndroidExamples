@@ -24,12 +24,22 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         // Click events
-        findViewById(R.id.button_gestures).setOnClickListener(onGesturesButtonClick());
-        findViewById(R.id.button_views).setOnClickListener(onAnotherViewsButtonClick());
-        findViewById(R.id.button_simple_view_pager).setOnClickListener(onViewPagerButtonClick());
-        findViewById(R.id.button_toolbar).setOnClickListener(onToolbarButtonClick());
+        findViewById(R.id.button_animations).setOnClickListener(onAnimationsButtonClick());
+        findViewById(R.id.button_another_views).setOnClickListener(onAnotherViewsButtonClick());
         findViewById(R.id.button_fragments).setOnClickListener(onFragmentsButtonClick());
+        findViewById(R.id.button_gestures).setOnClickListener(onGesturesButtonClick());
         findViewById(R.id.button_save_instance_state).setOnClickListener(onSaveInstanceStateButtonClick());
+        findViewById(R.id.button_view_pager).setOnClickListener(onViewPagerButtonClick());
+        findViewById(R.id.button_toolbar).setOnClickListener(onToolbarButtonClick());
+    }
+
+    private View.OnClickListener onAnimationsButtonClick() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), AnimationsActivity.class));
+            }
+        };
     }
 
     private View.OnClickListener onSaveInstanceStateButtonClick() {

@@ -12,7 +12,7 @@
         <include layout="@layout/toolbar"/>
 
         <Button
-            android:text="@string/button_drawing_shapes"
+            android:text="@string/drawing_shapes"
             android:paddingTop="@dimen/activity_vertical_padding"
             android:textAllCaps="false"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -23,7 +23,7 @@
             android:id="@+id/button_drawing_shapes" />
 
         <Button
-            android:text="@string/button_gridview"
+            android:text="@string/gridview"
             android:paddingTop="@dimen/activity_vertical_padding"
             android:textAllCaps="false"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -33,7 +33,7 @@
             android:id="@+id/button_gridview" />
 
         <Button
-            android:text="@string/button_image_switcher"
+            android:text="@string/image_switcher"
             android:paddingTop="@dimen/activity_vertical_padding"
             android:textAllCaps="false"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/button_image_switcher" />
         <Button
-            android:text="@string/button_recycler_view"
+            android:text="@string/recycler_view"
             android:paddingTop="@dimen/activity_vertical_padding"
             android:textAllCaps="false"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/button_recycler_view" />
         <Button
-            android:text="@string/button_webview"
+            android:text="@string/web_view"
             android:paddingTop="@dimen/activity_vertical_padding"
             android:textAllCaps="false"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/button_webview" />
         <Button
-            android:text="@string/button_xml_selectors"
+            android:text="@string/xml_selectors"
             android:paddingTop="@dimen/activity_vertical_padding"
             android:textAllCaps="false"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/button_xml_selectors" />
         <Button
-            android:text="@string/button_spinner_complete_check"
+            android:text="@string/spinner_complete_check"
             android:paddingTop="@dimen/activity_vertical_padding"
             android:textAllCaps="false"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -81,7 +81,7 @@
             android:id="@+id/button_get_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/button_get_image"
+            android:text="@string/get_image"
             android:textAllCaps="false"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"

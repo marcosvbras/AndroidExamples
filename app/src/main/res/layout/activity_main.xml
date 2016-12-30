@@ -9,16 +9,32 @@
     <include layout="@layout/toolbar" />
 
     <Button
-        android:text="@string/button_fragments"
+        android:text="@string/animations"
+        android:textAllCaps="false"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_animations" />
+    <Button
+        android:text="@string/another_views"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_another_views" />
+    <Button
+        android:text="@string/fragments"
+        android:textAllCaps="false"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button_fragments" />
     <Button
-        android:text="@string/button_gestures"
+        android:text="@string/gestures"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
@@ -26,7 +42,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/button_gestures" />
     <Button
-        android:text="@string/button_save_instance_state"
+        android:text="@string/save_instance_state"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
@@ -34,7 +50,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/button_save_instance_state" />
     <Button
-        android:text="@string/button_toolbar"
+        android:text="@string/toolbar"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
@@ -42,19 +58,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/button_toolbar" />
     <Button
-        android:text="@string/button_viewpager"
+        android:text="@string/view_pager"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button_simple_view_pager" />
-    <Button
-        android:text="@string/button_another_views"
-        android:textAllCaps="false"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_views" />
+        android:id="@+id/button_view_pager" />
+
 </LinearLayout>
