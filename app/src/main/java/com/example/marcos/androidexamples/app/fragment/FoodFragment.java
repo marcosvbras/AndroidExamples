@@ -3,10 +3,12 @@ package com.example.marcos.androidexamples.app.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.marcos.androidexamples.R;
@@ -22,6 +24,7 @@ public class FoodFragment extends Fragment {
     // Views
     private TextView textViewFood;
     private ImageView imageViewFood;
+    private LinearLayout linearLayoutFood;
 
     // Another objects
     private OnDetachFragmentListener onDetachFragmentListener;
@@ -39,13 +42,16 @@ public class FoodFragment extends Fragment {
         if(getArguments() != null) {
             textViewFood = (TextView)getView().findViewById(R.id.textViewFood);
             imageViewFood = (ImageView)getView().findViewById(R.id.imageViewFood);
+            linearLayoutFood = (LinearLayout)getView().findViewById(R.id.linearLayoutFood);
             int resource = getArguments().getInt(Constants.KEY_RESOURCE);
             String text = getArguments().getString(Constants.KEY_TEXT);
-            setValues(resource, text);
+            int color = getArguments().getInt(Constants.KEY_COLOR);
+            setValues(resource, text, color);
         }
     }
 
-    private void setValues(int resource, String text) {
+    private void setValues(int resource, String text, int color) {
+        linearLayoutFood.setBackgroundColor(ContextCompat.getColor(getActivity(), color));
         imageViewFood.setImageResource(resource);
         textViewFood.setText(text);
     }

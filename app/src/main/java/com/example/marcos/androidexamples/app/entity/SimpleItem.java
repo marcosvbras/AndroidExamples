@@ -8,10 +8,17 @@ public class SimpleItem {
 
     private int imageResource;
     private String name;
+    private int colorResource;
 
     public SimpleItem(String name, int imageResource) {
         this.imageResource = imageResource;
         this.name = name;
+    }
+
+    public SimpleItem(String name, int imageResource, int colorResource) {
+        this.imageResource = imageResource;
+        this.name = name;
+        this.colorResource = colorResource;
     }
 
     public int getImageResource() {
@@ -26,6 +33,14 @@ public class SimpleItem {
     }
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getColorResource() {
+        return colorResource;
+    }
+
+    public void setColorResource(int colorResource) {
+        this.colorResource = colorResource;
     }
 
     @Override

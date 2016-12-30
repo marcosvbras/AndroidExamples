@@ -23,20 +23,20 @@
             android:layout_width="0dp"
             android:textAllCaps="false"
             android:layout_weight="1"
-            android:text="@string/add_frag1"
+            android:text="@string/add_sw_frag"
             android:layout_height="wrap_content" />
         <Button
-            android:id="@+id/button_add_frag2"
+            android:id="@+id/button_add_food_frag"
             android:layout_width="0dp"
             android:textAllCaps="false"
             android:layout_weight="1"
-            android:text="@string/add_frag2"
+            android:text="@string/add_food_frag"
             android:layout_height="wrap_content" />
         <Button
-            android:id="@+id/button_remove"
+            android:id="@+id/button_replace_all"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="lksdf"
+            android:text="@string/replace_animal_frag"
             android:textAllCaps="false"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -45,24 +45,50 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:id="@+id/button_remove_frag1"
+            android:id="@+id/button_remove_sw_frag"
             android:layout_width="0dp"
             android:textAllCaps="false"
             android:layout_weight="1"
             android:text="@string/remove_star_wars_frag"
             android:layout_height="wrap_content" />
         <Button
-            android:id="@+id/button_remove_frag2"
+            android:id="@+id/button_remove_food_frag"
             android:layout_width="0dp"
             android:textAllCaps="false"
             android:layout_weight="1"
             android:text="@string/remove_food_frag"
             android:layout_height="wrap_content" />
         <Button
-            android:id="@+id/button_removesas"
+            android:id="@+id/button_remove_animal"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="lksdf"
+            android:text="@string/remove_animal_frag"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/button_remove_all_sw"
+            android:layout_width="0dp"
+            android:textAllCaps="false"
+            android:layout_weight="1"
+            android:text="@string/remove_all_sw_frag"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/button_remove_all_food"
+            android:layout_width="0dp"
+            android:textAllCaps="false"
+            android:layout_weight="1"
+            android:text="@string/remove_all_food_frag"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/button_remove_all"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/remove_all_fragments"
             android:textAllCaps="false"
             android:layout_height="wrap_content" />
     </LinearLayout>

@@ -3,6 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:background="@color/bg_screen7"
     android:gravity="center"
+    android:id="@+id/linearLayoutAnimals"
     android:layout_height="match_parent">
     <ImageView
         android:id="@+id/imageViewAnimals"
