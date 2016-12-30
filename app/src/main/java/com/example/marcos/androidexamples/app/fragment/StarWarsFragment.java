@@ -44,6 +44,8 @@ public class StarWarsFragment extends Fragment {
             linearLayoutStarWars = (LinearLayout)getView().findViewById(R.id.linearLayoutStarWars);
             setValues(resource, text, color);
         }
+
+        setRetainInstance(true);
     }
 
     public void setValues(int resource, String text, int color) {

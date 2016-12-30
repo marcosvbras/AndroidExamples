@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -30,13 +29,11 @@ public class FragmentsActivity extends AppCompatActivity {
 
     // Another objects
     private FragmentManager fragmentManager;
-    private FragmentTransaction fragmentTransaction;
     private StarWarsFragment starWarsFragment;
     private FoodFragment foodFragment;
     private AnimalFragment animalFragment;
     private int countStarWarsFrag;
     private int countFoodFrag;
-    private int countAnimalsFrag;
     private Bundle bundle;
     private List<SimpleItem> listStarWars;
     private List<SimpleItem> listFood;
@@ -47,6 +44,7 @@ public class FragmentsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragments);
         loadComponents();
+        populateLists();
     }
 
     private void loadComponents() {
@@ -54,26 +52,23 @@ public class FragmentsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         buttonAddSWFrag = (Button) findViewById(R.id.button_add_sw_frag);
         buttonAddSWFrag.setOnClickListener(onStarWarsFragControlClick());
-        findViewById(R.id.button_remove_sw_frag).setOnClickListener(onStarWarsFragControlClick());
         buttonAddFoodFrag = (Button) findViewById(R.id.button_add_food_frag);
         buttonAddFoodFrag.setOnClickListener(onFoodFragControlClick());
-        findViewById(R.id.button_remove_food_frag).setOnClickListener(onFoodFragControlClick());
         findViewById(R.id.button_replace_all).setOnClickListener(onReplaceAllButtonClick());
-        findViewById(R.id.button_remove_animal).setOnClickListener(onRemoveAnimalFragButtonClick());
-        findViewById(R.id.button_remove_all).setOnClickListener(onRemoveAllButtonClick());
-        findViewById(R.id.button_remove_all_sw).setOnClickListener(onRemoveAllButtonClick());
-        findViewById(R.id.button_remove_all_food).setOnClickListener(onRemoveAllButtonClick());
+        findViewById(R.id.button_remove_current).setOnClickListener(onRemoveControlsClick());
+        findViewById(R.id.button_remove_all).setOnClickListener(onRemoveControlsClick());
+        findViewById(R.id.button_remove_all_sw).setOnClickListener(onRemoveControlsClick());
+        findViewById(R.id.button_remove_all_food).setOnClickListener(onRemoveControlsClick());
         countStarWarsFrag = 0;
         countFoodFrag = 0;
-        countAnimalsFrag = 0;
     }
 
-    private View.OnClickListener onRemoveAllButtonClick() {
+    private View.OnClickListener onRemoveControlsClick() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 List<Fragment> listFragments = fragmentManager.getFragments();
 
                 if(v.getId() == R.id.button_remove_all) {
@@ -84,8 +79,8 @@ public class FragmentsActivity extends AppCompatActivity {
                         if(fragment.getTag().equals(Constants.TAG_STAR_WARS_FRAG)) {
                             fragmentTransaction.remove(fragment);
 
-//                            if(getLastFragment(listFragments).getTag().equals(fragment.getTag()))
-//                                fragmentManager.popBackStack();
+                            if(getLastFragment(listFragments).getTag().equals(fragment.getTag()))
+                                fragmentManager.popBackStack();
                         }
                     }
 
@@ -101,6 +96,8 @@ public class FragmentsActivity extends AppCompatActivity {
                     }
 
                     fragmentTransaction.commit();
+                } else if(v.getId() == R.id.button_remove_current) {
+                    fragmentManager.popBackStack();
                 }
             }
         };
@@ -117,32 +114,13 @@ public class FragmentsActivity extends AppCompatActivity {
 //        return getSupportFragmentManager().findFragmentByTag(tag);
 //    }
 
-    private View.OnClickListener onRemoveAnimalFragButtonClick() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fragmentManager = getSupportFragmentManager();
-                animalFragment = (AnimalFragment)fragmentManager.findFragmentByTag(Constants.TAG_ANIMAL_FRAG);
-
-                if(animalFragment != null) {
-                    fragmentTransaction.remove(animalFragment);
-                    fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
-                    fragmentTransaction.commit();
-                    showMessage("'" + Constants.TAG_ANIMAL_FRAG + "' " + getResources().getString(R.string.frag_removed));
-                } else {
-                    showMessage("'" + Constants.TAG_ANIMAL_FRAG + "' " + getResources().getString(R.string.frag_not_added));
-                }
-            }
-        };
-    }
-
     private View.OnClickListener onReplaceAllButtonClick() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Criação do fragment
                 fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 animalFragment = new AnimalFragment();
                 bundle = new Bundle();
                 bundle.putInt(Constants.KEY_COLOR, simpleItemAnimal.getColorResource());
@@ -151,17 +129,11 @@ public class FragmentsActivity extends AppCompatActivity {
                 animalFragment.setArguments(bundle);
                 // Transação do fragment
                 fragmentTransaction.replace(R.id.conteinerFrag, animalFragment, Constants.TAG_ANIMAL_FRAG);
-                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.addToBackStack(Constants.TAG_ANIMAL_FRAG); // Adiciona o fragment à pilha para que ele seja considerado no OnBackPressed
                 fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 fragmentTransaction.commit();
             }
         };
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        populateLists();
     }
 
     private View.OnClickListener onStarWarsFragControlClick() {
@@ -169,7 +141,7 @@ public class FragmentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                 if(v.getId() == R.id.button_add_sw_frag) {
                     if(countStarWarsFrag < listStarWars.size()) {
@@ -188,24 +160,12 @@ public class FragmentsActivity extends AppCompatActivity {
                             }
                         });
                         fragmentTransaction.add(R.id.conteinerFrag, starWarsFragment, Constants.TAG_STAR_WARS_FRAG);
-                        fragmentTransaction.addToBackStack(null);
+                        fragmentTransaction.addToBackStack(Constants.TAG_STAR_WARS_FRAG); // Adiciona o fragment à pilha para que ele seja considerado no OnBackPressed
                         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                         fragmentTransaction.commit();
                         countStarWarsFrag++;
                     } else {
                         buttonAddSWFrag.setEnabled(false);
-                    }
-                } else if(v.getId() == R.id.button_remove_sw_frag) {
-                    starWarsFragment = (StarWarsFragment)fragmentManager.findFragmentByTag(Constants.TAG_STAR_WARS_FRAG);
-
-                    if(starWarsFragment != null) {
-                        fragmentTransaction.remove(starWarsFragment);
-                        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
-                        fragmentTransaction.commit();
-                        fragmentManager.popBackStack();
-                        showMessage("'" + Constants.TAG_STAR_WARS_FRAG + "' " + getResources().getString(R.string.frag_removed));
-                    } else {
-                        showMessage("'" + Constants.TAG_STAR_WARS_FRAG + "' " + getResources().getString(R.string.frag_not_added));
                     }
                 }
             }
@@ -217,7 +177,7 @@ public class FragmentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                 if(v.getId() == R.id.button_add_food_frag) {
                     if(countFoodFrag < listFood.size()) {
@@ -236,24 +196,12 @@ public class FragmentsActivity extends AppCompatActivity {
                             }
                         });
                         fragmentTransaction.add(R.id.conteinerFrag, foodFragment, Constants.TAG_FOOD_FRAG);
-                        fragmentTransaction.addToBackStack(null);
+                        fragmentTransaction.addToBackStack(Constants.TAG_FOOD_FRAG); // Adiciona o fragment à pilha para que ele seja considerado no OnBackPressed
                         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                         fragmentTransaction.commit();
                         countFoodFrag++;
                     } else {
                         buttonAddFoodFrag.setEnabled(false);
-                    }
-                } else if(v.getId() == R.id.button_remove_food_frag) {
-                    foodFragment = (FoodFragment) fragmentManager.findFragmentByTag(Constants.TAG_FOOD_FRAG);
-
-                    if(foodFragment != null) {
-                        fragmentTransaction.remove(foodFragment);
-                        fragmentTransaction.commit();
-                        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
-                        fragmentManager.popBackStack();
-                        showMessage("'" + Constants.TAG_FOOD_FRAG + "' " + getResources().getString(R.string.frag_removed));
-                    } else {
-                        showMessage("'" + Constants.TAG_FOOD_FRAG + "' " + getResources().getString(R.string.frag_not_added));
                     }
                 }
             }
@@ -280,6 +228,28 @@ public class FragmentsActivity extends AppCompatActivity {
         listFood.add(new SimpleItem(null, R.drawable.white_cake, R.color.bg_screen1));
 
         simpleItemAnimal = new SimpleItem(null, R.drawable.white_fish, R.color.bg_screen3);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(Constants.KEY_COUNT_SW, countStarWarsFrag);
+        outState.putInt(Constants.KEY_COUNT_FOOD, countFoodFrag);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        if(savedInstanceState != null) {
+            countStarWarsFrag = savedInstanceState.getInt(Constants.KEY_COUNT_SW);
+            if(countStarWarsFrag >= listStarWars.size())
+                buttonAddSWFrag.setEnabled(false);
+
+            countFoodFrag = savedInstanceState.getInt(Constants.KEY_COUNT_FOOD);
+            if(countFoodFrag >= listFood.size())
+                buttonAddFoodFrag.setEnabled(false);
+        }
     }
 
     private void showMessage(String text) {

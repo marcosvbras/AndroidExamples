@@ -44,6 +44,8 @@ public class AnimalFragment extends Fragment {
             String text = getArguments().getString(Constants.KEY_TEXT);
             setValues(color, imageResource, text);
         }
+
+        setRetainInstance(true);
     }
 
     private void setValues(int color, int imageResource, String text) {

@@ -48,6 +48,8 @@ public class FoodFragment extends Fragment {
             int color = getArguments().getInt(Constants.KEY_COLOR);
             setValues(resource, text, color);
         }
+
+        setRetainInstance(true);
     }
 
     private void setValues(int resource, String text, int color) {

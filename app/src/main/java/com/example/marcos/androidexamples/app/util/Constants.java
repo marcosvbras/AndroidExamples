@@ -20,6 +20,8 @@ public class Constants {
     public static final String KEY_TEXT = "keyText";
     public static final String KEY_RESOURCE = "keyResource";
     public static final String KEY_COLOR = "keyColor";
+    public static final String KEY_COUNT_SW = "keyCountSw";
+    public static final String KEY_COUNT_FOOD = "keyCountFood";
 
     // Tags
     public static final String TAG_STAR_WARS_FRAG = "Star Wsrs Frag";

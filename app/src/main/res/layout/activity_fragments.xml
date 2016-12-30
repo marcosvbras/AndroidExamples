@@ -19,6 +19,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
+            android:id="@+id/button_remove_current"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/remove_current_frag"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
             android:id="@+id/button_add_sw_frag"
             android:layout_width="0dp"
             android:textAllCaps="false"
@@ -40,33 +51,6 @@
             android:textAllCaps="false"
             android:layout_height="wrap_content" />
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/button_remove_sw_frag"
-            android:layout_width="0dp"
-            android:textAllCaps="false"
-            android:layout_weight="1"
-            android:text="@string/remove_star_wars_frag"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/button_remove_food_frag"
-            android:layout_width="0dp"
-            android:textAllCaps="false"
-            android:layout_weight="1"
-            android:text="@string/remove_food_frag"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/button_remove_animal"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="@string/remove_animal_frag"
-            android:textAllCaps="false"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
