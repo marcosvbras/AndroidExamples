@@ -101,8 +101,45 @@
             android:name=".app.activity.AnimationsActivity"
             android:label="@string/animations"
             android:parentActivityName=".app.activity.MainActivity" />
-        <activity android:name=".app.activity.AnimationDrawableActivity"
+        <activity
+            android:name=".app.activity.AnimationDrawableActivity"
             android:label="@string/animation_drawable"
+            android:parentActivityName=".app.activity.AnimationsActivity" />
+        <activity
+            android:name=".app.activity.AlphaActivity"
+            android:label="@string/alpha"
+            android:parentActivityName=".app.activity.AnimationsActivity" />
+        <activity
+            android:name=".app.activity.RotateActivity"
+            android:label="@string/rotate"
+            android:parentActivityName=".app.activity.AnimationsActivity" />
+        <activity
+            android:name=".app.activity.TranslateActivity"
+            android:label="@string/translate"
+            android:parentActivityName=".app.activity.AnimationsActivity"/>
+        <activity
+            android:name=".app.activity.ScaleActivity"
+            android:label="@string/scale_anim"
+            android:parentActivityName=".app.activity.AnimationsActivity"/>
+        <activity
+            android:name=".app.activity.AnimationSetActivity"
+            android:label="@string/animation_set"
+            android:parentActivityName=".app.activity.AnimationsActivity"/>
+        <activity
+            android:name=".app.activity.AnimationListenerActivity"
+            android:label="@string/animation_listener"
+            android:parentActivityName=".app.activity.AnimationsActivity"/>
+        <activity
+            android:name=".app.activity.ViewFlipperActivity"
+            android:label="@string/view_flipper"
+            android:parentActivityName=".app.activity.AnimationsActivity"/>
+        <activity
+            android:name=".app.activity.ViewAnimatedActivity"
+            android:label="@string/view_animated"
+            android:parentActivityName=".app.activity.AnimationsActivity"/>
+        <activity
+            android:name=".app.activity.AnimLayoutChangesActivity"
+            android:label="@string/anim_layout_changes"
             android:parentActivityName=".app.activity.AnimationsActivity"/>
     </application>
 

@@ -1,19 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_animations"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.marcos.androidexamples.app.activity.AnimationsActivity">
-    <include layout="@layout/toolbar"/>
-    <Button
-        android:text="@string/animation_drawable"
-        android:textAllCaps="false"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/activity_animations"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_animation_drawable" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.marcos.androidexamples.app.activity.AnimationsActivity">
+        <include layout="@layout/toolbar"/>
+        <Button
+            android:text="@string/animation_drawable"
+            android:textAllCaps="false"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_animation_drawable" />
+        <Button
+            android:text="@string/alpha"
+            android:textAllCaps="false"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_alpha" />
+        <Button
+            android:text="@string/anim_layout_changes"
+            android:textAllCaps="false"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_anim_layout_changes" />
+        <Button
+            android:text="@string/animation_listener"
+            android:textAllCaps="false"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_animation_listener" />
+        <Button
+            android:text="@string/animation_set"
+            android:textAllCaps="false"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_animation_set" />
+        <Button
+            android:text="@string/rotate"
+            android:textAllCaps="false"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_rotate" />
+        <Button
+            android:text="@string/scale_anim"
+            android:textAllCaps="false"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_scale" />
+        <Button
+            android:text="@string/translate"
+            android:textAllCaps="false"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_translate" />
+        <Button
+            android:text="@string/view_animated"
+            android:textAllCaps="false"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_view_animated" />
+        <Button
+            android:text="@string/view_flipper"
+            android:textAllCaps="false"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_view_flipper" />
+    </LinearLayout>
+</ScrollView>

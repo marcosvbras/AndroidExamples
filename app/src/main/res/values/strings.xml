@@ -23,12 +23,28 @@
     <string name="recycler_view">RecyclerView</string>
     <string name="spinner_complete_check">Spinner, AutoComplete and CheckBox</string>
     <string name="save_instance_state">SaveInstanceState</string>
+    <string name="rotation_type">Rotation Type</string>
+    <string name="relative_to_object">Relative to object</string>
+    <string name="relative_to_layout">Relative to layout</string>
     <string name="animations">Animations</string>
     <string name="animation_drawable">Animation Drawable</string>
-
+    <string name="alpha">Alpha</string>
+    <string name="rotate">Rotate</string>
+    <string name="translate">Translate</string>
+    <string name="animation_set">Animation Set</string>
+    <string name="animation_listener">Animation Listener</string>
+    <string name="view_flipper">View Flipper</string>
+    <string name="view_animated">View Animated</string>
+    <string name="anim_layout_changes">Anim Layout Changes</string>
+    <string name="drawable_animation">Drawable Animation</string>
+    <string name="bug_example">Bug Example</string>
+    <string name="type_angle">Type an angle</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
-
+    <string name="animate_xml">Animate with XML</string>
+    <string name="animate_api">Animate with API</string>
+    <string name="value_more_zero">Value greater than zero required</string>
+    <string name="reverse">Reverse</string>
     <string name="title_activity_welcome">Home Screen</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
