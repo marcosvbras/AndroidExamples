@@ -35,6 +35,7 @@
     <string name="animation_listener">Animation Listener</string>
     <string name="view_flipper">View Flipper</string>
     <string name="view_animated">View Animated</string>
+    <string name="animate">Animate</string>
     <string name="anim_layout_changes">Anim Layout Changes</string>
     <string name="drawable_animation">Drawable Animation</string>
     <string name="bug_example">Bug Example</string>
@@ -63,7 +64,7 @@
     <string name="remove_all_sw_frag">Remove All Star Wars Fragments</string>
     <string name="remove_all_food_frag">Remove All Food Fragments</string>
     <string name="remove_all_fragments">Remove All Fragments</string>
-
+    <string name="animation_finished">The animation has finished</string>
     <string name="slide_1_title">Hello Food!</string>
     <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
     <string name="slide_2_title">Movie Tickets</string>

@@ -8,77 +8,54 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.marcos.androidexamples.R;
 
 public class AnimationListenerActivity extends AppCompatActivity {
 
-    // Views
-    private ImageView imageView;
-
-    // Another objects
     private ScaleAnimation animationRetract;
-    private boolean dead = true;
-    private int pivotXType;
-    private int pivotYType;
-    private float pivotXValue;
-    private float pivotYValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_anim_examples);
+        setContentView(R.layout.activity_animation_listener);
         loadComponents();
     }
 
     private void loadComponents() {
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        imageView = (ImageView)findViewById(R.id.imageView);
-        imageView.setImageResource(R.drawable.heart);
-        findViewById(R.id.button_animate_api).setOnClickListener(onAnimateApiButtonClick());
-        findViewById(R.id.button_animate_xml).setOnClickListener(onAnimateXmlButtonClick());
+        findViewById(R.id.button_animate).setOnClickListener(onAnimateButtonClick());
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        pivotXType = Animation.RELATIVE_TO_SELF;
-        pivotXValue = 0.5f;
-        pivotYType = Animation.RELATIVE_TO_SELF;
-        pivotYValue = 0.5f;
-        animationRetract = new ScaleAnimation(1.0f, 0.6f, 1.0f, 0.6f, pivotXType, pivotXValue, pivotYType, pivotYValue);
-        animationRetract.setDuration(500);
-        animationRetract.setRepeatCount(Animation.INFINITE);
-        animationRetract.setRepeatMode(Animation.RESTART);
-    }
-
-    private View.OnClickListener onAnimateApiButtonClick() {
+    private View.OnClickListener onAnimateButtonClick() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(dead)
-                    imageView.startAnimation(animationRetract);
-                else
-                    imageView.getAnimation().cancel();
-
-                dead = !dead;
+                animationRetract = (ScaleAnimation) AnimationUtils.loadAnimation(getBaseContext(), R.anim.scale_retract);
+                animationRetract.setAnimationListener(onAnimation());
+                findViewById(R.id.linearLayoutAnimated).startAnimation(animationRetract);
             }
         };
     }
 
-    private View.OnClickListener onAnimateXmlButtonClick() {
-        return new View.OnClickListener() {
+    private Animation.AnimationListener onAnimation() {
+        return new Animation.AnimationListener() {
             @Override
-            public void onClick(View v) {
-                if(dead)
-                    imageView.startAnimation(AnimationUtils.loadAnimation(getBaseContext(), R.anim.scale_heart_beat));
-                else
-                    imageView.getAnimation().cancel();
+            public void onAnimationStart(Animation animation) {
 
-                dead = !dead;
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                findViewById(R.id.linearLayoutMessage).setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
             }
         };
     }
