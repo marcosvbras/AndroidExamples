@@ -27,15 +27,8 @@ public class AnimationDrawableActivity extends AppCompatActivity {
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //animatable = (Animatable)((ImageView)findViewById(R.id.imageView)).getDrawable();
-        //animatable.start();
-
-        ImageView imageView = (ImageView)findViewById(R.id.imageView);
-        Animation animation = AnimationUtils.loadAnimation(this, android.R.anim.fade_out);
-        animation.setDuration(800);
-        //animation.setFillAfter(true);
-        animation.setRepeatCount(15);
-        imageView.startAnimation(animation);
+        animatable = (Animatable)((ImageView)findViewById(R.id.imageView)).getDrawable();
+        animatable.start();
 
         findViewById(R.id.button_start).setOnClickListener(onStarButtonClick());
         findViewById(R.id.button_stop).setOnClickListener(onStopButtonClick());

@@ -21,13 +21,14 @@ public class ViewAnimationsActivity extends AppCompatActivity {
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //findViewById(R.id.button_animation_drawable).setOnClickListener(onAnimationsClick());
+        findViewById(R.id.button_animation_drawable).setOnClickListener(onAnimationsClick());
         findViewById(R.id.button_alpha).setOnClickListener(onAnimationsClick());
         findViewById(R.id.button_rotate).setOnClickListener(onAnimationsClick());
         findViewById(R.id.button_scale).setOnClickListener(onAnimationsClick());
         findViewById(R.id.button_translate).setOnClickListener(onAnimationsClick());
         findViewById(R.id.button_animation_listener).setOnClickListener(onAnimationsClick());
         findViewById(R.id.button_animation_set).setOnClickListener(onAnimationsClick());
+        findViewById(R.id.button_view_flipper).setOnClickListener(onAnimationsClick());
     }
 
     private View.OnClickListener onAnimationsClick() {
@@ -41,9 +42,9 @@ public class ViewAnimationsActivity extends AppCompatActivity {
                     case R.id.button_rotate:
                         startActivity(new Intent(getBaseContext(), RotateActivity.class));
                         break;
-//                    case R.id.button_animation_drawable:
-//                        startActivity(new Intent(getBaseContext(), AnimationDrawableActivity.class));
-//                        break;
+                    case R.id.button_animation_drawable:
+                        startActivity(new Intent(getBaseContext(), AnimationDrawableActivity.class));
+                        break;
                     case R.id.button_scale:
                         startActivity(new Intent(getBaseContext(), ScaleActivity.class));
                         break;
@@ -55,6 +56,9 @@ public class ViewAnimationsActivity extends AppCompatActivity {
                         break;
                     case R.id.button_animation_set:
                         startActivity(new Intent(getBaseContext(), AnimationSetActivity.class));
+                        break;
+                    case R.id.button_view_flipper:
+                        startActivity(new Intent(getBaseContext(), ViewFlipperActivity.class));
                         break;
                 }
             }

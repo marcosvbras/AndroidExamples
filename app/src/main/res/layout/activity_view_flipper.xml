@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_alpha"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.marcos.androidexamples.app.activity.ViewFlipperActivity">
+    <include layout="@layout/toolbar"/>
+    <ViewFlipper
+        android:id="@+id/view_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+        <!--Layout 1-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/imageView"
+                android:scaleType="centerInside"
+                android:src="@drawable/android"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/button_flip"
+                android:text="@string/flip"
+                android:textAllCaps="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/bg_screen3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="@string/this_is_not_droid"
+                android:textColor="@android:color/white"
+                android:layout_width="match_parent"
+                android:textSize="20sp"
+                android:layout_height="match_parent"
+                android:gravity="center"/>
+        </LinearLayout>
+    </ViewFlipper>
+</LinearLayout>
