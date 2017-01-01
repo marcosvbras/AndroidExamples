@@ -2,6 +2,7 @@ package com.example.marcos.androidexamples.app.util;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
@@ -9,12 +10,31 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+
 public class ImageHelper {
 
-    // Método que arredonda uma imagem nos cantos definidos
-    public static Bitmap getRoundedCornerBitmap(Context context, Bitmap input, int pixels, int width, int height, boolean squareTopLeft, boolean squareTopRight, boolean squareBottomLeft, boolean squareBottomRight) {
-        Bitmap output = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(output);
+    // Faz o download de uma imagem na web e retorna como Bitmap
+    public static Bitmap downloadBitmap(String url) {
+        Bitmap bitmap = null;
+
+        try {
+            // Faz o download da imagem
+            InputStream inputStream = new URL(url).openStream();
+            // Converte a InputStream do Java para Bitmap
+            bitmap = BitmapFactory.decodeStream(inputStream);
+            inputStream.close();
+        } catch(Exception ex) {}
+
+        return bitmap;
+    }
+
+    // Arredonda uma imagem nos cantos definidos
+    public static Bitmap getRoundedCornerBitmap(Context context, Bitmap bitmapInput, int pixels, int width, int height, boolean squareTopLeft, boolean squareTopRight, boolean squareBottomLeft, boolean squareBottomRight) {
+        Bitmap bitmapOutput = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmapOutput);
         final float densityMultiplier = context.getResources().getDisplayMetrics().density;
 
         final int color = 0xff424242;
@@ -31,22 +51,22 @@ public class ImageHelper {
         canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
 
         //draw rectangles over the corners we want to be square
-        if (squareTopLeft ){
+        if (squareTopLeft ) {
             canvas.drawRect(0, 0, width/2, height/2, paint);
         }
-        if (squareTopRight ){
+        if (squareTopRight ) {
             canvas.drawRect(width/2, 0, width, height/2, paint);
         }
-        if (squareBottomLeft ){
+        if (squareBottomLeft ) {
             canvas.drawRect(0, height/2, width/2, height, paint);
         }
-        if (squareBottomRight ){
+        if (squareBottomRight ) {
             canvas.drawRect(width/2, height/2, width, height, paint);
         }
 
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-        canvas.drawBitmap(input, 0,0, paint);
+        canvas.drawBitmap(bitmapInput, 0,0, paint);
 
-        return output;
+        return bitmapOutput;
     }
 }

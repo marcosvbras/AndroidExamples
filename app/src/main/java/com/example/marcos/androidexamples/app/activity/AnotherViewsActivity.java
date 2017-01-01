@@ -10,21 +10,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.marcos.androidexamples.R;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
 public class AnotherViewsActivity extends AppCompatActivity {
-
-    // Views
-    private Button buttonGetImage;
-    private ProgressDialog progressDialog;
-    private ImageView imageView;
-
-    // Outros objetos
-    private final String URL_ANIME = "https://static.hummingbird.me/anime/poster_images/000/003/021/large/bYWVjy9.jpg?1419353531";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +38,6 @@ public class AnotherViewsActivity extends AppCompatActivity {
         findViewById(R.id.button_image_switcher).setOnClickListener(onImageSwitcherButtonClick());
         findViewById(R.id.button_recycler_view).setOnClickListener(onRecyclerViewButtonClick());
         findViewById(R.id.button_spinner_complete_check).setOnClickListener(onSpinnerCompleteCheckButtonClick());
-
-        // Button
-        buttonGetImage = (Button)findViewById(R.id.button_get_image);
-        buttonGetImage.setOnClickListener(onButtonGetImageClick());
-        imageView = (ImageView)findViewById(R.id.imageView);
     }
 
     private View.OnClickListener onSpinnerCompleteCheckButtonClick() {
@@ -112,49 +101,5 @@ public class AnotherViewsActivity extends AppCompatActivity {
                 startActivity(new Intent(getBaseContext(), XmlSelectorsActivity.class));
             }
         };
-    }
-
-    private View.OnClickListener onButtonGetImageClick() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                downloadImage(URL_ANIME);
-            }
-        };
-    }
-
-    private void downloadImage(final String urlImg) {
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle(R.string.dialog_download);
-        progressDialog.setMessage(getResources().getString(R.string.dialog_wait));
-        progressDialog.setIndeterminate(true);
-
-        //progressDialog.show();
-
-        new Thread() {
-            @Override
-            public void run() {
-                try {
-                    URL url = new URL(urlImg);
-                    InputStream inputStream = url.openStream();
-                    final Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-                    inputStream.close();
-                    showImage(bitmap);
-                } catch (Exception ex) {
-
-                }
-            }
-        }.run();
-    }
-
-    private void showImage(final Bitmap bitmap) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                //progressDialog.dismiss();
-                imageView.setImageBitmap(bitmap);
-                bitmap.recycle();
-            }
-        });
     }
 }

@@ -34,7 +34,7 @@
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/textView" />
         <Button
-            android:id="@+id/button"
+            android:id="@+id/button_send_message_handler"
             android:text="@string/share"
             android:layout_below="@+id/textView"
             android:layout_marginTop="30dp"

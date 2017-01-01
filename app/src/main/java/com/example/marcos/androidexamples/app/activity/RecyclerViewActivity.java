@@ -122,9 +122,9 @@ public class RecyclerViewActivity extends AppCompatActivity implements RecyclerV
         alertDialogBuilder.setNegativeButton(R.string.cancel, null);
         viewDialog = LayoutInflater.from(this).inflate(R.layout.dialog_recycle_settings, null, false);
 
-        String[] animations = {getResources().getString(R.string.none), getResources().getString(R.string.slide_in_left_anim),
-                getResources().getString(R.string.slide_out_right_anim), getResources().getString(R.string.fade_in_anim), getResources().getString(R.string.fade_out_anim),
-                getResources().getString(R.string.scale_anim)};
+        String[] animations = {getResources().getString(R.string.none), getResources().getString(R.string.slide_in_left),
+                getResources().getString(R.string.slide_out_right), getResources().getString(R.string.fade_in), getResources().getString(R.string.fade_out),
+                getResources().getString(R.string.scale)};
         String[] layouts = {getResources().getString(R.string.linear_manager_vertical), getResources().getString(R.string.linear_manager_horizontal),
                 getResources().getString(R.string.grid_manager_vertical), getResources().getString(R.string.grid_manager_horizontal),
                 getResources().getString(R.string.staggered_manager_vertical), getResources().getString(R.string.staggered_manager_horizontal)};

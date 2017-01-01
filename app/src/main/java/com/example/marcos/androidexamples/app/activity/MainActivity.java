@@ -24,74 +24,46 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         // Click events
-        findViewById(R.id.button_animations).setOnClickListener(onAnimationsButtonClick());
-        findViewById(R.id.button_another_views).setOnClickListener(onAnotherViewsButtonClick());
-        findViewById(R.id.button_fragments).setOnClickListener(onFragmentsButtonClick());
-        findViewById(R.id.button_gestures).setOnClickListener(onGesturesButtonClick());
-        findViewById(R.id.button_save_instance_state).setOnClickListener(onSaveInstanceStateButtonClick());
-        findViewById(R.id.button_view_pager).setOnClickListener(onViewPagerButtonClick());
-        findViewById(R.id.button_toolbar).setOnClickListener(onToolbarButtonClick());
+        findViewById(R.id.button_animations).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_another_views).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_fragments).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_gestures).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_save_instance_state).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_view_pager).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_toolbar).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_handler).setOnClickListener(onButtonClick());
     }
 
-    private View.OnClickListener onAnimationsButtonClick() {
+    private View.OnClickListener onButtonClick() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(), AnimationsActivity.class));
-            }
-        };
-    }
-
-    private View.OnClickListener onSaveInstanceStateButtonClick() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(), SaveInstanceStateActivity.class));
-            }
-        };
-    }
-
-    private View.OnClickListener onFragmentsButtonClick() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(), FragmentsActivity.class));
-            }
-        };
-    }
-
-    private View.OnClickListener onGesturesButtonClick() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(), GesturesActivity.class));
-            }
-        };
-    }
-
-    private View.OnClickListener onToolbarButtonClick() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(), ToolbarActivity.class));
-            }
-        };
-    }
-
-    private View.OnClickListener onViewPagerButtonClick() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(), ViewPagerActivity.class));
-            }
-        };
-    }
-
-    private View.OnClickListener onAnotherViewsButtonClick() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(), AnotherViewsActivity.class));
+                switch (v.getId()) {
+                    case R.id.button_animations:
+                        startActivity(new Intent(getBaseContext(), AnimationsActivity.class));
+                        break;
+                    case R.id.button_another_views:
+                        startActivity(new Intent(getBaseContext(), AnotherViewsActivity.class));
+                        break;
+                    case R.id.button_fragments:
+                        startActivity(new Intent(getBaseContext(), FragmentsActivity.class));
+                        break;
+                    case R.id.button_gestures:
+                        startActivity(new Intent(getBaseContext(), GesturesActivity.class));
+                        break;
+                    case R.id.button_handler:
+                        startActivity(new Intent(getBaseContext(), HandlerActivity.class));
+                        break;
+                    case R.id.button_save_instance_state:
+                        startActivity(new Intent(getBaseContext(), SaveInstanceStateActivity.class));
+                        break;
+                    case R.id.button_toolbar:
+                        startActivity(new Intent(getBaseContext(), ToolbarActivity.class));
+                        break;
+                    case R.id.button_view_pager:
+                        startActivity(new Intent(getBaseContext(), ViewPagerActivity.class));
+                        break;
+                }
             }
         };
     }

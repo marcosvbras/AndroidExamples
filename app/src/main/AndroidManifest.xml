@@ -116,30 +116,53 @@
         <activity
             android:name=".app.activity.TranslateActivity"
             android:label="@string/translate"
-            android:parentActivityName=".app.activity.AnimationsActivity"/>
+            android:parentActivityName=".app.activity.AnimationsActivity" />
         <activity
             android:name=".app.activity.ScaleActivity"
-            android:label="@string/scale_anim"
-            android:parentActivityName=".app.activity.AnimationsActivity"/>
+            android:label="@string/scale"
+            android:parentActivityName=".app.activity.AnimationsActivity" />
         <activity
             android:name=".app.activity.AnimationSetActivity"
             android:label="@string/animation_set"
-            android:parentActivityName=".app.activity.AnimationsActivity"/>
+            android:parentActivityName=".app.activity.AnimationsActivity" />
         <activity
             android:name=".app.activity.AnimationListenerActivity"
             android:label="@string/animation_listener"
-            android:parentActivityName=".app.activity.AnimationsActivity"/>
+            android:parentActivityName=".app.activity.AnimationsActivity" />
         <activity
             android:name=".app.activity.ViewFlipperActivity"
             android:label="@string/view_flipper"
-            android:parentActivityName=".app.activity.AnimationsActivity"/>
+            android:parentActivityName=".app.activity.AnimationsActivity" />
         <activity
             android:name=".app.activity.ViewAnimatedActivity"
             android:label="@string/view_animated"
-            android:parentActivityName=".app.activity.AnimationsActivity"/>
+            android:parentActivityName=".app.activity.AnimationsActivity" />
         <activity
             android:name=".app.activity.AnimLayoutChangesActivity"
             android:label="@string/anim_layout_changes"
+            android:parentActivityName=".app.activity.AnimationsActivity" />
+        <activity
+            android:name=".app.activity.HandlerActivity"
+            android:label="@string/handler"
+            android:parentActivityName=".app.activity.MainActivity" />
+        <activity
+            android:name=".app.activity.HandlerMessageActivity"
+            android:label="@string/handler_message"
+            android:parentActivityName=".app.activity.HandlerActivity" />
+        <activity
+            android:name=".app.activity.ReDownloadImage"
+            android:label="@string/redownload_image"
+            android:parentActivityName=".app.activity.HandlerActivity" />
+        <activity android:name=".app.activity.SplashScreenActivity" />
+        <activity
+            android:name=".app.activity.TestActivity"
+            android:label="@string/test_activity" />
+        <activity
+            android:name=".app.activity.ViewAnimationsActivity"
+            android:label="@string/view_animations"
+            android:parentActivityName=".app.activity.AnimationsActivity" />
+        <activity android:name=".app.activity.ActivityAnimationsActivity"
+            android:label="@string/activity_animations"
             android:parentActivityName=".app.activity.AnimationsActivity"/>
     </application>
 
