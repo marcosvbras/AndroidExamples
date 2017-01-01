@@ -14,14 +14,23 @@ import com.example.marcos.androidexamples.R;
 import com.example.marcos.androidexamples.app.interfaces.ImageDownloadListener;
 import com.example.marcos.androidexamples.app.util.DownloadImageTask;
 
+import java.util.List;
+
 public class AsyncTaskActivity extends AppCompatActivity implements ImageDownloadListener {
 
     // Views
     private ProgressBar progressBar;
     private DownloadImageTask downloadImageTask;
+    private ImageView imageView1;
+    private ImageView imageView2;
+    private ImageView imageView3;
+    private ImageView imageView4;
 
     // Another objects
-    private static final String URL = "http://noragami-anime.net/index/img/bg_blu-ray01.jpg";
+    private static final String URL1 = "http://noragami-anime.net/index/img/bg_blu-ray01.jpg";
+    private static final String URL2 = "http://noragami-anime.net/index/img/bg_blu-ray02.jpg";
+    private static final String URL3 = "http://noragami-anime.net/index/img/bg_blu-ray03.jpg";
+    private static final String URL4 = "http://noragami-anime.net/index/img/bg_blu-ray04.jpg";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +45,16 @@ public class AsyncTaskActivity extends AppCompatActivity implements ImageDownloa
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
         findViewById(R.id.button_start).setOnClickListener(onStartButtonClick());
         findViewById(R.id.button_stop).setOnClickListener(onStopButtonClick());
+        imageView1 = (ImageView)findViewById(R.id.imageView1);
+        imageView2 = (ImageView)findViewById(R.id.imageView2);
+        imageView3 = (ImageView)findViewById(R.id.imageView3);
+        imageView4 = (ImageView)findViewById(R.id.imageView4);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        downloadImageTask = new DownloadImageTask(progressBar, URL, this);
+        newTask();
     }
 
     private View.OnClickListener onStopButtonClick() {
@@ -63,10 +76,10 @@ public class AsyncTaskActivity extends AppCompatActivity implements ImageDownloa
             @Override
             public void onClick(View v) {
                 if(downloadImageTask.getStatus() == AsyncTask.Status.PENDING) {
-                    downloadImageTask.execute();
+                    downloadImageTask.execute(URL1, URL2, URL3, URL4);
                 } else if(downloadImageTask.getStatus() == AsyncTask.Status.FINISHED) {
                     newTask();
-                    downloadImageTask.execute();
+                    downloadImageTask.execute(URL1, URL2, URL3, URL4);
                 } else
                     Toast.makeText(getBaseContext(), getResources().getString(R.string.task_already_started), Toast.LENGTH_SHORT).show();
             }
@@ -74,15 +87,22 @@ public class AsyncTaskActivity extends AppCompatActivity implements ImageDownloa
     }
 
     private void newTask() {
-        downloadImageTask = new DownloadImageTask(progressBar, URL, this);
-        ((ImageView)findViewById(R.id.imageView)).setImageBitmap(null);
+        downloadImageTask = new DownloadImageTask(progressBar, this, this);
+        imageView1.setImageBitmap(null);
+        imageView2.setImageBitmap(null);
+        imageView3.setImageBitmap(null);
+        imageView4.setImageBitmap(null);
+        progressBar.setMax(100);
+        progressBar.setProgress(0);
     }
 
     @Override
-    public void onDownloadFinish(Bitmap bitmap) {
-        if(bitmap != null) {
-            ((ImageView)findViewById(R.id.imageView)).setImageBitmap(bitmap);
-//            bitmap.recycle();
+    public void onDownloadFinish(List<Bitmap> listBitmap) {
+        if(listBitmap != null) {
+            imageView1.setImageBitmap(listBitmap.get(0));
+            imageView2.setImageBitmap(listBitmap.get(1));
+            imageView3.setImageBitmap(listBitmap.get(2));
+            imageView4.setImageBitmap(listBitmap.get(3));
         } else {
             Toast.makeText(this, getResources().getString(R.string.failed_download), Toast.LENGTH_SHORT).show();
         }
