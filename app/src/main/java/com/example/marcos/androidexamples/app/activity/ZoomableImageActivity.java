@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import com.example.marcos.androidexamples.R;
-import com.example.marcos.androidexamples.app.util.ZoomableImageView;
+import com.example.marcos.androidexamples.app.view.ZoomableImageView;
 
 public class ZoomableImageActivity extends AppCompatActivity {
 

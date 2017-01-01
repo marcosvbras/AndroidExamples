@@ -8,12 +8,12 @@ import android.view.View;
 
 import com.example.marcos.androidexamples.R;
 
-public class HandlerActivity extends AppCompatActivity {
+public class HandlerAsyncTaskActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_handler);
+        setContentView(R.layout.activity_handler_async_task);
         loadComponents();
     }
 
@@ -23,6 +23,7 @@ public class HandlerActivity extends AppCompatActivity {
         findViewById(R.id.button_handler_message).setOnClickListener(onButtonClick());
         findViewById(R.id.button_redownload_image).setOnClickListener(onButtonClick());
         findViewById(R.id.button_splash_screen).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_async_task).setOnClickListener(onButtonClick());
     }
 
     private View.OnClickListener onButtonClick() {
@@ -38,6 +39,10 @@ public class HandlerActivity extends AppCompatActivity {
                         break;
                     case R.id.button_splash_screen:
                         startActivity(new Intent(getBaseContext(), SplashScreenActivity.class));
+                        break;
+                    case R.id.button_async_task:
+                        startActivity(new Intent(getBaseContext(), AsyncTaskActivity.class));
+                        break;
                 }
             }
         };

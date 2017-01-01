@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button_save_instance_state).setOnClickListener(onButtonClick());
         findViewById(R.id.button_view_pager).setOnClickListener(onButtonClick());
         findViewById(R.id.button_toolbar).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_handler).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_handler_async_task).setOnClickListener(onButtonClick());
     }
 
     private View.OnClickListener onButtonClick() {
@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.button_gestures:
                         startActivity(new Intent(getBaseContext(), GesturesActivity.class));
                         break;
-                    case R.id.button_handler:
-                        startActivity(new Intent(getBaseContext(), HandlerActivity.class));
+                    case R.id.button_handler_async_task:
+                        startActivity(new Intent(getBaseContext(), HandlerAsyncTaskActivity.class));
                         break;
                     case R.id.button_save_instance_state:
                         startActivity(new Intent(getBaseContext(), SaveInstanceStateActivity.class));

@@ -6,6 +6,9 @@
     <string name="gridview">GridView</string>
     <string name="search_view">Search View with Filterable</string>
     <string name="toolbar_tabs">Toolbar With Tabs</string>
+    <string name="task_already_started">Task already started</string>
+    <string name="task_not_started">Task not yet started</string>
+    <string name="task_already_finished">Task already finished</string>
     <string name="xml_selectors">XML Selectors</string>
     <string name="view_pager">ViewPager</string>
     <string name="simple_view_pager">Simple ViewPager</string>
@@ -24,7 +27,8 @@
     <string name="web_view">WebView</string>
     <string name="toolbar">Toolbar</string>
     <string name="gestures">Gestures</string>
-    <string name="handler">Handler</string>
+    <string name="handler_async_task">Handler and Async Tasks</string>
+    <string name="async_task">AsyncTask</string>
     <string name="handler_message">Handler Message</string>
     <string name="drawing_shapes">Drawing Shapes</string>
     <string name="draggable_view">Draggable View</string>

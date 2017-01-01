@@ -9,7 +9,7 @@
     tools:context="com.example.marcos.androidexamples.app.activity.ZoomableImageActivity">
     <include layout="@layout/toolbar" />
 
-    <com.example.marcos.androidexamples.app.util.ZoomableImageView
+    <com.example.marcos.androidexamples.app.view.ZoomableImageView
         android:id="@+id/zoomableImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

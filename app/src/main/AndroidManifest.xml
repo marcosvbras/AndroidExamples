@@ -142,17 +142,17 @@
             android:label="@string/anim_layout_changes"
             android:parentActivityName=".app.activity.AnimationsActivity" />
         <activity
-            android:name=".app.activity.HandlerActivity"
-            android:label="@string/handler"
+            android:name=".app.activity.HandlerAsyncTaskActivity"
+            android:label="@string/handler_async_task"
             android:parentActivityName=".app.activity.MainActivity" />
         <activity
             android:name=".app.activity.HandlerMessageActivity"
             android:label="@string/handler_message"
-            android:parentActivityName=".app.activity.HandlerActivity" />
+            android:parentActivityName=".app.activity.HandlerAsyncTaskActivity" />
         <activity
             android:name=".app.activity.ReDownloadImage"
             android:label="@string/redownload_image"
-            android:parentActivityName=".app.activity.HandlerActivity" />
+            android:parentActivityName=".app.activity.HandlerAsyncTaskActivity" />
         <activity android:name=".app.activity.SplashScreenActivity" />
         <activity
             android:name=".app.activity.TestActivity"
@@ -161,9 +161,14 @@
             android:name=".app.activity.ViewAnimationsActivity"
             android:label="@string/view_animations"
             android:parentActivityName=".app.activity.AnimationsActivity" />
-        <activity android:name=".app.activity.ActivityAnimationsActivity"
+        <activity
+            android:name=".app.activity.ActivityAnimationsActivity"
             android:label="@string/activity_animations"
-            android:parentActivityName=".app.activity.AnimationsActivity"/>
+            android:parentActivityName=".app.activity.AnimationsActivity" />
+        <activity
+            android:name=".app.activity.AsyncTaskActivity"
+            android:label="@string/async_task"
+            android:parentActivityName=".app.activity.HandlerAsyncTaskActivity"/>
     </application>
 
 </manifest>

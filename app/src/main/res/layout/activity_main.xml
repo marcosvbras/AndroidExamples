@@ -56,12 +56,12 @@
                 android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/button_handler"
+                android:id="@+id/button_handler_async_task"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:text="@string/handler"
+                android:text="@string/handler_async_task"
                 android:textAllCaps="false" />
 
             <Button
