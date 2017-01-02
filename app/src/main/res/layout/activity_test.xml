@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/bg_screen7"
-    tools:context="com.example.marcos.androidexamples.app.activity.TestActivity">
+    tools:context="com.androidexamples.app.activity.TestActivity">
     <include layout="@layout/toolbar"/>
     <LinearLayout
         android:layout_width="match_parent"

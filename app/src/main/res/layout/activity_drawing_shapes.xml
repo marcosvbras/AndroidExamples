@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.marcos.androidexamples.app.activity.DrawingShapesActivity">
+    tools:context="com.androidexamples.app.activity.DrawingShapesActivity">
     <include layout="@layout/toolbar"/>
-    <com.example.marcos.androidexamples.app.view.MyView
+    <com.androidexamples.app.view.MyView
         android:id="@+id/myCustomView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

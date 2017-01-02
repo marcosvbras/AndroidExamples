@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.marcos.androidexamples.app.activity.SpinnerCompleteCheckActivity">
+    tools:context="com.androidexamples.app.activity.SpinnerCompleteCheckActivity">
     <include layout="@layout/toolbar"/>
     <AutoCompleteTextView
         android:id="@+id/autoComplete"
