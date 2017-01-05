@@ -10,8 +10,6 @@ import com.androidexamples.app.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,8 +18,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        toolbar = (Toolbar)findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
 
         // Click events
         findViewById(R.id.button_animations).setOnClickListener(onButtonClick());

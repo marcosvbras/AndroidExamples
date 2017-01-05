@@ -177,9 +177,13 @@
             android:name=".activity.RevealEffectActivity"
             android:label="@string/reveal_effect"
             android:parentActivityName=".activity.AnimationsActivity" />
-        <activity android:name=".activity.PaletteActivity"
+        <activity
+            android:name=".activity.PaletteActivity"
             android:label="@string/palette"
-            android:parentActivityName=".activity.MainActivity"/>
+            android:parentActivityName=".activity.MainActivity" />
+        <activity android:name=".activity.StandAloneToolbarActivity"
+            android:label="@string/stand_alone_toolbar"
+            android:parentActivityName=".activity.ToolbarActivity"/>
     </application>
 
 </manifest>
