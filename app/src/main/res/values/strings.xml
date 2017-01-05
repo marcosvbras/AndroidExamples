@@ -6,6 +6,7 @@
     <string name="gridview">GridView</string>
     <string name="show">Show</string>
     <string name="hide">Hide</string>
+    <string name="zoom">Zoom</string>
     <string name="search_view">Search View with Filterable</string>
     <string name="toolbar_tabs">Toolbar With Tabs</string>
     <string name="reveal_effect">Reveal Effect</string>
@@ -21,6 +22,7 @@
     <string name="intro_slider">Intro Slider</string>
     <string name="image_switcher">Image Switcher</string>
     <string name="splash_screen">Splash Screen</string>
+    <string name="palette">Palette</string>
     <string name="loading_death_star">Loading Death Star...</string>
     <string name="rebel_base_reach">Rebel base within reach in 5 seconds</string>
     <string name="test_activity">Test Activity</string>
@@ -29,6 +31,7 @@
     <string name="this_is_not_droid">This is not the droid you are looking for</string>
     <string name="activity_animations">Activity Animations</string>
     <string name="i_am_watermelon">I\'m a watermelon</string>
+    <string name="extract_colors">Extract Colors</string>
     <string name="web_view">WebView</string>
     <string name="toolbar">Toolbar</string>
     <string name="gestures">Gestures</string>
@@ -127,4 +130,5 @@
     <string name="scroll_to_see">Scroll To See Changes</string>
     <string name="no_results_for">No results for</string>
     <string name="share">Share</string>
+    <string name="transition_key">anything</string>
 </resources>

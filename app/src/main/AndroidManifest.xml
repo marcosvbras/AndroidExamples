@@ -173,9 +173,13 @@
             android:name=".activity.FabWithSnackBarActivity"
             android:label="@string/fab_with_snackbar"
             android:parentActivityName=".activity.AnotherViewsActivity" />
-        <activity android:name=".activity.RevealEffectActivity"
+        <activity
+            android:name=".activity.RevealEffectActivity"
             android:label="@string/reveal_effect"
-            android:parentActivityName=".activity.AnimationsActivity"/>
+            android:parentActivityName=".activity.AnimationsActivity" />
+        <activity android:name=".activity.PaletteActivity"
+            android:label="@string/palette"
+            android:parentActivityName=".activity.MainActivity"/>
     </application>
 
 </manifest>

@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button_view_pager).setOnClickListener(onButtonClick());
         findViewById(R.id.button_toolbar).setOnClickListener(onButtonClick());
         findViewById(R.id.button_handler_async_task).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_palette).setOnClickListener(onButtonClick());
     }
 
     private View.OnClickListener onButtonClick() {
@@ -62,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.button_view_pager:
                         startActivity(new Intent(getBaseContext(), ViewPagerActivity.class));
+                        break;
+                    case R.id.button_palette:
+                        startActivity(new Intent(getBaseContext(), PaletteActivity.class));
                         break;
                 }
             }
