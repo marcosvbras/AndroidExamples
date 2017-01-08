@@ -1,4 +1,4 @@
-package com.androidexamples.app.entity;
+package com.androidexamples.app.domain;
 
 /**
  * Created by marcos on 15/12/2016.

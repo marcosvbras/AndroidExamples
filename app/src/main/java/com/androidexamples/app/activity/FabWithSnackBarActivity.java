@@ -32,7 +32,7 @@ public class FabWithSnackBarActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         animation = AnimationUtils.loadAnimation(this, R.anim.scale_up);
         coordinatorLayoutRoot = (CoordinatorLayout) findViewById(R.id.coordinatorLayoutRoot);

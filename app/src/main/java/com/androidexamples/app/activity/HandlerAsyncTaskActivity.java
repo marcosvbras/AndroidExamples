@@ -18,7 +18,7 @@ public class HandlerAsyncTaskActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         findViewById(R.id.button_handler_message).setOnClickListener(onButtonClick());
         findViewById(R.id.button_redownload_image).setOnClickListener(onButtonClick());

@@ -39,7 +39,7 @@ public class SearchViewActivity extends AppCompatActivity implements FilterObser
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         listView = (ListView)findViewById(R.id.listView);
         listView.setOnItemClickListener(onItemClick());

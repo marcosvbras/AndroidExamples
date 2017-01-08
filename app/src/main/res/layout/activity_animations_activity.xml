@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.androidexamples.app.activity.ActivityAnimationsActivity">
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/include_top_toolbar"/>
     <Button
         android:id="@+id/button_fade"
         android:layout_width="match_parent"

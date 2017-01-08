@@ -5,8 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.androidexamples.app.R;
@@ -24,7 +22,7 @@ public class AnimationDrawableActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         animatable = (Animatable)((ImageView)findViewById(R.id.imageView)).getDrawable();

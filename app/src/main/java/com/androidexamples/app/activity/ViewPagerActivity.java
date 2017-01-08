@@ -18,7 +18,7 @@ public class ViewPagerActivity extends AppCompatActivity {
     }
 
     private void LoadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         findViewById(R.id.button_view_pager).setOnClickListener(onSimpleViewPagerButtonClick());
         findViewById(R.id.button_viewpager_title).setOnClickListener(onViewPagerTitleButtonClick());

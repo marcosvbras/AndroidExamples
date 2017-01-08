@@ -18,7 +18,7 @@ public class GesturesActivity extends AppCompatActivity {
     }
 
     private void LoadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         findViewById(R.id.button_zoomable_imageview).setOnClickListener(onZoomableImageViewButtonClick());
         findViewById(R.id.button_drag_drop_image).setOnClickListener(onDragDropImageButtonClick());

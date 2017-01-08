@@ -11,12 +11,12 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.androidexamples.app.R;
-import com.androidexamples.app.entity.SimpleItem;
-import com.androidexamples.app.fragment.AnimalFragment;
-import com.androidexamples.app.fragment.StarWarsFragment;
-import com.androidexamples.app.fragment.FoodFragment;
+import com.androidexamples.app.domain.SimpleItem;
+import com.androidexamples.app.fragments.AnimalFragment;
+import com.androidexamples.app.fragments.StarWarsFragment;
+import com.androidexamples.app.fragments.FoodFragment;
 import com.androidexamples.app.interfaces.OnDetachFragmentListener;
-import com.androidexamples.app.util.Constants;
+import com.androidexamples.app.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +48,7 @@ public class FragmentsActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         buttonAddSWFrag = (Button) findViewById(R.id.button_add_sw_frag);
         buttonAddSWFrag.setOnClickListener(onStarWarsFragControlClick());

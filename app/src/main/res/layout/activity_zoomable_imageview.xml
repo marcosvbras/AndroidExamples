@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@android:color/black"
     tools:context="com.androidexamples.app.activity.ZoomableImageActivity">
-    <include layout="@layout/toolbar" />
+    <include layout="@layout/include_top_toolbar" />
 
     <com.androidexamples.app.view.ZoomableImageView
         android:id="@+id/zoomableImageView"

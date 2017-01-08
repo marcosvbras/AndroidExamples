@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.animation.AnimationSet;
 
 import com.androidexamples.app.R;
 
@@ -19,7 +18,7 @@ public class AnimationsActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         findViewById(R.id.button_view_animations).setOnClickListener(onButtonClick());
         findViewById(R.id.button_activity_animations).setOnClickListener(onButtonClick());

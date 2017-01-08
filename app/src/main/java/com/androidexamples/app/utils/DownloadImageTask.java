@@ -1,4 +1,4 @@
-package com.androidexamples.app.util;
+package com.androidexamples.app.utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.androidexamples.app.interfaces.ImageDownloadListener;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;

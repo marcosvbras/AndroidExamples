@@ -3,9 +3,6 @@ package com.androidexamples.app.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ProgressBar;
 
 import com.androidexamples.app.R;
 
@@ -19,7 +16,7 @@ public class ToolbarWithTabsActivity extends AppCompatActivity {
     }
 
     private void LoadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="com.androidexamples.app.activity.SearchViewActivity">
 
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/include_top_toolbar"/>
 
     <ListView
         android:layout_width="match_parent"

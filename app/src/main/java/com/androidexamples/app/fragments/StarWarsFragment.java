@@ -1,4 +1,4 @@
-package com.androidexamples.app.fragment;
+package com.androidexamples.app.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.androidexamples.app.R;
 import com.androidexamples.app.interfaces.OnDetachFragmentListener;
-import com.androidexamples.app.util.Constants;
+import com.androidexamples.app.utils.Constants;
 
 /**
  * Created by marcos on 29/12/2016.

@@ -10,11 +10,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.androidexamples.app.R;
-import com.androidexamples.app.entity.SimpleItem;
-import com.androidexamples.app.interfaces.RecyclerViewTouchListener;
-import com.androidexamples.app.util.Animations;
-import com.androidexamples.app.util.Constants;
-import com.androidexamples.app.util.RecyclerSettings;
+import com.androidexamples.app.domain.SimpleItem;
+import com.androidexamples.app.utils.Animations;
+import com.androidexamples.app.utils.Constants;
+import com.androidexamples.app.utils.RecyclerSettings;
 
 import java.util.List;
 

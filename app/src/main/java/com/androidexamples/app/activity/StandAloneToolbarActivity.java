@@ -21,7 +21,7 @@ public class StandAloneToolbarActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
 
         toolbarBottom = (Toolbar)findViewById(R.id.toolbar_bottom);
         toolbarBottom.setOnMenuItemClickListener(onMenuItemClickListener());

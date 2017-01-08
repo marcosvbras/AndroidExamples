@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.androidexamples.app.R;
-import com.androidexamples.app.util.RevealEffect;
+import com.androidexamples.app.utils.RevealEffect;
 
 public class RevealEffectActivity extends AppCompatActivity {
 
@@ -22,7 +22,7 @@ public class RevealEffectActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageView = (ImageView)findViewById(R.id.imageView);
         findViewById(R.id.button_show).setOnClickListener(onButtonClick());

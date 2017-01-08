@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.androidexamples.app.activity.ImageSwitcherActivity">
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/include_top_toolbar"/>
     <ImageSwitcher
         android:id="@+id/imageSwitcher"
         android:layout_marginTop="3dp"

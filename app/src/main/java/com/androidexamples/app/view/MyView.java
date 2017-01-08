@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.androidexamples.app.util.Converter;
+import com.androidexamples.app.utils.Converter;
 
 /**
  * Created by marcos on 17/12/2016.

@@ -40,7 +40,7 @@ public class TranslateActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         findViewById(R.id.button_animate_xml).setOnClickListener(onAnimateXmlButtonClick());
         findViewById(R.id.button_animate_api).setOnClickListener(onAnimateApiButtonClick());

@@ -18,7 +18,7 @@ public class ZoomableImageActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ZoomableImageView zoomableImageView = (ZoomableImageView) findViewById(R.id.zoomableImageView);
         zoomableImageView.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.tghoul));

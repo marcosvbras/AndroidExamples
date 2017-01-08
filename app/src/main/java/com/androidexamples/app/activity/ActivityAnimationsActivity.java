@@ -1,6 +1,5 @@
 package com.androidexamples.app.activity;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -12,7 +11,7 @@ import android.view.Window;
 import android.widget.ImageView;
 
 import com.androidexamples.app.R;
-import com.androidexamples.app.util.Constants;
+import com.androidexamples.app.utils.Constants;
 
 public class ActivityAnimationsActivity extends AppCompatActivity {
 
@@ -33,7 +32,7 @@ public class ActivityAnimationsActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageView = (ImageView) findViewById(R.id.imageView);
         findViewById(R.id.button_fade).setOnClickListener(onFadeButtonClick());

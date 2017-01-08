@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.androidexamples.app.R;
-import com.androidexamples.app.util.Constants;
+import com.androidexamples.app.utils.Constants;
 
 public class SaveInstanceStateActivity extends AppCompatActivity {
 
@@ -48,7 +48,7 @@ public class SaveInstanceStateActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         button = (Button)findViewById(R.id.button_send_message_handler);
         button.setOnClickListener(onButtonClick());

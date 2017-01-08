@@ -1,4 +1,4 @@
-package com.androidexamples.app.util;
+package com.androidexamples.app.utils;
 
 import android.content.Context;
 import android.view.View;

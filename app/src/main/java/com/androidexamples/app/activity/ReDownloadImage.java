@@ -11,9 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.androidexamples.app.R;
-import com.androidexamples.app.util.ImageHelper;
-
-import java.io.IOException;
+import com.androidexamples.app.utils.ImageHelper;
 
 public class ReDownloadImage extends AppCompatActivity {
 
@@ -33,7 +31,7 @@ public class ReDownloadImage extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageView = (ImageView) findViewById(R.id.imageView);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);

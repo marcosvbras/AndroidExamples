@@ -7,8 +7,7 @@ import android.widget.GridView;
 
 import com.androidexamples.app.R;
 import com.androidexamples.app.adapter.GridAdapter;
-import com.androidexamples.app.adapter.SimpleItemAdapter;
-import com.androidexamples.app.entity.SimpleItem;
+import com.androidexamples.app.domain.SimpleItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +26,7 @@ public class GridViewActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         gridView = (GridView)findViewById(R.id.gridView);
     }

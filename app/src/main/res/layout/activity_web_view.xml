@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.androidexamples.app.activity.WebViewActivity">
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/include_top_toolbar"/>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context="com.androidexamples.app.activity.AnotherViewsActivity">
-        <include layout="@layout/toolbar"/>
+        <include layout="@layout/include_top_toolbar"/>
 
         <Button
             android:text="@string/drawing_shapes"

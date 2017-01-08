@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.view.Window;
 
 import com.androidexamples.app.R;
-import com.androidexamples.app.util.Constants;
+import com.androidexamples.app.utils.Constants;
 
 public class TestActivity extends AppCompatActivity {
 
@@ -22,7 +22,7 @@ public class TestActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if(getIntent().getExtras() != null)

@@ -1,4 +1,4 @@
-package com.androidexamples.app.util;
+package com.androidexamples.app.utils;
 
 import android.support.v7.widget.RecyclerView;
 

@@ -20,11 +20,11 @@ import android.widget.Toast;
 
 import com.androidexamples.app.R;
 import com.androidexamples.app.adapter.BlueHairAdapter;
-import com.androidexamples.app.entity.SimpleItem;
+import com.androidexamples.app.domain.SimpleItem;
 import com.androidexamples.app.listener.RecyclerItemClickListener;
 import com.androidexamples.app.interfaces.RecyclerViewTouchListener;
-import com.androidexamples.app.util.Constants;
-import com.androidexamples.app.util.RecyclerSettings;
+import com.androidexamples.app.utils.Constants;
+import com.androidexamples.app.utils.RecyclerSettings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +59,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements RecyclerV
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
     }

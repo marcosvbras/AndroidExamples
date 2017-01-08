@@ -18,7 +18,7 @@ public class ViewAnimationsActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         findViewById(R.id.button_animation_drawable).setOnClickListener(onAnimationsClick());

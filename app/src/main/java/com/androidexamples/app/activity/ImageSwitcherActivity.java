@@ -3,7 +3,6 @@ package com.androidexamples.app.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
@@ -12,8 +11,8 @@ import android.widget.ImageView;
 import android.widget.ViewSwitcher;
 
 import com.androidexamples.app.R;
-import com.androidexamples.app.entity.SimpleItem;
-import com.androidexamples.app.util.Constants;
+import com.androidexamples.app.domain.SimpleItem;
+import com.androidexamples.app.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +35,7 @@ public class ImageSwitcherActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageSwitcher = (ImageSwitcher)findViewById(R.id.imageSwitcher);
         imageSwitcher.setFactory(getViewFactory());

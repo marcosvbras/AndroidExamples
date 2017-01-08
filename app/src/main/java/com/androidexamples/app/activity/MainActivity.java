@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
 
         // Click events
         findViewById(R.id.button_animations).setOnClickListener(onButtonClick());
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button_toolbar).setOnClickListener(onButtonClick());
         findViewById(R.id.button_handler_async_task).setOnClickListener(onButtonClick());
         findViewById(R.id.button_palette).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_navigation_drawer).setOnClickListener(onButtonClick());
     }
 
     private View.OnClickListener onButtonClick() {
@@ -63,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.button_palette:
                         startActivity(new Intent(getBaseContext(), PaletteActivity.class));
+                        break;
+                    case R.id.button_navigation_drawer:
+                        startActivity(new Intent(getBaseContext(), NavigationDrawerActivity.class));
                         break;
                 }
             }

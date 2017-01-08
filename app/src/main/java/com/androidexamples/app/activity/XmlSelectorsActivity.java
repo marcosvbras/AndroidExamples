@@ -20,7 +20,7 @@ public class XmlSelectorsActivity extends AppCompatActivity {
     }
 
     private void LoadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageButton = (ImageButton)findViewById(R.id.imageButton);
         imageButton.setOnClickListener(onButtonClick());

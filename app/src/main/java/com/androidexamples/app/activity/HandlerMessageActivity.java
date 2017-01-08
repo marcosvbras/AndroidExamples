@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.androidexamples.app.R;
-import com.androidexamples.app.util.Constants;
+import com.androidexamples.app.utils.Constants;
 
 public class HandlerMessageActivity extends AppCompatActivity {
 
@@ -21,7 +21,7 @@ public class HandlerMessageActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         findViewById(R.id.button_send_message_handler).setOnClickListener(onSendMessageHandlerButtonClick());

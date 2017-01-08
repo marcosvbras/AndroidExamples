@@ -12,7 +12,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.androidexamples.app.R;
-import com.androidexamples.app.entity.SimpleItem;
+import com.androidexamples.app.domain.SimpleItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +45,7 @@ public class SpinnerCompleteCheckActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         autoCompleteTextView = (AutoCompleteTextView)findViewById(R.id.autoComplete);
         autoCompleteTextView.setOnItemClickListener(onAutoCompleteTextViewItemClick());

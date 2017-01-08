@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.androidexamples.app.R;
-import com.androidexamples.app.entity.SimpleItem;
+import com.androidexamples.app.domain.SimpleItem;
 
 import java.util.List;
 

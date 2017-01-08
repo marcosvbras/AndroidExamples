@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.androidexamples.app.R;
 import com.androidexamples.app.interfaces.ImageDownloadListener;
-import com.androidexamples.app.util.DownloadImageTask;
+import com.androidexamples.app.utils.DownloadImageTask;
 
 import java.util.List;
 
@@ -40,7 +40,7 @@ public class AsyncTaskActivity extends AppCompatActivity implements ImageDownloa
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
         findViewById(R.id.button_start).setOnClickListener(onStartButtonClick());

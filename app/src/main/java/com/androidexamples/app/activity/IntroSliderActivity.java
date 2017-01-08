@@ -19,7 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.androidexamples.app.R;
-import com.androidexamples.app.util.PrefManager;
+import com.androidexamples.app.utils.PrefManager;
 
 public class IntroSliderActivity extends AppCompatActivity {
 

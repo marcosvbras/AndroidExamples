@@ -1,7 +1,6 @@
-package com.androidexamples.app.util;
+package com.androidexamples.app.utils;
 
 import android.content.Context;
-import android.content.res.Resources;
 
 /**
  * Created by marco on 17/12/2016.

@@ -1,4 +1,4 @@
-package com.androidexamples.app.util;
+package com.androidexamples.app.utils;
 
 /**
  * Created by marcos on 25/12/2016.
@@ -31,6 +31,11 @@ public class Constants {
     public static final String TAG_STAR_WARS_FRAG = "Star Wsrs Frag";
     public static final String TAG_FOOD_FRAG = "Food Frag";
     public static final String TAG_ANIMAL_FRAG = "Animals Frag";
+    public static final String TAG_FAVORITE_FRAG = "Favorite Frag";
+    public static final String TAG_SETTINGS_FRAG = "Settings Frag";
+    public static final String TAG_RATE_FRAG = "Rate Frag";
+    public static final String TAG_CALENDAR_FRAG = "Calendar Frag";
+    public static final String TAG_WORK_FRAG = "Work Frag";
 
     // Another Constants
     public static final int TEST_MESSAGE = 1;

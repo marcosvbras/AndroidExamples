@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.androidexamples.app.activity.DrawingShapesActivity">
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/include_top_toolbar"/>
     <com.androidexamples.app.view.MyView
         android:id="@+id/myCustomView"
         android:layout_width="match_parent"

@@ -23,7 +23,7 @@ public class ViewFlipperActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         findViewById(R.id.button_flip).setOnClickListener(onFlipButtonClick());
         viewFlipper = (ViewFlipper)findViewById(R.id.view_flipper);

@@ -7,7 +7,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.androidexamples.app.R;
 import com.androidexamples.app.adapter.ImageAdapter;
-import com.androidexamples.app.entity.SimpleItem;
+import com.androidexamples.app.domain.SimpleItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +39,7 @@ public class SimpleViewPagerActivity extends AppCompatActivity {
     }
 
     private void loadComponents() {
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         viewPager = (ViewPager)findViewById(R.id.viewPager);
         viewPager.setAdapter(new ImageAdapter(this, listSimpleItems));
