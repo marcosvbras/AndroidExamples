@@ -11,12 +11,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.androidexamples.app.R;
-import com.androidexamples.app.fragments.FavoriteFragment;
-import com.androidexamples.app.fragments.RateFragment;
-import com.androidexamples.app.fragments.SettingsFragment;
+import com.androidexamples.app.fragments.DefaultFragment;
 import com.androidexamples.app.utils.Constants;
 
 public class BaseActivity extends AppCompatActivity {
@@ -81,13 +78,13 @@ public class BaseActivity extends AppCompatActivity {
     private void onNavDrawerItemSelected(MenuItem menuItem) {
         switch(menuItem.getItemId()) {
             case R.id.nav_item_favorite:
-                replaceFragment(new FavoriteFragment());
+                replaceFragment(DefaultFragment.newInstance(R.string.favorite, R.color.bg_screen1, android.R.color.white));
                 break;
             case R.id.nav_item_settings:
-                replaceFragment(new SettingsFragment());
+                replaceFragment(DefaultFragment.newInstance(R.string.settings, R.color.bg_screen3, android.R.color.white));
                 break;
             case R.id.nav_item_rate:
-                replaceFragment(new RateFragment());
+                replaceFragment(DefaultFragment.newInstance(R.string.rate, R.color.bg_screen5, android.R.color.white));
                 break;
         }
     }

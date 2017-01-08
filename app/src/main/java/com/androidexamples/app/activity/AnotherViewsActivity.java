@@ -49,7 +49,7 @@ public class AnotherViewsActivity extends AppCompatActivity {
                         startActivity(new Intent(getBaseContext(), ImageSwitcherActivity.class));
                         break;
                     case R.id.button_webview:
-                        startActivity(new Intent(getBaseContext(), WebViewActivity.class));
+                        startActivity(new Intent(getBaseContext(), WebViewSwipeRefreshActivity.class));
                         break;
                     case R.id.button_recycler_view:
                         startActivity(new Intent(getBaseContext(), RecyclerViewActivity.class));

@@ -3,7 +3,7 @@ package com.androidexamples.app.activity;
 import android.os.Bundle;
 
 import com.androidexamples.app.R;
-import com.androidexamples.app.fragments.FavoriteFragment;
+import com.androidexamples.app.fragments.DefaultFragment;
 
 public class NavigationDrawerActivity extends BaseActivity {
 
@@ -21,6 +21,6 @@ public class NavigationDrawerActivity extends BaseActivity {
         setUpToolbar();
         setupNavigationDrawer();
         selectSelectedItem(0);
-        replaceFragment(new FavoriteFragment());
+        replaceFragment(DefaultFragment.newInstance(R.string.favorite, R.color.bg_screen1, android.R.color.white));
     }
 }

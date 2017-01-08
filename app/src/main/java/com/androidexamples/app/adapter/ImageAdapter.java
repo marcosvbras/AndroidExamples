@@ -46,7 +46,7 @@ public class ImageAdapter extends PagerAdapter {
     }
 
     @Override
-    public void destroyItem(ViewGroup container, int position, Object view) { // Remove view from container
+    public void destroyItem(ViewGroup container, int position, Object view) { // Remove a view do container
         container.removeView((View)view);
     }
 

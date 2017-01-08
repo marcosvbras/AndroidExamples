@@ -63,8 +63,8 @@
             android:label="@string/image_switcher"
             android:parentActivityName=".activity.AnotherViewsActivity" />
         <activity
-            android:name=".activity.WebViewActivity"
-            android:label="@string/web_view"
+            android:name=".activity.WebViewSwipeRefreshActivity"
+            android:label="@string/web_view_swipe_refresh"
             android:parentActivityName=".activity.AnotherViewsActivity" />
         <activity
             android:name=".activity.ToolbarActivity"

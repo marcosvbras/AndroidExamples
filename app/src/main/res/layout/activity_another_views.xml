@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/button_recycler_view" />
         <Button
-            android:text="@string/web_view"
+            android:text="@string/web_view_swipe_refresh"
             android:paddingTop="@dimen/activity_vertical_padding"
             android:textAllCaps="false"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"

@@ -1,14 +1,15 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_screen5"
-    tools:context="com.androidexamples.app.fragments.RateFragment">
+    android:background="@color/bg_screen1"
+    tools:context="com.androidexamples.app.fragments.DefaultFragment">
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
-        android:textSize="40sp"
-        android:text="@string/rate" />
+        android:textSize="40sp" />
 </FrameLayout>
