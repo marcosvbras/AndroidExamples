@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button_fragments).setOnClickListener(onButtonClick());
         findViewById(R.id.button_gestures).setOnClickListener(onButtonClick());
         findViewById(R.id.button_save_instance_state).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_view_pager).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_simple_view_pager).setOnClickListener(onButtonClick());
         findViewById(R.id.button_toolbar).setOnClickListener(onButtonClick());
         findViewById(R.id.button_handler_async_task).setOnClickListener(onButtonClick());
         findViewById(R.id.button_palette).setOnClickListener(onButtonClick());
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.button_toolbar:
                         startActivity(new Intent(getBaseContext(), ToolbarActivity.class));
                         break;
-                    case R.id.button_view_pager:
+                    case R.id.button_simple_view_pager:
                         startActivity(new Intent(getBaseContext(), ViewPagerActivity.class));
                         break;
                     case R.id.button_palette:

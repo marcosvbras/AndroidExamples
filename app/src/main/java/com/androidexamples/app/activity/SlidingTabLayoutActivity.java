@@ -1,6 +1,5 @@
 package com.androidexamples.app.activity;
 
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -11,15 +10,16 @@ import android.support.v7.widget.Toolbar;
 import com.androidexamples.app.R;
 import com.androidexamples.app.adapter.TabsAdapter;
 import com.androidexamples.app.fragments.DefaultFragment;
+import com.androidexamples.app.view.SlidingTabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ToolbarWithTabsActivity extends AppCompatActivity {
+public class SlidingTabLayoutActivity extends AppCompatActivity {
 
     // Views
     private ViewPager viewPager;
-    private TabLayout tabLayout;
+    private SlidingTabLayout slidingTabLayout;
 
     private List<Fragment> listFragment;
     private List<String> listTitles;
@@ -27,16 +27,15 @@ public class ToolbarWithTabsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_toolbar_with_tabs);
+        setContentView(R.layout.activity_sliding_tab_layout);
         LoadComponents();
     }
 
     private void LoadComponents() {
         setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setElevation(0);
         viewPager = (ViewPager)findViewById(R.id.view_pager);
-        tabLayout = (TabLayout)findViewById(R.id.tab_layout);
+        slidingTabLayout = (SlidingTabLayout)findViewById(R.id.sliding_tab_layout);
         populateList();
     }
 
@@ -61,7 +60,10 @@ public class ToolbarWithTabsActivity extends AppCompatActivity {
         // Mantem duas abas (que não estão sendo exibidas) à mais em memória
         viewPager.setOffscreenPageLimit(2);
         viewPager.setAdapter(new TabsAdapter(getSupportFragmentManager(), this, listFragment, listTitles));
-        tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setTabTextColors(ContextCompat.getColor(this, android.R.color.white), ContextCompat.getColor(this, android.R.color.white));
+        slidingTabLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary));
+        slidingTabLayout.setDistributeEvenly(true);
+        slidingTabLayout.setSelectedIndicatorColors(ContextCompat.getColor(this, R.color.colorAccent), ContextCompat.getColor(this, R.color.colorAccent));
+        slidingTabLayout.setTitleColor(ContextCompat.getColor(this, android.R.color.white));
+        slidingTabLayout.setViewPager(viewPager);
     }
 }

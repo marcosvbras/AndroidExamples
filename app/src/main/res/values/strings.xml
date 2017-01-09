@@ -8,11 +8,11 @@
     <string name="hide">Hide</string>
     <string name="zoom">Zoom</string>
     <string name="search_view">Search View with Filterable</string>
-    <string name="toolbar_tabs">Toolbar With Tabs</string>
     <string name="reveal_effect">Reveal Effect</string>
     <string name="task_already_started">Task already started</string>
     <string name="task_not_started">Task not yet started</string>
     <string name="task_already_finished">Task already finished</string>
+    <string name="sliding_tab_layout">Sliding Tab Layout</string>
     <string name="xml_selectors">XML Selectors</string>
     <string name="view_pager">ViewPager</string>
     <string name="this_is_snackbar">This is a SnackBar</string>

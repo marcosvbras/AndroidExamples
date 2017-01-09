@@ -101,7 +101,7 @@
                 android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/button_view_pager"
+                android:id="@+id/button_simple_view_pager"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"

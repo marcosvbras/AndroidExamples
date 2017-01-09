@@ -27,9 +27,9 @@
             android:label="@string/search_view"
             android:parentActivityName=".activity.ToolbarActivity" />
         <activity
-            android:name=".activity.ToolbarWithTabsActivity"
-            android:label="@string/toolbar_tabs"
-            android:parentActivityName=".activity.ToolbarActivity" />
+            android:name=".activity.SlidingTabLayoutActivity"
+            android:label="@string/sliding_tab_layout"
+            android:parentActivityName=".activity.ViewPagerActivity" />
         <activity
             android:name=".activity.XmlSelectorsActivity"
             android:label="@string/xml_selectors"

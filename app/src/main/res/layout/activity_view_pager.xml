@@ -1,37 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_view_pager"
+    android:id="@+id/activity_toolbar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.androidexamples.app.activity.ViewPagerActivity">
+    tools:context="com.androidexamples.app.activity.ToolbarActivity">
     <include layout="@layout/include_top_toolbar"/>
+    <Button
+        android:text="@string/intro_slider"
+        android:paddingTop="@dimen/activity_vertical_padding"
+        android:textAllCaps="false"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_intro_slider" />
     <Button
         android:text="@string/simple_view_pager"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button_view_pager" />
+        android:id="@+id/button_simple_view_pager" />
+    <Button
+        android:text="@string/sliding_tab_layout"
+        android:textAllCaps="false"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_sliding_tab_layout" />
     <Button
         android:text="@string/view_pager_with_title"
+        android:paddingTop="@dimen/activity_vertical_padding"
         android:textAllCaps="false"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button_viewpager_title" />
-    <Button
-        android:text="@string/intro_slider"
-        android:textAllCaps="false"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_intro_slider" />
+        android:id="@+id/button_view_pager_title" />
 </LinearLayout>
