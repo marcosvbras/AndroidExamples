@@ -14,6 +14,7 @@
     <string name="task_already_finished">Task already finished</string>
     <string name="sliding_tab_layout">Sliding Tab Layout</string>
     <string name="xml_selectors">XML Selectors</string>
+    <string name="collapsing_toolbar_layout">Collapsing Toolbar Layout</string>
     <string name="view_pager">ViewPager</string>
     <string name="this_is_snackbar">This is a SnackBar</string>
     <string name="fab_with_snackbar">Floating Action Button with SnackBar</string>

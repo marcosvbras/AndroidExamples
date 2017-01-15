@@ -13,6 +13,7 @@
         android:layout_height="match_parent">
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab_mini"
+            android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
@@ -21,6 +22,7 @@
             app:fabSize="mini" />
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab_normal"
+            android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_input_add"
@@ -29,6 +31,7 @@
     </LinearLayout>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_bottom"
+        android:clickable="true"
         android:layout_gravity="bottom|center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

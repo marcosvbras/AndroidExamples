@@ -187,11 +187,14 @@
             android:label="@string/stand_alone_toolbar"
             android:parentActivityName=".activity.ToolbarActivity" />
         <activity
-            android:theme="@style/AppTheme.NoActionBar.NavDrawer"
             android:name=".activity.NavigationDrawerActivity"
             android:label="@string/navigation_drawer"
-            android:parentActivityName=".activity.MainActivity" />
-        <activity android:name=".activity.BaseActivity"/>
+            android:parentActivityName=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar.NavDrawer" />
+        <activity android:name=".activity.BaseActivity" />
+        <activity android:name=".activity.CollapsingToolbarLayoutActivity"
+            android:label="@string/collapsing_toolbar_layout"
+            android:parentActivityName=".activity.ToolbarActivity"/>
     </application>
 
 </manifest>

@@ -22,6 +22,7 @@ public class ToolbarActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         findViewById(R.id.button_search_view).setOnClickListener(onButtonClick());
         findViewById(R.id.button_stand_alone_toolbar).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_collapsing_toolbar).setOnClickListener(onButtonClick());
     }
 
     private View.OnClickListener onButtonClick() {
@@ -34,6 +35,9 @@ public class ToolbarActivity extends AppCompatActivity {
                         break;
                     case R.id.button_stand_alone_toolbar:
                         startActivity(new Intent(getBaseContext(), StandAloneToolbarActivity.class));
+                        break;
+                    case R.id.button_collapsing_toolbar:
+                        startActivity(new Intent(getBaseContext(), CollapsingToolbarLayoutActivity.class));
                         break;
                 }
             }
