@@ -20,6 +20,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.net.URL;
 
+/**
+ * Created by marcos on 17/01/2017.
+ */
+
 public class ImageHelper {
 
     // Extrai a imagem do ImageView retornando um Bitmap
