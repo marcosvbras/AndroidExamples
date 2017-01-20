@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by rlech on 9/27/2015.
+ * Created by marcos on 20/01/2017.
  */
 public class PermissionUtils {
 
@@ -26,20 +26,19 @@ public class PermissionUtils {
      */
     public static boolean validate(Activity activity, int requestCode, String... permissions) {
         List<String> list = new ArrayList<String>();
+
         for (String permission : permissions) {
-            if (!checkPermission(activity, permission)) {
+            if (!checkPermission(activity, permission))
                 list.add(permission);
-            }
         }
-        if (list.isEmpty()) {
+
+        if (list.isEmpty())
             return true;
-        }
 
         String[] newPermissions = new String[list.size()];
         list.toArray(newPermissions);
 
         ActivityCompat.requestPermissions(activity, newPermissions, 1);
-
         return false;
     }
 

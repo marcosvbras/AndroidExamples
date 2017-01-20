@@ -51,13 +51,13 @@ public class MyView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         // Desenha um quadrado
-        canvas.drawRect(Converter.toPixels(getContext(), 20), Converter.toPixels(getContext(), 20),
-                Converter.toPixels(getContext(), 200), Converter.toPixels(getContext(), 200), bluePaint);
+        canvas.drawRect(Converter.dipToPixels(getContext(), 20), Converter.dipToPixels(getContext(), 20),
+                Converter.dipToPixels(getContext(), 200), Converter.dipToPixels(getContext(), 200), bluePaint);
         // Desenha uma linha
-        canvas.drawLine(Converter.toPixels(getContext(), 200), Converter.toPixels(getContext(), 200),
-                Converter.toPixels(getContext(), 400), Converter.toPixels(getContext(), 400), blackPaint);
+        canvas.drawLine(Converter.dipToPixels(getContext(), 200), Converter.dipToPixels(getContext(), 200),
+                Converter.dipToPixels(getContext(), 400), Converter.dipToPixels(getContext(), 400), blackPaint);
         // Desenha uma círculo
-        canvas.drawCircle(Converter.toPixels(getContext(), 400), Converter.toPixels(getContext(), 400),
-                Converter.toPixels(getContext(), 100), redPaint);
+        canvas.drawCircle(Converter.dipToPixels(getContext(), 400), Converter.dipToPixels(getContext(), 400),
+                Converter.dipToPixels(getContext(), 100), redPaint);
     }
 }

@@ -193,9 +193,13 @@
             android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar.NavDrawer" />
         <activity android:name=".activity.BaseActivity" />
-        <activity android:name=".activity.CollapsingToolbarLayoutActivity"
+        <activity
+            android:name=".activity.CollapsingToolbarLayoutActivity"
             android:label="@string/collapsing_toolbar_layout"
-            android:parentActivityName=".activity.ToolbarActivity"/>
+            android:parentActivityName=".activity.ToolbarActivity" />
+        <activity android:name=".activity.PreferenceScreenActivity"
+            android:label="@string/preference_screen"
+            android:parentActivityName=".activity.MainActivity"/>
     </application>
 
 </manifest>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/app_name">
+        <CheckBoxPreference
+            android:key="PREF_CHECK_PUSH"
+            android:summary="@string/summary_example"
+            android:title="@string/title_example" />
+    </PreferenceCategory>
+</PreferenceScreen>

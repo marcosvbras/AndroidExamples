@@ -7,7 +7,7 @@ import android.util.Log;
 import java.io.File;
 
 /**
- * Classe utilitária para salvar criar arquivos no sdcard
+ * Created by marcos on 20/01/2017.
  */
 public class SDCardUtils {
     private static final String TAG = SDCardUtils.class.getName();

@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 /**
  * Created by marcos on 18/12/2016.
  */
-public class Preferences {
+public class PreferencesManager {
     // SharedPreferences name/id
     public static final String PREFERENCE_NAME = "androidexamples";
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";

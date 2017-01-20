@@ -6,7 +6,7 @@ import android.util.Log;
 import java.io.File;
 
 /**
- * Created by Ricardo Lecheta on 01/02/2015.
+ * Created by marcos on 20/01/2017.
  */
 public class PrefsSDCard {
     public static final String PREF_ID = "prefs";
@@ -36,7 +36,7 @@ public class PrefsSDCard {
 
     public static void setString(Context context, String chave, String valor) {
         File f = SDCardUtils.getPublicFile("prefs", chave + ".txt");
-        IOUtils.writeString(f, valor);
+        //IOUtils.writeString(f, valor);
     }
 
     public static String getString(Context context, String chave) {

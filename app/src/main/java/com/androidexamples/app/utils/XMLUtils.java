@@ -13,6 +13,10 @@ import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+/**
+ * Created by marcos on 20/01/2017.
+ */
+
 public class XMLUtils {
     // Retorna a tag raiz do XML
     public static Element getRoot(String xml, String charset) {

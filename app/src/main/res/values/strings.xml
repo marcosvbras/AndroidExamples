@@ -7,6 +7,8 @@
     <string name="show">Show</string>
     <string name="hide">Hide</string>
     <string name="zoom">Zoom</string>
+    <string name="title_example">Title Example </string>
+    <string name="summary_example">Summary Example </string>
     <string name="search_view">Search View with Filterable</string>
     <string name="reveal_effect">Reveal Effect</string>
     <string name="task_already_started">Task already started</string>
@@ -17,6 +19,7 @@
     <string name="collapsing_toolbar_layout">Collapsing Toolbar Layout</string>
     <string name="view_pager">ViewPager</string>
     <string name="this_is_snackbar">This is a SnackBar</string>
+    <string name="preference_screen">Preference Screen</string>
     <string name="fab_with_snackbar">Floating Action Button with SnackBar</string>
     <string name="simple_view_pager">Simple ViewPager</string>
     <string name="view_pager_with_title">ViewPager + TitleStrip</string>

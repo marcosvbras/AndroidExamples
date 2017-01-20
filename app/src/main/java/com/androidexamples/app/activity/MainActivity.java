@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button_handler_async_task).setOnClickListener(onButtonClick());
         findViewById(R.id.button_palette).setOnClickListener(onButtonClick());
         findViewById(R.id.button_navigation_drawer).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_preference_screen).setOnClickListener(onButtonClick());
     }
 
     private View.OnClickListener onButtonClick() {
@@ -67,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.button_navigation_drawer:
                         startActivity(new Intent(getBaseContext(), NavigationDrawerActivity.class));
+                        break;
+                    case R.id.button_preference_screen:
+                        startActivity(new Intent(getBaseContext(), PreferenceScreenActivity.class));
                         break;
                 }
             }

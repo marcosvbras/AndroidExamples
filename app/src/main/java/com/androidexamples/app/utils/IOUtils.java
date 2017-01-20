@@ -3,6 +3,9 @@ package com.androidexamples.app.utils;
 import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -81,6 +84,22 @@ public class IOUtils {
             outputStream.close();
         } catch (IOException e) {
             Log.e(TAG, e.getMessage(), e);
+        }
+    }
+
+    public static String readString(File file) {
+        try {
+            if (file == null || !file.exists()) {
+                return null;
+            }
+            InputStream in = new FileInputStream(file);
+            String s = inputStreamToString(in, "UTF-8");
+            return s;
+        } catch (FileNotFoundException e) {
+            return null;
+        } catch (IOException e) {
+            Log.e(TAG, e.getMessage(), e);
+            return null;
         }
     }
 }

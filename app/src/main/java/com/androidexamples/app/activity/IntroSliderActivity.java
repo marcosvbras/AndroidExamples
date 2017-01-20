@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.androidexamples.app.R;
 import com.androidexamples.app.adapter.IntroAdapter;
-import com.androidexamples.app.utils.Preferences;
+import com.androidexamples.app.utils.PreferencesManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +35,7 @@ public class IntroSliderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_intro_slider);
 
         // Checking for first time launch - before calling setContentView()
-        if (!Preferences.isFirstTimeLaunch(this)) {
+        if (!PreferencesManager.isFirstTimeLaunch(this)) {
             launchHomeScreen();
             finish();
         }
@@ -150,7 +150,7 @@ public class IntroSliderActivity extends AppCompatActivity {
     }
 
     private void launchHomeScreen() {
-        Preferences.setFirstTimeLaunch(this, false);
+        PreferencesManager.setFirstTimeLaunch(this, false);
         startActivity(new Intent(this, MainActivity.class));
         finish();
     }

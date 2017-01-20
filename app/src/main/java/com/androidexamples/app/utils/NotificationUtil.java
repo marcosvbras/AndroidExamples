@@ -10,7 +10,7 @@ import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
 
 /**
- * Classe utilitária para disparar notifications
+ * Created by marcos on 20/01/2017.
  */
 public class NotificationUtil {
 
