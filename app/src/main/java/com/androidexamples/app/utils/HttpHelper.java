@@ -45,7 +45,7 @@ public class HttpHelper {
             httpURLConnection = (HttpURLConnection) url.openConnection();
 
             if (contentType != null)
-                httpURLConnection.setRequestProperty("Content-Type", contentType);
+                httpURLConnection.setRequestProperty("Content-TypeDB", contentType);
 
             httpURLConnection.setRequestMethod("GET");
             httpURLConnection.setConnectTimeout(TIMEOUT_MILLIS);
@@ -99,7 +99,7 @@ public class HttpHelper {
             httpURLConnection = (HttpURLConnection) url.openConnection();
 
             if (contentType != null)
-                httpURLConnection.setRequestProperty("Content-Type", contentType);
+                httpURLConnection.setRequestProperty("Content-TypeDB", contentType);
 
             httpURLConnection.setRequestMethod("DELETE");
             httpURLConnection.setConnectTimeout(TIMEOUT_MILLIS);
@@ -147,7 +147,7 @@ public class HttpHelper {
             httpURLConnection = (HttpURLConnection) u.openConnection();
 
             if (contentType != null)
-                httpURLConnection.setRequestProperty("Content-Type", contentType);
+                httpURLConnection.setRequestProperty("Content-TypeDB", contentType);
 
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setConnectTimeout(TIMEOUT_MILLIS);

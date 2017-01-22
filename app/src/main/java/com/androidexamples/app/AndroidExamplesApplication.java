@@ -8,7 +8,7 @@ import android.app.Application;
 
 public class AndroidExamplesApplication extends Application {
 
-    // Vincgular essa classe na tag Application do Android Manifest
+    // Vincular essa classe na tag Application do Android Manifest
 
     public static AndroidExamplesApplication instance;
 
