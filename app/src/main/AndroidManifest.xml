@@ -26,7 +26,7 @@
         <activity
             android:name=".activity.SearchViewActivity"
             android:label="@string/search_view"
-            android:parentActivityName=".activity.ToolbarActivity" />
+            android:parentActivityName=".activity.AnotherViewsActivity" />
         <activity
             android:name=".activity.SlidingTabLayoutActivity"
             android:label="@string/sliding_tab_layout"
@@ -68,8 +68,8 @@
             android:label="@string/web_view_swipe_refresh"
             android:parentActivityName=".activity.AnotherViewsActivity" />
         <activity
-            android:name=".activity.ToolbarActivity"
-            android:label="@string/toolbar"
+            android:name=".activity.ActionBarToolbarActivity"
+            android:label="@string/actionbar_toolbar"
             android:parentActivityName=".activity.MainActivity" />
         <activity
             android:name=".activity.GesturesActivity"
@@ -186,7 +186,7 @@
         <activity
             android:name=".activity.StandAloneToolbarActivity"
             android:label="@string/stand_alone_toolbar"
-            android:parentActivityName=".activity.ToolbarActivity" />
+            android:parentActivityName=".activity.ActionBarToolbarActivity" />
         <activity
             android:name=".activity.NavigationDrawerActivity"
             android:label="@string/navigation_drawer"
@@ -196,10 +196,14 @@
         <activity
             android:name=".activity.CollapsingToolbarLayoutActivity"
             android:label="@string/collapsing_toolbar_layout"
-            android:parentActivityName=".activity.ToolbarActivity" />
-        <activity android:name=".activity.PreferenceScreenActivity"
+            android:parentActivityName=".activity.ActionBarToolbarActivity" />
+        <activity
+            android:name=".activity.PreferenceScreenActivity"
             android:label="@string/preference_screen"
-            android:parentActivityName=".activity.MainActivity"/>
+            android:parentActivityName=".activity.MainActivity" />
+        <activity android:name=".activity.ContextActionBarActivity"
+            android:label="@string/context_action_bar"
+            android:parentActivityName=".activity.ActionBarToolbarActivity"/>
     </application>
 
 </manifest>

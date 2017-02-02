@@ -27,6 +27,7 @@ public class AnotherViewsActivity extends AppCompatActivity {
         findViewById(R.id.button_drawing_shapes).setOnClickListener(onButtonClick());
         findViewById(R.id.button_image_switcher).setOnClickListener(onButtonClick());
         findViewById(R.id.button_recycler_view).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_search_view).setOnClickListener(onButtonClick());
         findViewById(R.id.button_spinner_complete_check).setOnClickListener(onButtonClick());
         findViewById(R.id.button_fab_with_snackbar).setOnClickListener(onButtonClick());
     }
@@ -53,6 +54,9 @@ public class AnotherViewsActivity extends AppCompatActivity {
                         break;
                     case R.id.button_recycler_view:
                         startActivity(new Intent(getBaseContext(), RecyclerViewActivity.class));
+                        break;
+                    case R.id.button_search_view:
+                        startActivity(new Intent(getBaseContext(), SearchViewActivity.class));
                         break;
                     case R.id.button_spinner_complete_check:
                         startActivity(new Intent(getBaseContext(), SpinnerCompleteCheckActivity.class));

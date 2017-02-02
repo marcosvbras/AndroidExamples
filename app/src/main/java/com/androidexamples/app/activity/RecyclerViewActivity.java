@@ -253,9 +253,4 @@ public class RecyclerViewActivity extends AppCompatActivity implements RecyclerV
     public void onLongItemClickListener(View view, int position) {
         Toast.makeText(getBaseContext(), "Item " + blueHairAdapter.getItemAtPosition(position).getName() + " long click", Toast.LENGTH_SHORT).show();
     }
-
-    @Override
-    public void onDoubleTapListener(View view, int position) {
-        Toast.makeText(getBaseContext(), "Item " + blueHairAdapter.getItemAtPosition(position).getName() + " double click", Toast.LENGTH_SHORT).show();
-    }
 }

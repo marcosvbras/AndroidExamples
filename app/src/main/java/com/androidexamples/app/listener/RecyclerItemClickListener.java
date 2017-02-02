@@ -43,16 +43,6 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
                 if(clickedView != null && recyclerViewTouchListener != null)
                     recyclerViewTouchListener.onLongItemClickListener(clickedView, recyclerView.getChildAdapterPosition(clickedView));
             }
-
-            @Override
-            public boolean onDoubleTap(MotionEvent motionEvent) {
-                View clickedView = recyclerView.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
-
-                if(clickedView != null && recyclerViewTouchListener != null)
-                    recyclerViewTouchListener.onDoubleTapListener(clickedView, recyclerView.getChildAdapterPosition(clickedView));
-
-                return true;
-            }
         };
     }
 

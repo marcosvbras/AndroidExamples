@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.androidexamples.app.activity.ToolbarActivity">
+    tools:context="com.androidexamples.app.activity.ActionBarToolbarActivity">
     <include layout="@layout/include_top_toolbar"/>
     <Button
-        android:text="@string/search_view"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/context_action_bar"
         android:textAllCaps="false"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button_search_view" />
+        android:id="@+id/button_context_action_bar" />
     <Button
         android:text="@string/stand_alone_toolbar"
         android:textAllCaps="false"

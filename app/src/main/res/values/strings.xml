@@ -4,6 +4,7 @@
     <string name="dialog_download">Downloading image</string>
     <string name="dialog_wait">Wait a moment...</string>
     <string name="gridview">GridView</string>
+    <string name="context_action_bar">Context ActionBar</string>
     <string name="show">Show</string>
     <string name="hide">Hide</string>
     <string name="zoom">Zoom</string>
@@ -42,7 +43,7 @@
     <string name="tab_2">Tab 2</string>
     <string name="tab_3">Tab 3</string>
     <string name="tab_4">Tab 4</string>
-    <string name="toolbar">Toolbar</string>
+    <string name="actionbar_toolbar">ActionBar and Toolbar</string>
     <string name="gestures">Gestures</string>
     <string name="handler_async_task">Handler and Async Tasks</string>
     <string name="async_task">AsyncTask</string>

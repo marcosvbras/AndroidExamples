@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(getBaseContext(), SaveInstanceStateActivity.class));
                         break;
                     case R.id.button_toolbar:
-                        startActivity(new Intent(getBaseContext(), ToolbarActivity.class));
+                        startActivity(new Intent(getBaseContext(), ActionBarToolbarActivity.class));
                         break;
                     case R.id.button_simple_view_pager:
                         startActivity(new Intent(getBaseContext(), ViewPagerActivity.class));

@@ -19,12 +19,21 @@
             tools:context="com.androidexamples.app.activity.MainActivity">
 
             <Button
+                android:id="@+id/button_toolbar"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:text="@string/actionbar_toolbar"
+                android:textAllCaps="false" />
+
+            <Button
                 android:id="@+id/button_animations"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:text="@string/animations"
                 android:textAllCaps="false" />
 
@@ -100,14 +109,7 @@
                 android:text="@string/save_instance_state"
                 android:textAllCaps="false" />
 
-            <Button
-                android:id="@+id/button_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:text="@string/toolbar"
-                android:textAllCaps="false" />
+
 
             <Button
                 android:id="@+id/button_simple_view_pager"
