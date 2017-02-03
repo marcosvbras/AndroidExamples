@@ -1,6 +1,22 @@
 <resources>
     <string name="app_name">Android Examples</string>
     <string name="another_views">Another Views</string>
+    <string name="send_email">Send E-mail</string>
+    <string name="send_sms">Send SMS</string>
+    <string name="pick_contact">Pick Contact</string>
+    <string name="select_image">Select Image</string>
+    <string name="select_video">Select Video</string>
+    <string name="open_web_site">Open Web Site</string>
+    <string name="maps_lat_long">Maps - Latitude and Longitude</string>
+    <string name="maps_route">Maps - Route</string>
+    <string name="pick_image">Pick Image </string>
+    <string name="pick_video">Pick Video</string>
+    <string name="maps_address">Maps - Address</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="take_video">Take Video</string>
+    <string name="view_all_contacts">View All Contacts</string>
+    <string name="call_number">Call Number</string>
+    <string name="dial_number">Dial Number</string>
     <string name="dialog_download">Downloading image</string>
     <string name="dialog_wait">Wait a moment...</string>
     <string name="gridview">GridView</string>
@@ -43,6 +59,7 @@
     <string name="tab_2">Tab 2</string>
     <string name="tab_3">Tab 3</string>
     <string name="tab_4">Tab 4</string>
+    <string name="intents">Intents</string>
     <string name="actionbar_toolbar">ActionBar and Toolbar</string>
     <string name="gestures">Gestures</string>
     <string name="handler_async_task">Handler and Async Tasks</string>

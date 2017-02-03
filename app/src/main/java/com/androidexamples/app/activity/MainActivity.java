@@ -21,17 +21,18 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
 
         // Click events
+        findViewById(R.id.button_actionbar_toolbar).setOnClickListener(onButtonClick());
         findViewById(R.id.button_animations).setOnClickListener(onButtonClick());
         findViewById(R.id.button_another_views).setOnClickListener(onButtonClick());
         findViewById(R.id.button_fragments).setOnClickListener(onButtonClick());
         findViewById(R.id.button_gestures).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_handler_async_task).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_intents).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_navigation_drawer).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_palette).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_preference_screen).setOnClickListener(onButtonClick());
         findViewById(R.id.button_save_instance_state).setOnClickListener(onButtonClick());
         findViewById(R.id.button_simple_view_pager).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_toolbar).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_handler_async_task).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_palette).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_navigation_drawer).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_preference_screen).setOnClickListener(onButtonClick());
     }
 
     private View.OnClickListener onButtonClick() {
@@ -54,10 +55,13 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.button_handler_async_task:
                         startActivity(new Intent(getBaseContext(), HandlerAsyncTaskActivity.class));
                         break;
+                    case R.id.button_intents:
+                        startActivity(new Intent(getBaseContext(), IntentsActivity.class));
+                        break;
                     case R.id.button_save_instance_state:
                         startActivity(new Intent(getBaseContext(), SaveInstanceStateActivity.class));
                         break;
-                    case R.id.button_toolbar:
+                    case R.id.button_actionbar_toolbar:
                         startActivity(new Intent(getBaseContext(), ActionBarToolbarActivity.class));
                         break;
                     case R.id.button_simple_view_pager:

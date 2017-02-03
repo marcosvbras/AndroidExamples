@@ -40,5 +40,12 @@ public class Constants {
 
     // Another Constants
     public static final int TEST_MESSAGE = 1;
+
+    // Request Codes
+    public static final int REQUEST_CODE_TAKE_PHOTO = 345455;
+    public static final int REQUEST_CODE_TAKE_VIDEO = 654645;
+    public static final int REQUEST_CODE_PICK_IMAGE = 765765;
+    public static final int REQUEST_CODE_PICK_VIDEO = 567577;
+    public static final int REQUEST_CODE_PICK_CONTACT = 457667;
 }
 

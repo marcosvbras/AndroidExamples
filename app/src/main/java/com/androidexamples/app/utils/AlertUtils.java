@@ -4,8 +4,11 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 /**
  * Created by marcos on 17/01/2017.
@@ -56,7 +59,7 @@ public class AlertUtils {
     /**
      * Simple AlertDialog with positive button
      */
-    public void alert(Context context, String title, String message, String positiveButtonText, DialogInterface.OnClickListener onPositiveClick, int icon) {
+    public static void alert(Context context, String title, String message, String positiveButtonText, DialogInterface.OnClickListener onPositiveClick, int icon) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
 
         if(!title.equals("") && title != null)
@@ -77,7 +80,7 @@ public class AlertUtils {
     /**
      * Simple AlertDialog with positive and negative buttons
      */
-    public void alert(Context context, String title, String message, String positiveButtonText, DialogInterface.OnClickListener onPositiveClick,
+    public static void alert(Context context, String title, String message, String positiveButtonText, DialogInterface.OnClickListener onPositiveClick,
                       String negativeButtonText, DialogInterface.OnClickListener onNegativeClick, int icon) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
 
@@ -95,5 +98,13 @@ public class AlertUtils {
 
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
+    }
+
+    public static void showToastImageView(Bitmap bitmap, Context context) {
+        Toast toast = new Toast(context);
+        ImageView imageView = new ImageView(context);
+        imageView.setImageBitmap(bitmap);
+        toast.setView(imageView);
+        toast.show();
     }
 }
