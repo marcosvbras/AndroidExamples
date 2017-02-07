@@ -1,9 +1,15 @@
 package com.androidexamples.app.activity;
 
+import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +21,7 @@ import com.androidexamples.app.utils.Agenda;
 import com.androidexamples.app.utils.AlertUtils;
 import com.androidexamples.app.utils.Constants;
 import com.androidexamples.app.utils.Contact;
+import com.androidexamples.app.utils.PermissionUtils;
 
 import java.io.IOException;
 
@@ -49,19 +56,54 @@ public class IntentsActivity extends AppCompatActivity {
         findViewById(R.id.button_take_photo).setOnClickListener(onButtonClick());
         findViewById(R.id.button_take_video).setOnClickListener(onButtonClick());
         findViewById(R.id.button_view_all_contacts).setOnClickListener(onButtonClick());
+        
+        // Solicita as permissões
+        String[] permissoes = new String[]{
+                Manifest.permission.CALL_PHONE,
+                Manifest.permission.READ_CONTACTS,
+                Manifest.permission.CAMERA
+        };
+        PermissionUtils.validate(this, 0, permissoes);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        for (int result : grantResults) {
+            if (result == PackageManager.PERMISSION_DENIED) {
+                // Alguma permissão foi negada, agora é com você :-)
+                alertAndFinish();
+                return;
+            }
+        }
+        // Se chegou aqui está OK :-)
+    }
+
+    private void alertAndFinish() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.app_name).setMessage("Para utilizar este aplicativo, você precisa aceitar as permissões.");
+        // Add the buttons
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                finish();
+            }
+        });
+        android.support.v7.app.AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == Constants.REQUEST_CODE_PICK_IMAGE && resultCode == RESULT_OK) {
             try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), intent.getData());
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
                 AlertUtils.showToastImageView(bitmap, this);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         } else if(requestCode == Constants.REQUEST_CODE_TAKE_PHOTO && resultCode == RESULT_OK) {
-            Bundle bundle = intent.getExtras();
+            Bundle bundle = data.getExtras();
 
             if(bundle != null) {
                 Bitmap bitmap = (Bitmap) bundle.get("data");
@@ -70,7 +112,7 @@ public class IntentsActivity extends AppCompatActivity {
         } else if(requestCode == Constants.REQUEST_CODE_TAKE_VIDEO && resultCode == RESULT_OK) {
 
         } else if(requestCode == Constants.REQUEST_CODE_PICK_CONTACT && resultCode == RESULT_OK) {
-            Uri uri = intent.getData();
+            Uri uri = data.getData();
             Contact contact = Agenda.getContact(this, uri);
             Toast.makeText(this, contact.getName() + " selected", Toast.LENGTH_SHORT).show();
         }
@@ -162,11 +204,7 @@ public class IntentsActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                 }
-
-                startActivity(intent);
             }
         };
-
-
     }
 }

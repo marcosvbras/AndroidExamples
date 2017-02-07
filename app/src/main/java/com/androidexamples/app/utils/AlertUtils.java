@@ -105,6 +105,7 @@ public class AlertUtils {
         ImageView imageView = new ImageView(context);
         imageView.setImageBitmap(bitmap);
         toast.setView(imageView);
+        toast.setDuration(Toast.LENGTH_SHORT);
         toast.show();
     }
 }
