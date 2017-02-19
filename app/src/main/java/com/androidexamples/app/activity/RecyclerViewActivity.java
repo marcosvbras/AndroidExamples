@@ -21,7 +21,7 @@ import android.widget.Toast;
 import com.androidexamples.app.R;
 import com.androidexamples.app.adapter.BlueHairAdapter;
 import com.androidexamples.app.domain.SimpleItem;
-import com.androidexamples.app.listener.RecyclerItemClickListener;
+import com.androidexamples.app.listener.RecyclerTouchListener;
 import com.androidexamples.app.interfaces.RecyclerViewTouchListener;
 import com.androidexamples.app.utils.Constants;
 import com.androidexamples.app.utils.RecyclerSettings;
@@ -89,7 +89,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements RecyclerV
         blueHairAdapter = new BlueHairAdapter(listSimpleItem, this, recyclerSettings);
         recyclerView.setAdapter(blueHairAdapter);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getBaseContext(), recyclerView, this));
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getBaseContext(), recyclerView, this));
         // Melhora a perfomance do RecycleView se o tamanho dos componentes forem fixos e não mudarão
         recyclerView.setHasFixedSize(true);
         setDialog();
@@ -245,12 +245,12 @@ public class RecyclerViewActivity extends AppCompatActivity implements RecyclerV
     }
 
     @Override
-    public void onItemClickListener(View view, int position) {
+    public void onItemClick(View view, int position) {
         Toast.makeText(getBaseContext(), "Item " + blueHairAdapter.getItemAtPosition(position).getName() + " single click", Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void onLongItemClickListener(View view, int position) {
+    public void onLongItemClick(View view, int position) {
         Toast.makeText(getBaseContext(), "Item " + blueHairAdapter.getItemAtPosition(position).getName() + " long click", Toast.LENGTH_SHORT).show();
     }
 }

@@ -12,13 +12,13 @@ import com.androidexamples.app.interfaces.RecyclerViewTouchListener;
  * Created by marcos on 25/12/2016.
  */
 
-public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListener {
+public class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
 
     private RecyclerView recyclerView;
     private RecyclerViewTouchListener recyclerViewTouchListener;
     private GestureDetector gestureDetector;
 
-    public RecyclerItemClickListener(Context context, RecyclerView recyclerView, RecyclerViewTouchListener recyclerViewTouchListener) {
+    public RecyclerTouchListener(Context context, RecyclerView recyclerView, RecyclerViewTouchListener recyclerViewTouchListener) {
         this.recyclerView = recyclerView;
         this.recyclerViewTouchListener = recyclerViewTouchListener;
         gestureDetector = new GestureDetector(context, onSimpleGestureListener());
@@ -31,7 +31,7 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
                 View clickedView = recyclerView.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
 
                 if(clickedView != null && recyclerViewTouchListener != null)
-                    recyclerViewTouchListener.onItemClickListener(clickedView, recyclerView.getChildAdapterPosition(clickedView));
+                    recyclerViewTouchListener.onItemClick(clickedView, recyclerView.getChildAdapterPosition(clickedView));
 
                 return true;
             }
@@ -41,7 +41,7 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
                 View clickedView = recyclerView.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
 
                 if(clickedView != null && recyclerViewTouchListener != null)
-                    recyclerViewTouchListener.onLongItemClickListener(clickedView, recyclerView.getChildAdapterPosition(clickedView));
+                    recyclerViewTouchListener.onLongItemClick(clickedView, recyclerView.getChildAdapterPosition(clickedView));
             }
         };
     }

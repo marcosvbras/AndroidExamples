@@ -20,7 +20,7 @@ import com.androidexamples.app.R;
  * Created by marcos on 07/01/2017.
  */
 
-public class RoundedImageView extends ImageView {
+public class CircularImageView extends ImageView {
 
     private int borderWidth;
     private int canvasSize;
@@ -28,21 +28,21 @@ public class RoundedImageView extends ImageView {
     private Paint paint;
     private Paint paintBorder;
 
-    public RoundedImageView(final Context context) {
+    public CircularImageView(final Context context) {
         this(context, null);
         if (this.isInEditMode()) {
             return;
         }
     }
 
-    public RoundedImageView(Context context, AttributeSet attrs) {
+    public CircularImageView(Context context, AttributeSet attrs) {
         this(context, attrs, R.attr.circularImageViewStyle);
         if (this.isInEditMode()) {
             return;
         }
     }
 
-    public RoundedImageView(Context context, AttributeSet attrs, int defStyle) {
+    public CircularImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
         if (!this.isInEditMode()) {

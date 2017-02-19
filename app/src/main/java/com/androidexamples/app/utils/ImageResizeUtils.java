@@ -25,6 +25,31 @@ public class ImageResizeUtils {
 
     private static final String TAG = ImageResizeUtils.class.getName();
 
+    // Redimensiona um Bitmap de acordo com um tamamho máximo definido
+    public static Bitmap resizeBitmap(Bitmap bitmapOriginal, int maxSize) {
+        if(bitmapOriginal != null) {
+            int bitmapWidth = bitmapOriginal.getWidth();
+            int bitmapHeight = bitmapOriginal.getHeight();
+
+            float bitmapRatio = (float)bitmapWidth / (float)bitmapHeight;
+
+            // Definindo se a imagem é horizontal ou vertical
+            boolean isLandscapeImage = bitmapRatio > 1 ? true : false;
+
+            if(isLandscapeImage && bitmapWidth > maxSize) {
+                bitmapWidth = maxSize;
+                bitmapHeight = (int)(bitmapWidth / bitmapRatio);
+                bitmapOriginal =  Bitmap.createScaledBitmap(bitmapOriginal, bitmapWidth, bitmapHeight, true);
+            } else if(!isLandscapeImage && bitmapHeight > maxSize) {
+                bitmapHeight = maxSize;
+                bitmapWidth = (int)(bitmapHeight * bitmapRatio);
+                bitmapOriginal = Bitmap.createScaledBitmap(bitmapOriginal, bitmapWidth, bitmapHeight, true);
+            }
+        }
+
+        return bitmapOriginal;
+    }
+
     public static Bitmap getResizedImageResource(Context context, int resourceImageId, int width, int height) {
         try {
             // Configura o BitmapFactory para apenas ler o tamanho da imagem (sem carregá-la em memória)

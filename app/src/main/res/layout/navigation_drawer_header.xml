@@ -10,7 +10,7 @@
         android:paddingTop="40dp"
         android:paddingBottom="20dp"
         android:layout_height="match_parent">
-        <com.androidexamples.app.view.RoundedImageView
+        <com.androidexamples.app.view.CircularImageView
             android:id="@+id/imageViewHeader"
             android:layout_width="100dp"
             android:src="@drawable/bh2"

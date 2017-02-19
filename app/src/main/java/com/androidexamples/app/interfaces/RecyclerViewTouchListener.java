@@ -7,6 +7,6 @@ import android.view.View;
  */
 
 public interface RecyclerViewTouchListener {
-    public void onItemClickListener(View view, int position);
-    public void onLongItemClickListener(View view, int position);
+    public void onItemClick(View view, int position);
+    public void onLongItemClick(View view, int position);
 }

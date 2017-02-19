@@ -1,6 +1,5 @@
 package com.androidexamples.app.activity;
 
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.ActionMode;
@@ -17,7 +16,7 @@ import com.androidexamples.app.R;
 import com.androidexamples.app.adapter.ContextAdapter;
 import com.androidexamples.app.domain.ContextExample;
 import com.androidexamples.app.interfaces.RecyclerViewTouchListener;
-import com.androidexamples.app.listener.RecyclerItemClickListener;
+import com.androidexamples.app.listener.RecyclerTouchListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +48,7 @@ public class ContextActionBarActivity extends AppCompatActivity implements Recyc
         setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, recyclerView, this));
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(this, recyclerView, this));
         recyclerView.setHasFixedSize(true);
     }
 
@@ -71,7 +70,7 @@ public class ContextActionBarActivity extends AppCompatActivity implements Recyc
     }
 
     @Override
-    public void onItemClickListener(View view, int position) {
+    public void onItemClick(View view, int position) {
         if(actionMode != null) {
             ContextExample contextExample = contextAdapter.getItemAtPosition(position);
             contextExample.setSelected(!contextExample.isSelected());
@@ -81,7 +80,7 @@ public class ContextActionBarActivity extends AppCompatActivity implements Recyc
     }
 
     @Override
-    public void onLongItemClickListener(View view, int position) {
+    public void onLongItemClick(View view, int position) {
         // Só o action mode já existe,
         if(actionMode != null)
             return;
