@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button_actionbar_toolbar).setOnClickListener(onButtonClick());
         findViewById(R.id.button_animations).setOnClickListener(onButtonClick());
         findViewById(R.id.button_another_views).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_broadcast_receiver).setOnClickListener(onButtonClick());
         findViewById(R.id.button_fragments).setOnClickListener(onButtonClick());
         findViewById(R.id.button_gestures).setOnClickListener(onButtonClick());
         findViewById(R.id.button_handler_async_task).setOnClickListener(onButtonClick());
@@ -45,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.button_another_views:
                         startActivity(new Intent(getBaseContext(), AnotherViewsActivity.class));
+                        break;
+                    case R.id.button_broadcast_receiver:
+                        startActivity(new Intent(getBaseContext(), BroadcastReceiverActivity.class));
                         break;
                     case R.id.button_fragments:
                         startActivity(new Intent(getBaseContext(), FragmentsActivity.class));

@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -218,6 +219,36 @@
             android:name=".activity.IntentsActivity"
             android:label="@string/intents"
             android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".activity.BroadcastReceiverActivity"
+            android:label="@string/broadcast_receiver"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".activity.SimpleBroadcastActivity"
+            android:label="@string/static_broadcast"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".activity.DynamicBroadcastActivity"
+            android:label="@string/dynamic_broadcast"
+            android:parentActivityName=".activity.MainActivity" />
+
+        <receiver android:name=".broadcast.StaticBroadcastReceiver">
+            <intent-filter>
+                <action android:name="Katiau" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".broadcast.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".activity.LocalBroadcastActivity"
+            android:label="@string/local_broadcast"
+            android:parentActivityName=".activity.MainActivity"/>
     </application>
 
 </manifest>

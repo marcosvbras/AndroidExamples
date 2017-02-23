@@ -47,6 +47,15 @@
                 android:textAllCaps="false" />
 
             <Button
+                android:id="@+id/button_broadcast_receiver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:text="@string/broadcast_receiver"
+                android:textAllCaps="false" />
+
+            <Button
                 android:id="@+id/button_fragments"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -118,14 +127,13 @@
                 android:text="@string/save_instance_state"
                 android:textAllCaps="false" />
 
-
-
             <Button
                 android:id="@+id/button_simple_view_pager"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:text="@string/view_pager"
                 android:textAllCaps="false" />
         </LinearLayout>
