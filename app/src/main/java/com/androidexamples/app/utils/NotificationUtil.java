@@ -17,23 +17,22 @@ public class NotificationUtil {
     private static final String TAG = "NotificationUtil";
 
     public static void create(Context context, int id, Intent intent, int smallIcon, String contentTitle, String contentText) {
-        NotificationManager manager =
-                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         // Intent para disparar o broadcast
-        PendingIntent p = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         // Cria a notification
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
-                .setContentIntent(p)
+                .setContentIntent(pendingIntent)
                 .setContentTitle(contentTitle)
                 .setContentText(contentText)
                 .setSmallIcon(smallIcon)
                 .setAutoCancel(true);
 
         // Dispara a notification
-        Notification n = builder.build();
-        manager.notify(id, n);
+        Notification notification = builder.build();
+        notificationManager.notify(id, notification);
 
         Log.d(TAG,"Notification criada com sucesso");
     }

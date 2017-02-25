@@ -62,11 +62,16 @@
     <string name="tab_4">Tab 4</string>
     <string name="broadcast_receiver">Broadcast Receiver</string>
     <string name="local_broadcast">Local Broadcast Receiver</string>
+    <string name="notifications">Notifications</string>
     <string name="intents">Intents</string>
     <string name="static_broadcast">Static Broadcast Receiver</string>
     <string name="dynamic_broadcast">Dynamic Broadcast Receiver</string>
     <string name="actionbar_toolbar">ActionBar and Toolbar</string>
     <string name="gestures">Gestures</string>
+    <string name="simple_notification">Simple Notification</string>
+    <string name="heads_up_notification">Heads Up Notification</string>
+    <string name="big_view_notification">Big View Notification</string>
+    <string name="notification_with_action">Notification With Action</string>
     <string name="handler_async_task">Handler and Async Tasks</string>
     <string name="async_task">AsyncTask</string>
     <string name="handler_message">Handler Message</string>

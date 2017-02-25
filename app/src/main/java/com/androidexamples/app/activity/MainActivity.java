@@ -21,22 +21,23 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar((Toolbar)findViewById(R.id.top_toolbar));
 
         // Click events
-        findViewById(R.id.button_actionbar_toolbar).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_animations).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_another_views).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_broadcast_receiver).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_fragments).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_gestures).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_handler_async_task).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_intents).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_navigation_drawer).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_palette).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_preference_screen).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_save_instance_state).setOnClickListener(onButtonClick());
-        findViewById(R.id.button_simple_view_pager).setOnClickListener(onButtonClick());
+        findViewById(R.id.button_actionbar_toolbar).setOnClickListener(onButtonClickListener());
+        findViewById(R.id.button_animations).setOnClickListener(onButtonClickListener());
+        findViewById(R.id.button_another_views).setOnClickListener(onButtonClickListener());
+        findViewById(R.id.button_broadcast_receiver).setOnClickListener(onButtonClickListener());
+        findViewById(R.id.button_fragments).setOnClickListener(onButtonClickListener());
+        findViewById(R.id.button_gestures).setOnClickListener(onButtonClickListener());
+        findViewById(R.id.button_handler_async_task).setOnClickListener(onButtonClickListener());
+        findViewById(R.id.button_intents).setOnClickListener(onButtonClickListener());
+        findViewById(R.id.button_navigation_drawer).setOnClickListener(onButtonClickListener());
+        findViewById(R.id.button_notifications).setOnClickListener(onButtonClickListener());
+        findViewById(R.id.button_palette).setOnClickListener(onButtonClickListener());
+        findViewById(R.id.button_preference_screen).setOnClickListener(onButtonClickListener());
+        findViewById(R.id.button_save_instance_state).setOnClickListener(onButtonClickListener());
+        findViewById(R.id.button_simple_view_pager).setOnClickListener(onButtonClickListener());
     }
 
-    private View.OnClickListener onButtonClick() {
+    private View.OnClickListener onButtonClickListener() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.button_navigation_drawer:
                         startActivity(new Intent(getBaseContext(), NavigationDrawerActivity.class));
+                        break;
+                    case R.id.button_notifications:
+                        startActivity(new Intent(getBaseContext(), NotificationsActivity.class));
                         break;
                     case R.id.button_preference_screen:
                         startActivity(new Intent(getBaseContext(), PreferenceScreenActivity.class));
