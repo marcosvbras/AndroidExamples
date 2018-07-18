@@ -56,14 +56,14 @@ public class IntentsActivity extends AppCompatActivity {
         findViewById(R.id.button_take_photo).setOnClickListener(onButtonClick());
         findViewById(R.id.button_take_video).setOnClickListener(onButtonClick());
         findViewById(R.id.button_view_all_contacts).setOnClickListener(onButtonClick());
-        
+
         // Solicita as permissões
         String[] permissoes = new String[]{
                 Manifest.permission.CALL_PHONE,
                 Manifest.permission.READ_CONTACTS,
                 Manifest.permission.CAMERA
         };
-        PermissionUtils.validate(this, 0, permissoes);
+        PermissionUtils.INSTANCE.validate(this, 0, permissoes);
     }
 
     @Override
