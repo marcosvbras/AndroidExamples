@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.androidexamples.app.activity.BroadcastReceiverActivity">
+    tools:context="com.androidexamples.app.flows.broadcastReceiver.BroadcastReceiverActivity">
     <include layout="@layout/include_top_toolbar"/>
     <Button
         android:id="@+id/button_dynamic_broadcast"

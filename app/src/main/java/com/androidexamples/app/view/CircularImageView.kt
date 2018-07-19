@@ -36,7 +36,7 @@ class CircularImageView : ImageView {
             return
     }
 
-    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs, defStyle) {}
+    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs, defStyle)
 
     fun setBorderWidth(borderWidth: Int) {
         this.borderWidth = borderWidth
@@ -76,6 +76,7 @@ class CircularImageView : ImageView {
         val canvas = Canvas(bitmap)
         drawable.setBounds(0, 0, canvas.width, canvas.height)
         drawable.draw(canvas)
+
         return bitmap
     }
 

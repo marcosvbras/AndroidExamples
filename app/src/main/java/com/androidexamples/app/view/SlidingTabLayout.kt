@@ -23,6 +23,7 @@ import android.widget.TextView
 import com.androidexamples.app.utils.SlidingTabStrip
 
 class SlidingTabLayout @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) : HorizontalScrollView(context, attrs, defStyle) {
+
     // Metrics
     private val TITLE_OFFSET_DIPS = 24
     private val TAB_VIEW_PADDING_DIPS = 16

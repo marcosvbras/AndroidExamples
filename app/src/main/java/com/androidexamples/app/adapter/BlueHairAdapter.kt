@@ -84,7 +84,6 @@ class BlueHairAdapter(private val simpleItems: MutableList<SimpleItem>, private 
     }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
         internal var textView: TextView
         internal var imageView: ImageView
         internal var container: LinearLayout

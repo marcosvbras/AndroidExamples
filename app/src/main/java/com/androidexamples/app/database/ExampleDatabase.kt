@@ -9,13 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper
  */
 
 class ExampleDatabase(context: Context) {
-    private val databaseHelper: DatabaseHelper
-    val database: SQLiteDatabase
 
-    init {
-        databaseHelper = DatabaseHelper(context)
-        database = databaseHelper.writableDatabase
-    }
+    private val databaseHelper: DatabaseHelper = DatabaseHelper(context)
+    val database: SQLiteDatabase = databaseHelper.writableDatabase
 
     fun closeConnection() {
         database.close()
@@ -26,9 +22,7 @@ class ExampleDatabase(context: Context) {
         database.execSQL(sql)
     }
 
-    private inner class DatabaseHelper(context: Context)// Context, database name, factory, database version
-        : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
-
+    private inner class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
         override fun onCreate(sqLiteDatabase: SQLiteDatabase) {
             sqLiteDatabase.execSQL(TypeDB.TABLE_CREATE)
             sqLiteDatabase.execSQL(ExampleDB.TABLE_CREATE)
@@ -40,7 +34,7 @@ class ExampleDatabase(context: Context) {
     }
 
     companion object {
-        val DATABASE_NAME = "androidExamples"
-        val DATABASE_VERSION = 3
+        const val DATABASE_NAME = "androidExamples"
+        const val DATABASE_VERSION = 3
     }
 }

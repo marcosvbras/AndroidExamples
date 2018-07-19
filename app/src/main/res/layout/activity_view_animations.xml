@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            tools:context="com.androidexamples.app.activity.ViewAnimationsActivity">
+            tools:context="com.androidexamples.app.flows.animations.viewAnimations.ViewAnimationsActivity">
 
             <Button
                 android:id="@+id/button_animation_drawable"

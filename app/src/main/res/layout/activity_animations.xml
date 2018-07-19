@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="com.androidexamples.app.activity.AnimationsActivity">
+        tools:context="com.androidexamples.app.flows.animations.activityAnimations.AnimationsActivity">
         <include layout="@layout/include_top_toolbar"/>
         <Button
             android:text="@string/view_animations"

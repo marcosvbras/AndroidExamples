@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.androidexamples.app.activity.SlidingTabLayoutActivity">
+    tools:context="com.androidexamples.app.flows.viewpager.SlidingTabLayoutActivity">
     <include layout="@layout/include_top_toolbar"/>
     <com.androidexamples.app.view.SlidingTabLayout
         android:id="@+id/sliding_tab_layout"

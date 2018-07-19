@@ -10,29 +10,29 @@ import android.widget.EditText
 
 class EditTextMaster : EditText {
 
-    constructor(context: Context) : super(context) {}
+    constructor(context: Context) : super(context)
 
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {}
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {}
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
     fun isRequiredFieldCompleted(errorMessage: String): Boolean {
-        if (super.getText().toString().trim { it <= ' ' } != "") {
-            return true
+        return if (super.getText().toString().trim { it <= ' ' } != "") {
+            true
         } else {
             super.setError(errorMessage)
             super.requestFocus()
-            return false
+            false
         }
     }
 
     fun isNotRequiredFieldCompleted(length: Int, errorMessage: String): Boolean {
-        if (super.getText().toString().trim { it <= ' ' }.length == length) {
-            return true
+        return if (super.getText().toString().trim { it <= ' ' }.length == length) {
+            true
         } else {
             super.setError(errorMessage)
             super.requestFocus()
-            return false
+            false
         }
     }
 }

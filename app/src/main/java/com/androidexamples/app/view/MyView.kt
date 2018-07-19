@@ -20,12 +20,12 @@ class MyView : View {
     private var bluePaint: Paint? = null
 
     /*
-    * Construtor chamado quando a view via API
+    * Constructor called when view is created via API
     * */
-    constructor(context: Context) : super(context, null) {}
+    constructor(context: Context) : super(context, null)
 
     /*
-    * Contrutor chamado quando a view é criada via XML
+    * Constructor called when view is created via XML
     * O parâmetro do tipo AttributeSet guarda os atributos da view definidos no arquivo XML
     * */
     constructor(context: Context, attributeSet: AttributeSet) : super(context, attributeSet) {
@@ -40,19 +40,20 @@ class MyView : View {
         bluePaint = Paint()
         bluePaint!!.setARGB(255, 0, 0, 255)
 
-        // Configura a view para receber foco e tratar eventos de teclado
+        // Set focus on view to receive keyboard events
         isFocusable = true
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        // Desenha um quadrado
+
+        // Draw a square
         canvas.drawRect(Converter.dipToPixels(context, 20f), Converter.dipToPixels(context, 20f),
                 Converter.dipToPixels(context, 200f), Converter.dipToPixels(context, 200f), bluePaint)
-        // Desenha uma linha
+        // Draw a line
         canvas.drawLine(Converter.dipToPixels(context, 200f), Converter.dipToPixels(context, 200f),
                 Converter.dipToPixels(context, 400f), Converter.dipToPixels(context, 400f), blackPaint)
-        // Desenha uma círculo
+        // Draw a circle
         canvas.drawCircle(Converter.dipToPixels(context, 400f), Converter.dipToPixels(context, 400f),
                 Converter.dipToPixels(context, 100f), redPaint)
     }

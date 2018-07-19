@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@android:color/black"
-    tools:context="com.androidexamples.app.activity.ZoomableImageActivity">
+    tools:context="com.androidexamples.app.flows.gestures.ZoomableImageActivity">
     <include layout="@layout/include_top_toolbar" />
 
     <com.androidexamples.app.view.ZoomableImageView

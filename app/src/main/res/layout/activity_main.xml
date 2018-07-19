@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            tools:context="com.androidexamples.app.activity.MainActivity">
+            tools:context="com.androidexamples.app.flows.MainActivity">
 
             <Button
                 android:id="@+id/button_actionbar_toolbar"
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:text="@string/another_views"
+                android:text="@string/other_views"
                 android:textAllCaps="false" />
 
             <Button

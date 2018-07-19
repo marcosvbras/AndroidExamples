@@ -16,13 +16,13 @@
         android:required="true" />
 
     <application
-        android:name=".AndroidExamplesApplication"
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".flows.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,207 +30,207 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.ZoomableImageActivity"
+            android:name=".flows.gestures.ZoomableImageActivity"
             android:label="@string/zoomable_imageview"
-            android:parentActivityName=".activity.GesturesActivity" />
+            android:parentActivityName=".flows.gestures.GesturesActivity" />
         <activity
-            android:name=".activity.SearchViewActivity"
+            android:name=".flows.views.SearchViewActivity"
             android:label="@string/search_view"
-            android:parentActivityName=".activity.AnotherViewsActivity" />
+            android:parentActivityName=".flows.views.OtherViewsActivity" />
         <activity
-            android:name=".activity.SlidingTabLayoutActivity"
+            android:name=".flows.viewpager.SlidingTabLayoutActivity"
             android:label="@string/sliding_tab_layout"
-            android:parentActivityName=".activity.ViewPagerActivity" />
+            android:parentActivityName=".flows.viewpager.ViewPagerActivity" />
         <activity
-            android:name=".activity.XmlSelectorsActivity"
+            android:name=".flows.views.XmlSelectorsActivity"
             android:label="@string/xml_selectors"
-            android:parentActivityName=".activity.AnotherViewsActivity" />
+            android:parentActivityName=".flows.views.OtherViewsActivity" />
         <activity
-            android:name=".activity.AnotherViewsActivity"
-            android:label="@string/another_views"
-            android:parentActivityName=".activity.MainActivity" />
+            android:name=".flows.views.OtherViewsActivity"
+            android:label="@string/other_views"
+            android:parentActivityName=".flows.MainActivity" />
         <activity
-            android:name=".activity.GridViewActivity"
+            android:name=".flows.views.GridViewActivity"
             android:label="@string/gridview"
-            android:parentActivityName=".activity.AnotherViewsActivity" />
+            android:parentActivityName=".flows.views.OtherViewsActivity" />
         <activity
-            android:name=".activity.ViewPagerActivity"
+            android:name=".flows.viewpager.ViewPagerActivity"
             android:label="@string/view_pager"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".flows.MainActivity" />
         <activity
-            android:name=".activity.ViewPagerTitleActivity"
+            android:name=".flows.viewpager.ViewPagerTitleActivity"
             android:label="@string/view_pager_with_title"
-            android:parentActivityName=".activity.ViewPagerActivity" />
+            android:parentActivityName=".flows.viewpager.ViewPagerActivity" />
         <activity
-            android:name=".activity.SimpleViewPagerActivity"
+            android:name=".flows.viewpager.SimpleViewPagerActivity"
             android:label="@string/simple_view_pager"
-            android:parentActivityName=".activity.ViewPagerActivity" />
+            android:parentActivityName=".flows.viewpager.ViewPagerActivity" />
         <activity
-            android:name=".activity.IntroSliderActivity"
+            android:name=".flows.viewpager.IntroSliderActivity"
             android:label="@string/intro_slider"
-            android:parentActivityName=".activity.ViewPagerActivity" />
+            android:parentActivityName=".flows.viewpager.ViewPagerActivity" />
         <activity
-            android:name=".activity.ImageSwitcherActivity"
+            android:name=".flows.views.ImageSwitcherActivity"
             android:label="@string/image_switcher"
-            android:parentActivityName=".activity.AnotherViewsActivity" />
+            android:parentActivityName=".flows.views.OtherViewsActivity" />
         <activity
-            android:name=".activity.WebViewSwipeRefreshActivity"
+            android:name=".flows.views.WebViewSwipeRefreshActivity"
             android:label="@string/web_view_swipe_refresh"
-            android:parentActivityName=".activity.AnotherViewsActivity" />
+            android:parentActivityName=".flows.views.OtherViewsActivity" />
         <activity
-            android:name=".activity.ActionBarToolbarActivity"
+            android:name=".flows.toolbar.ActionBarToolbarActivity"
             android:label="@string/actionbar_toolbar"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".flows.MainActivity" />
         <activity
-            android:name=".activity.GesturesActivity"
+            android:name=".flows.gestures.GesturesActivity"
             android:label="@string/gestures"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".flows.MainActivity" />
         <activity
-            android:name=".activity.DraggableViewActivity"
+            android:name=".flows.gestures.DraggableViewActivity"
             android:label="@string/draggable_view"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".flows.MainActivity" />
         <activity
-            android:name=".activity.DrawingShapesActivity"
+            android:name=".flows.views.DrawingShapesActivity"
             android:label="@string/drawing_shapes"
-            android:parentActivityName=".activity.AnotherViewsActivity" />
+            android:parentActivityName=".flows.views.OtherViewsActivity" />
         <activity
-            android:name=".activity.FragmentsActivity"
+            android:name=".flows.fragments.FragmentsActivity"
             android:label="@string/fragments"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".flows.MainActivity" />
         <activity
-            android:name=".activity.RecyclerViewActivity"
+            android:name=".flows.views.RecyclerViewActivity"
             android:label="@string/recycler_view"
-            android:parentActivityName=".activity.AnotherViewsActivity" />
+            android:parentActivityName=".flows.views.OtherViewsActivity" />
         <activity
-            android:name=".activity.SpinnerCompleteCheckActivity"
+            android:name=".flows.views.SpinnerCompleteCheckActivity"
             android:label="@string/spinner_complete_check"
-            android:parentActivityName=".activity.AnotherViewsActivity" />
+            android:parentActivityName=".flows.views.OtherViewsActivity" />
         <activity
-            android:name=".activity.SaveInstanceStateActivity"
+            android:name=".flows.SaveInstanceStateActivity"
             android:label="@string/save_instance_state"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".flows.MainActivity" />
         <activity
-            android:name=".activity.AnimationsActivity"
+            android:name=".flows.animations.activityAnimations.AnimationsActivity"
             android:label="@string/animations"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".flows.MainActivity" />
         <activity
-            android:name=".activity.AnimationDrawableActivity"
+            android:name=".flows.animations.viewAnimations.AnimationDrawableActivity"
             android:label="@string/animation_drawable"
-            android:parentActivityName=".activity.AnimationsActivity" />
+            android:parentActivityName=".flows.animations.activityAnimations.AnimationsActivity" />
         <activity
-            android:name=".activity.AlphaActivity"
+            android:name=".flows.animations.viewAnimations.AlphaActivity"
             android:label="@string/alpha"
-            android:parentActivityName=".activity.AnimationsActivity" />
+            android:parentActivityName=".flows.animations.activityAnimations.AnimationsActivity" />
         <activity
-            android:name=".activity.RotateActivity"
+            android:name=".flows.animations.viewAnimations.RotateActivity"
             android:label="@string/rotate"
-            android:parentActivityName=".activity.AnimationsActivity" />
+            android:parentActivityName=".flows.animations.activityAnimations.AnimationsActivity" />
         <activity
-            android:name=".activity.TranslateActivity"
+            android:name=".flows.animations.viewAnimations.TranslateActivity"
             android:label="@string/translate"
-            android:parentActivityName=".activity.AnimationsActivity" />
+            android:parentActivityName=".flows.animations.activityAnimations.AnimationsActivity" />
         <activity
-            android:name=".activity.ScaleActivity"
+            android:name=".flows.animations.viewAnimations.ScaleActivity"
             android:label="@string/scale"
-            android:parentActivityName=".activity.AnimationsActivity" />
+            android:parentActivityName=".flows.animations.activityAnimations.AnimationsActivity" />
         <activity
-            android:name=".activity.AnimationSetActivity"
+            android:name=".flows.animations.viewAnimations.AnimationSetActivity"
             android:label="@string/animation_set"
-            android:parentActivityName=".activity.AnimationsActivity" />
+            android:parentActivityName=".flows.animations.activityAnimations.AnimationsActivity" />
         <activity
-            android:name=".activity.AnimationListenerActivity"
+            android:name=".flows.animations.viewAnimations.AnimationListenerActivity"
             android:label="@string/animation_listener"
-            android:parentActivityName=".activity.AnimationsActivity" />
+            android:parentActivityName=".flows.animations.activityAnimations.AnimationsActivity" />
         <activity
-            android:name=".activity.ViewFlipperActivity"
+            android:name=".flows.animations.viewAnimations.ViewFlipperActivity"
             android:label="@string/view_flipper"
-            android:parentActivityName=".activity.AnimationsActivity" />
+            android:parentActivityName=".flows.animations.activityAnimations.AnimationsActivity" />
         <activity
-            android:name=".activity.ViewAnimatedActivity"
+            android:name=".flows.ViewAnimatedActivity"
             android:label="@string/view_animated"
-            android:parentActivityName=".activity.AnimationsActivity" />
+            android:parentActivityName=".flows.animations.activityAnimations.AnimationsActivity" />
         <activity
-            android:name=".activity.AnimLayoutChangesActivity"
+            android:name=".flows.AnimLayoutChangesActivity"
             android:label="@string/anim_layout_changes"
-            android:parentActivityName=".activity.AnimationsActivity" />
+            android:parentActivityName=".flows.animations.activityAnimations.AnimationsActivity" />
         <activity
-            android:name=".activity.HandlerAsyncTaskActivity"
+            android:name=".flows.handlers.HandlerAsyncTaskActivity"
             android:label="@string/handler_async_task"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".flows.MainActivity" />
         <activity
-            android:name=".activity.HandlerMessageActivity"
+            android:name=".flows.handlers.HandlerMessageActivity"
             android:label="@string/handler_message"
-            android:parentActivityName=".activity.HandlerAsyncTaskActivity" />
+            android:parentActivityName=".flows.handlers.HandlerAsyncTaskActivity" />
         <activity
-            android:name=".activity.ReDownloadImage"
+            android:name=".flows.handlers.ReDownloadImage"
             android:label="@string/redownload_image"
-            android:parentActivityName=".activity.HandlerAsyncTaskActivity" />
-        <activity android:name=".activity.SplashScreenActivity" />
+            android:parentActivityName=".flows.handlers.HandlerAsyncTaskActivity" />
+        <activity android:name=".flows.handlers.SplashScreenActivity" />
         <activity
-            android:name=".activity.TestActivity"
+            android:name=".flows.animations.activityAnimations.TestActivity"
             android:label="@string/test_activity" />
         <activity
-            android:name=".activity.ViewAnimationsActivity"
+            android:name=".flows.animations.viewAnimations.ViewAnimationsActivity"
             android:label="@string/view_animations"
-            android:parentActivityName=".activity.AnimationsActivity" />
+            android:parentActivityName=".flows.animations.activityAnimations.AnimationsActivity" />
         <activity
-            android:name=".activity.ActivityAnimationsActivity"
+            android:name=".flows.animations.activityAnimations.ActivityAnimationsActivity"
             android:label="@string/activity_animations"
-            android:parentActivityName=".activity.AnimationsActivity" />
+            android:parentActivityName=".flows.animations.activityAnimations.AnimationsActivity" />
         <activity
-            android:name=".activity.AsyncTaskActivity"
+            android:name=".flows.handlers.AsyncTaskActivity"
             android:label="@string/async_task"
-            android:parentActivityName=".activity.HandlerAsyncTaskActivity" />
+            android:parentActivityName=".flows.handlers.HandlerAsyncTaskActivity" />
         <activity
-            android:name=".activity.FabWithSnackBarActivity"
+            android:name=".flows.views.FabWithSnackBarActivity"
             android:label="@string/fab_with_snackbar"
-            android:parentActivityName=".activity.AnotherViewsActivity" />
+            android:parentActivityName=".flows.views.OtherViewsActivity" />
         <activity
-            android:name=".activity.RevealEffectActivity"
+            android:name=".flows.animations.activityAnimations.RevealEffectActivity"
             android:label="@string/reveal_effect"
-            android:parentActivityName=".activity.AnimationsActivity" />
+            android:parentActivityName=".flows.animations.activityAnimations.AnimationsActivity" />
         <activity
-            android:name=".activity.PaletteActivity"
+            android:name=".flows.PaletteActivity"
             android:label="@string/palette"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".flows.MainActivity" />
         <activity
-            android:name=".activity.StandAloneToolbarActivity"
+            android:name=".flows.toolbar.StandAloneToolbarActivity"
             android:label="@string/stand_alone_toolbar"
-            android:parentActivityName=".activity.ActionBarToolbarActivity" />
+            android:parentActivityName=".flows.toolbar.ActionBarToolbarActivity" />
         <activity
-            android:name=".activity.NavigationDrawerActivity"
+            android:name=".flows.NavigationDrawerActivity"
             android:label="@string/navigation_drawer"
-            android:parentActivityName=".activity.MainActivity"
+            android:parentActivityName=".flows.MainActivity"
             android:theme="@style/AppTheme.NoActionBar.NavDrawer" />
-        <activity android:name=".activity.BaseActivity" />
+        <activity android:name=".flows.BaseActivity" />
         <activity
-            android:name=".activity.CollapsingToolbarLayoutActivity"
+            android:name=".flows.toolbar.CollapsingToolbarLayoutActivity"
             android:label="@string/collapsing_toolbar_layout"
-            android:parentActivityName=".activity.ActionBarToolbarActivity" />
+            android:parentActivityName=".flows.toolbar.ActionBarToolbarActivity" />
         <activity
-            android:name=".activity.PreferenceScreenActivity"
+            android:name=".flows.PreferenceScreenActivity"
             android:label="@string/preference_screen"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".flows.MainActivity" />
         <activity
-            android:name=".activity.ContextActionBarActivity"
+            android:name=".flows.toolbar.ContextActionBarActivity"
             android:label="@string/context_action_bar"
-            android:parentActivityName=".activity.ActionBarToolbarActivity" />
+            android:parentActivityName=".flows.toolbar.ActionBarToolbarActivity" />
         <activity
-            android:name=".activity.IntentsActivity"
+            android:name=".flows.IntentsActivity"
             android:label="@string/intents"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".flows.MainActivity" />
         <activity
-            android:name=".activity.BroadcastReceiverActivity"
+            android:name=".flows.broadcastReceiver.BroadcastReceiverActivity"
             android:label="@string/broadcast_receiver"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".flows.MainActivity" />
         <activity
-            android:name=".activity.SimpleBroadcastActivity"
+            android:name=".flows.broadcastReceiver.SimpleBroadcastActivity"
             android:label="@string/static_broadcast"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".flows.MainActivity" />
         <activity
-            android:name=".activity.DynamicBroadcastActivity"
+            android:name=".flows.broadcastReceiver.DynamicBroadcastActivity"
             android:label="@string/dynamic_broadcast"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".flows.MainActivity" />
 
         <receiver android:name=".broadcast.StaticBroadcastReceiver">
             <intent-filter>
@@ -248,12 +248,12 @@
         </receiver>
 
         <activity
-            android:name=".activity.LocalBroadcastActivity"
+            android:name=".flows.broadcastReceiver.LocalBroadcastActivity"
             android:label="@string/local_broadcast"
-            android:parentActivityName=".activity.MainActivity" />
-        <activity android:name=".activity.NotificationsActivity"
+            android:parentActivityName=".flows.MainActivity" />
+        <activity android:name=".flows.notifications.NotificationsActivity"
             android:label="@string/notifications"
-            android:parentActivityName=".activity.MainActivity"/>
+            android:parentActivityName=".flows.MainActivity"/>
     </application>
 
 </manifest>

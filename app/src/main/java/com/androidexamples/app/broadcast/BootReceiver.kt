@@ -1,5 +1,6 @@
 package com.androidexamples.app.broadcast
 
+import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -13,10 +14,11 @@ import android.widget.Toast
 class BootReceiver : BroadcastReceiver() {
 
     /**
-     * Necessita declaração da seguinte permissão no AndroidManifest.xml
+     * Requires permission in Android Manifest
      * <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
      */
 
+    @SuppressLint("UnsafeProtectedBroadcastReceiver")
     override fun onReceive(context: Context, intent: Intent) {
         Toast.makeText(context, "'Boot completed' received with Boot Receiver", Toast.LENGTH_SHORT).show()
         Log.v("Debug", "'Boot completed' received with Boot Receiver")

@@ -16,7 +16,7 @@ class ExampleDB {
     var isActive: Boolean = false
     private var type: TypeDB? = null
 
-    constructor() {}
+    constructor()
 
     constructor(id: Int, name: String, weight: Double, active: Boolean, type: TypeDB) {
         this.id = id
@@ -43,16 +43,12 @@ class ExampleDB {
     }
 
     companion object {
-
-        /**
-         * Database section  */
-
-        val TABLE_NAME = "Example"
-        val COLUMN_ID = "_id"
-        val COLUMN_NAME = "name"
-        val COLUMN_WEIGHT = "weight"
-        val COLUMN_ACTIVE = "active"
-        val COLUMN_TYPE_ID = "type_id"
+        const val TABLE_NAME = "Example"
+        const val COLUMN_ID = "_id"
+        const val COLUMN_NAME = "name"
+        const val COLUMN_WEIGHT = "weight"
+        const val COLUMN_ACTIVE = "active"
+        const val COLUMN_TYPE_ID = "type_id"
 
         val TABLE_CREATE = ("CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ("
                 + COLUMN_ID + " INTEGER PRIMARY KEY, "
