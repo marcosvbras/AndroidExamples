@@ -16,30 +16,30 @@ object PrefsSDCard {
         setString(context, chave, if (on) "1" else "0")
     }
 
-    fun getBoolean(context: Context, chave: String): Boolean {
-        val s = getString(context, chave)
-        return "1" == s
-    }
+//    fun getBoolean(context: Context, chave: String): Boolean {
+//        val s = getString(context, chave)
+//        return "1" == s
+//    }
 
     fun setInteger(context: Context, chave: String, valor: Int) {
         setString(context, chave, valor.toString())
     }
 
-    fun getInteger(context: Context, chave: String): Int {
-        val s = getString(context, chave)
-        return if (s != null) {
-            Integer.parseInt(s)
-        } else 0
-    }
+//    fun getInteger(context: Context, chave: String): Int {
+//        val s = getString(context, chave)
+//        return if (s != null) {
+//            Integer.parseInt(s)
+//        } else 0
+//    }
 
     fun setString(context: Context, chave: String, valor: String) {
         val f = SDCardUtils.getPublicFile("prefs", "$chave.txt")
         //IOUtils.writeString(f, valor);
     }
 
-    fun getString(context: Context, chave: String): String? {
-        val f = SDCardUtils.getPublicFile("prefs", "$chave.txt")
-        Log.d("livroandroid", "getString: $f")
-        return IOUtils.readString(f)
-    }
+//    fun getString(context: Context, chave: String): String? {
+//        val f = SDCardUtils.getPublicFile("prefs", "$chave.txt")
+//        Log.d("livroandroid", "getString: $f")
+//        return IOUtils.readString(f)
+//    }
 }

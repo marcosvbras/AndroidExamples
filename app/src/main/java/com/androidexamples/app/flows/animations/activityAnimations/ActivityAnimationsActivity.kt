@@ -18,7 +18,7 @@ class ActivityAnimationsActivity : AppCompatActivity() {
     // Views
     private var imageView: ImageView? = null
 
-    // Another Objects
+    // Other Objects
     private var newIntent: Intent? = null
     private var bundle: Bundle? = null
     private var activityOptionsCompat: ActivityOptionsCompat? = null

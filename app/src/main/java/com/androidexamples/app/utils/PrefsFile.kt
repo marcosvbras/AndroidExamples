@@ -25,21 +25,21 @@ object PrefsFile {
         setString(context, chave, if (on) "1" else "0")
     }
 
-    fun getBoolean(context: Context, chave: String): Boolean {
-        val s = getString(context, chave)
-        return "1" == s
-    }
+//    fun getBoolean(context: Context, chave: String): Boolean {
+//        val s = getString(context, chave)
+//        return "1" == s
+//    }
 
     fun setInteger(context: Context, chave: String, valor: Int) {
         setString(context, chave, valor.toString())
     }
 
-    fun getInteger(context: Context, chave: String): Int {
-        val s = getString(context, chave)
-        return if (s != null) {
-            Integer.parseInt(s)
-        } else 0
-    }
+//    fun getInteger(context: Context, chave: String): Int {
+//        val s = getString(context, chave)
+//        return if (s != null) {
+//            Integer.parseInt(s)
+//        } else 0
+//    }
 
     fun setString(context: Context, chave: String, valor: String) {
         var chave = chave
@@ -55,14 +55,14 @@ object PrefsFile {
 
     }
 
-    fun getString(context: Context, chave: String): String? {
-        var chave = chave
-        chave += ".txt"
-        val f = context.getFileStreamPath(chave)
-        val s = IOUtils.readString(f)
-        Log.d(TAG, "PrefsFile.getString file: $f >  $s")
-        return s
-    }
+//    fun getString(context: Context, chave: String): String? {
+//        var chave = chave
+//        chave += ".txt"
+//        val f = context.getFileStreamPath(chave)
+//        val s = IOUtils.readString(f)
+//        Log.d(TAG, "PrefsFile.getString file: $f >  $s")
+//        return s
+//    }
 }
 
 

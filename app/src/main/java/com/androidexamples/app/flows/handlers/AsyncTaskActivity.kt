@@ -71,32 +71,26 @@ class AsyncTaskActivity : AppCompatActivity(), ImageDownloadListener {
     }
 
     private fun newTask() {
-        downloadImageTask = DownloadImageTask(progressBar, this, this)
-        imageView1!!.setImageBitmap(null)
-        imageView2!!.setImageBitmap(null)
-        imageView3!!.setImageBitmap(null)
-        imageView4!!.setImageBitmap(null)
-        progressBar!!.max = 100
-        progressBar!!.progress = 0
+        downloadImageTask = DownloadImageTask(progressBar!!, this, this)
+        imageView1?.setImageBitmap(null)
+        imageView2?.setImageBitmap(null)
+        imageView3?.setImageBitmap(null)
+        imageView4?.setImageBitmap(null)
+        progressBar?.max = 100
+        progressBar?.progress = 0
     }
 
     override fun onDownloadFinish(listBitmap: List<Bitmap>) {
-        if (listBitmap != null) {
-            imageView1!!.setImageBitmap(listBitmap[0])
-            imageView2!!.setImageBitmap(listBitmap[1])
-            imageView3!!.setImageBitmap(listBitmap[2])
-            imageView4!!.setImageBitmap(listBitmap[3])
-        } else {
-            Toast.makeText(this, resources.getString(R.string.failed_download), Toast.LENGTH_SHORT).show()
-        }
+        imageView1?.setImageBitmap(listBitmap[0])
+        imageView2?.setImageBitmap(listBitmap[1])
+        imageView3?.setImageBitmap(listBitmap[2])
+        imageView4?.setImageBitmap(listBitmap[3])
     }
 
     companion object {
-
-        // Another objects
-        private val URL1 = "http://noragami-anime.net/index/img/bg_blu-ray01.jpg"
-        private val URL2 = "http://noragami-anime.net/index/img/bg_blu-ray02.jpg"
-        private val URL3 = "http://noragami-anime.net/index/img/bg_blu-ray03.jpg"
-        private val URL4 = "http://noragami-anime.net/index/img/bg_blu-ray04.jpg"
+        private const val URL1 = "http://noragami-anime.net/index/img/bg_blu-ray01.jpg"
+        private const val URL2 = "http://noragami-anime.net/index/img/bg_blu-ray02.jpg"
+        private const val URL3 = "http://noragami-anime.net/index/img/bg_blu-ray03.jpg"
+        private const val URL4 = "http://noragami-anime.net/index/img/bg_blu-ray04.jpg"
     }
 }

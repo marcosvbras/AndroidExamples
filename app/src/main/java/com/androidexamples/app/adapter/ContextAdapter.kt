@@ -16,7 +16,7 @@ import com.androidexamples.app.domain.ContextExample
  * Created by marcosvbras on 22/01/17.
  */
 
-class ContextAdapter(private val listItems: List<ContextExample>, private val context: Context) : RecyclerView.Adapter<ContextAdapter.MyViewHolder>() {
+class ContextAdapter(private val listItems: MutableList<ContextExample>?, private val context: Context) : RecyclerView.Adapter<ContextAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(context).inflate(R.layout.item_context, parent, false)
@@ -24,21 +24,21 @@ class ContextAdapter(private val listItems: List<ContextExample>, private val co
     }
 
     override fun onBindViewHolder(myViewHolder: MyViewHolder, position: Int) {
-        val item = listItems[position]
-        myViewHolder.textView.text = item.name
+        val item = listItems?.get(position)
+        myViewHolder.textView.text = item?.name
 
-        if (item.isSelected)
+        if (item?.isSelected!!)
             myViewHolder.container.setBackgroundColor(ContextCompat.getColor(context, R.color.colorAccent))
         else
             myViewHolder.container.setBackgroundColor(ContextCompat.getColor(context, android.R.color.white))
     }
 
     override fun getItemCount(): Int {
-        return listItems.size
+        return listItems?.size?: 0
     }
 
-    fun getItemAtPosition(position: Int): ContextExample {
-        return listItems[position]
+    fun getItemAtPosition(position: Int): ContextExample? {
+        return listItems?.get(position)
     }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

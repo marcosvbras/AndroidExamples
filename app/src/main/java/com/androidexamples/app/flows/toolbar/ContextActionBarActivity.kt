@@ -22,7 +22,7 @@ import java.util.ArrayList
 class ContextActionBarActivity : AppCompatActivity(), RecyclerViewTouchListener {
 
     /**
-     * Necessita adicionar no tema:
+     * Required the following items in styles.xml
      * <item name="actionModeBackground">@color/colorPrimary</item>
      * <item name="windowActionModeOverlay">true</item>
      */
@@ -100,7 +100,7 @@ class ContextActionBarActivity : AppCompatActivity(), RecyclerViewTouchListener 
     override fun onItemClick(view: View, position: Int) {
         if (actionMode != null) {
             val contextExample = contextAdapter!!.getItemAtPosition(position)
-            contextExample.isSelected = !contextExample.isSelected
+            contextExample?.isSelected = !contextExample?.isSelected!!
             contextAdapter!!.notifyDataSetChanged()
             updateActionModeTitle()
         }
@@ -114,7 +114,7 @@ class ContextActionBarActivity : AppCompatActivity(), RecyclerViewTouchListener 
         actionMode = startSupportActionMode(actionModeCallBack)
 
         val contextExample = contextAdapter!!.getItemAtPosition(position)
-        contextExample.isSelected = true
+        contextExample?.isSelected = true
         contextAdapter!!.notifyDataSetChanged()
         updateActionModeTitle()
     }
